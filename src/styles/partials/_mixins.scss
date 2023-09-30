@@ -1,0 +1,82 @@
+@use "./colors";
+// CENTERS ELEMETN BOTH VERTICALLY AND HORIZONTALLY WITHIN THE CONTAINER
+@mixin flex-absolute-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*----------------------------------------------------------*/
+// SECTION HEADER - MAX-WIDTH: 320PX
+@mixin sectionHeader320 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+// SECTION HEADER - MIN-WIDTH:768PX [] TABLET & DESKTOP
+@mixin sectionHeader768 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 44px;
+}
+/*----------------------------------------------------------*/
+// MEDIA QUERIES MIXINS
+// MOBILE-1
+@mixin mobileOne {
+  @media (min-width: 465px) {
+    @content;
+  }
+}
+// MOBILE-2
+@mixin mobileTwo {
+  @media (min-width: 610px) {
+    @content;
+  }
+}
+// TABLET
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+// DESKTOP
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+/*----------------------------------------------------------*/
+// PROFILE-IMAGE/PROFILE-IMAGE-BASE DIMENSION
+
+// MOBILE
+@mixin profileImageMobile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+// TABLET
+@mixin profileImageTablet {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+/*----------------------------------------------------------*/
+// SUBMIT BUTTON
+
+// MOBILE
+@mixin buttonMobile {
+  width: 100%;
+  font-size: 14px;
+  padding: 11.67px 0px; // PADDING IS ADDED TO TOTAL HEIGHT = 40PX
+  text-transform: uppercase;
+  color: colors.$white;
+  background-color: colors.$bandSiteBlack;
+  border-radius: 4px;
+  border-width: 0px;
+  margin-top: 16px;
+}
+
+// TABLET & DESKTOP
+@mixin buttonTabeletDesktop {
+  width: 150px;
+  padding: 11.67px 32px;
+}
