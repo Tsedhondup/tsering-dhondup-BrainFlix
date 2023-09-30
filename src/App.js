@@ -1,7 +1,7 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
 import CurrentVid from "./components/CurrentVid/CurrentVid";
-import CommentContainer from "./components/CommentContainer/CommentContainer";
+import Comment from "./components/Comment/Comment";
 import NextVid from "./components/NextVid/NextVid";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <Header />
       <CurrentVid />
-      <CommentContainer />
+      <Comment />
       <NextVid />
     </>
   );

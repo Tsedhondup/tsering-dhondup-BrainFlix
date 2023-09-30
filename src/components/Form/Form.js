@@ -1,3 +1,3 @@
-import "./CommentForm.scss";
+import "./Form.scss";
 let CommentForm = () => {};
 export default CommentForm;
