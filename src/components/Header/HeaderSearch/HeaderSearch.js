@@ -1,5 +1,5 @@
 import "./HeaderSearch.scss";
-import Search from "../../assets/images/search.svg";
+import Search from "../../../assets/images/search.svg";
 let HeaderSearch = () => {
   return (
     <form>

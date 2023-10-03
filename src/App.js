@@ -1,15 +1,19 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
 import CurrentVid from "./components/CurrentVid/CurrentVid";
-import Comment from "./components/Comment/Comment";
+import CommentCount from "./components/CommentCount/CommentCount";
+import CommentAdd from "./components/CommentAdd/CommentAdd";
+import CommentList from "./components/CommentList/CommentList";
 import NextVid from "./components/NextVid/NextVid";
 
 function App() {
   return (
     <>
-      <Header />
+      <Header /> 
       <CurrentVid />
-      <Comment />
+      <CommentCount />
+      <CommentAdd />
+      <CommentList />
       <NextVid />
     </>
   );

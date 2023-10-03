@@ -1,9 +1,9 @@
 import "./Header.scss";
-import HeaderLogo from "../HeaderLogo/HeaderLogo";
-import HeaderProfileTablet from "../HeaderProfileTablet/HeaderProfileTablet";
-import HeaderProfileMobile from "../HeaderProfileMobile/HeaderProfileMobile";
-import HeaderSearch from "../HeaderSearch/HeaderSearch";
-import HeaderUpload from "../HeaderUpload/HeaderUpload";
+import HeaderLogo from "../Header/HeaderLogo/HeaderLogo";
+import HeaderProfileTablet from "../Header/HeaderProfileTablet/HeaderProfileTablet";
+import HeaderProfileMobile from "../Header/HeaderProfileMobile/HeaderProfileMobile";
+import HeaderSearch from "../Header/HeaderSearch/HeaderSearch";
+import HeaderUpload from "../Header/HeaderUpload/HeaderUpload";
 
 let Header = () => {
   return (
