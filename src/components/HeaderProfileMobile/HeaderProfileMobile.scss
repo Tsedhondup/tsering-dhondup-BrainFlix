@@ -1,0 +1,11 @@
+@use "../../styles//partials/mixins";
+.header__profile-mobile {
+  width: 50px;
+  height: auto;
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.header__profile-mobile {
+  @include mixins.tablet {
+    display: none;
+  }
+}

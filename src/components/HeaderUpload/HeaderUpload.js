@@ -1,3 +1,5 @@
 import "./HeaderUpload.scss";
-let HeaderUpload = () => {};
+let HeaderUpload = () => {
+  return <button>upload</button>;
+};
 export default HeaderUpload;

@@ -1,0 +1,12 @@
+@use "../../styles//partials/mixins";
+.header__profile-tablet {
+  width: 50px;
+  height: auto;
+  display: none;
+}
+//  MEDIA = MOBILE = [ ] = 320PX
+.header__profile-tablet {
+  @include mixins.tablet {
+    display: inline-block;
+  }
+}
