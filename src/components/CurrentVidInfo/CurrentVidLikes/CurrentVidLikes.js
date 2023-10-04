@@ -1,3 +1,5 @@
 import "./CurrentVidLikes.scss";
-let CurrentVidLikes = () => {};
+let CurrentVidLikes = () => {
+  return <p>likes</p>;
+};
 export default CurrentVidLikes;

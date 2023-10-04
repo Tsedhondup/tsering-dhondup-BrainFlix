@@ -1,3 +1,5 @@
 import "./CurrentVidViews.scss";
-let CurrentVidViews = () => {};
+let CurrentVidViews = () => {
+    return <p>views</p>
+};
 export default CurrentVidViews;

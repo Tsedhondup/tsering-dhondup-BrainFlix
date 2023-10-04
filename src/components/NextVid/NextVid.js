@@ -1,3 +1,5 @@
 import "./NextVid.scss";
-let NextVid = () => {};
+let NextVid = () => {
+  return <p>this is next vidoe</p>;
+};
 export default NextVid;

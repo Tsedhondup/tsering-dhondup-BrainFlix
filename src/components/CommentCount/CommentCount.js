@@ -1,3 +1,5 @@
 import "./CommentCount.scss";
-let CommentCount = () => {};
+let CommentCount = () => {
+  return <p>comment count</p>;
+};
 export default CommentCount;
