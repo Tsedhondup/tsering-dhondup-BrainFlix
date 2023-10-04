@@ -1,4 +1,4 @@
-import "./ComponentsWrapper1.scss";
+import "./FollowingCurrentVidComponents.scss";
 
 import CurrentVidInfo from "../CurrentVidInfo/CurrentVidInfo";
 import CommentCount from "../CommentCount/CommentCount";
@@ -16,21 +16,22 @@ import NextVid from "../NextVid/NextVid";
 (4) COMMENT-LIST
 (5) NEXT-VIDEOS
  */
-let ComponentsWrapper1 = () => {
+let FollowingCurrentVidComponents  = () => {
   return (
-    /* CURRENT-VIDEO-INFO, COMMENT-COUNT, COMMENT-ADD, & COMMMENT-LIST CONTAINER */
-    <div className="componentWrapper1">
-      {/*--------------------------------------------------------*/}
-      <div>
-        <CurrentVidInfo />
-        <CommentCount />
-        <CommentAdd />
-        <CommentList />
+    <div>
+      <div className="componentWrapper1">
+        {/*--------------------------------------------------------*/}
+        <div>
+          <CurrentVidInfo />
+          <CommentCount />
+          <CommentAdd />
+          <CommentList />
+        </div>
+        {/*--------------------------------------------------------*/}
+        {/* NEXT-VIDEO */}
+        <NextVid />
       </div>
-      {/*--------------------------------------------------------*/}
-      {/* NEXT-VIDEO */}
-      <NextVid />
     </div>
   );
 };
-export default ComponentsWrapper1;
+export default FollowingCurrentVidComponents;
