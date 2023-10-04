@@ -1,4 +1,4 @@
-import "./ComponntsWrapper1.scss";
+import "./ComponentsWrapper1.scss";
 
 import CurrentVidInfo from "../CurrentVidInfo/CurrentVidInfo";
 import CommentCount from "../CommentCount/CommentCount";

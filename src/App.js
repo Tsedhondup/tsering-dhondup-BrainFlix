@@ -1,20 +1,23 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
 import CurrentVid from "./components/CurrentVid/CurrentVid";
-import CommentCount from "./components/CommentCount/CommentCount";
-import CommentAdd from "./components/CommentAdd/CommentAdd";
-import CommentList from "./components/CommentList/CommentList";
-import NextVid from "./components/NextVid/NextVid";
+import ComponentsWrapper1 from "./components/ComponentsWrapper1/ComponentsWrapper1";
 
 function App() {
   return (
     <>
-      <Header /> 
+      <Header />
       <CurrentVid />
-      <CommentCount />
-      <CommentAdd />
-      <CommentList />
-      <NextVid />
+
+      {/* 
+      # COMPONENTS-WRAPPER-1 CONTAINS FOLLOWING COMPONENTS
+    
+      (1) CURRENT-VIDEO-INFO
+      (2) COMMENT-COUNT
+      (3) COMMENT-ADD
+      (4) COMMENT-LIST
+      */}
+      <ComponentsWrapper1 />
     </>
   );
 }
