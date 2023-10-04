@@ -1,5 +1,16 @@
-.componentWrapper1 {
-  display: flex;
-  gap: 10px;
-  background-color: aqua;
+.following-current-vid-components {
+  // FOLLOWING-CURRENT-VID-COMPONENTS-CONTENT
+  &__content {
+    display: flex;
+    gap: 10px;
+    background-color: aqua;
+    // CURRENT-VIDEO-CONTAINER
+    .current-vid-info-and-comment-container {
+      background-color: green;
+    }
+    // NEXT-VIDEO-CONTAINER
+    .next-video-container {
+      background-color: blue;
+    }
+  }
 }

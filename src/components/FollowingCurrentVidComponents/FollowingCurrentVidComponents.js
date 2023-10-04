@@ -16,12 +16,12 @@ import NextVid from "../NextVid/NextVid";
 (4) COMMENT-LIST
 (5) NEXT-VIDEOS
  */
-let FollowingCurrentVidComponents  = () => {
+let FollowingCurrentVidComponents = () => {
   return (
-    <div>
-      <div className="componentWrapper1">
+    <div className="following-current-vid-components">
+      <div className="following-current-vid-components__content">
         {/*--------------------------------------------------------*/}
-        <div>
+        <div className="current-vid-info-and-comment-container">
           <CurrentVidInfo />
           <CommentCount />
           <CommentAdd />
@@ -29,7 +29,9 @@ let FollowingCurrentVidComponents  = () => {
         </div>
         {/*--------------------------------------------------------*/}
         {/* NEXT-VIDEO */}
-        <NextVid />
+        <div className="next-video-container">
+          <NextVid />
+        </div>
       </div>
     </div>
   );
