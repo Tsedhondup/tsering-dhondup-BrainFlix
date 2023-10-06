@@ -1,6 +1,14 @@
 import "./CurrentVid.scss";
-import data from "../../data/video-details.json";
-import { useState } from "react";
-let CurrentVid = () => {
-console.log(data)};
+
+let CurrentVid = (props) => {
+  return (
+    <div className="current-video-container">
+      <video
+        className="current-video-container__video"
+        poster={props.currentVideo.image}
+        controls
+      ></video>
+    </div>
+  );
+};
 export default CurrentVid;

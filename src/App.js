@@ -1,14 +1,13 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import CurrentVid from "./components/CurrentVid/CurrentVid";
+import StateCurrentVid from "./components/State/StateCurrentVid/StateCurrentVid";
 import FollowingCurrentVidComponents from "./components/FollowingCurrentVidComponents/FollowingCurrentVidComponents";
 
 function App() {
   return (
     <>
       <Header />
-      <CurrentVid />
-
+      <StateCurrentVid />
       {/* 
       # COMPONENTS-WRAPPER-1 CONTAINS FOLLOWING COMPONENTS
       (1) CURRENT-VIDEO-INFO
