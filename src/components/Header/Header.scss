@@ -1,19 +1,13 @@
 // PARTIALS
 @use "../../styles//partials/mixins";
 .header {
-  display: flex;
-  // PROFILE-MOBILE
-
-  
-
-  // PROFILE-TABLET & DESKTOP
-  &__profile-tab-desk {
-    display: none;
-  }
-  //  MEDIA = TABLET = [ ] = 768PX
-  &__profile-tab-desk {
-    @include mixins.tablet {
-      display: inline-block;
+  &__content {
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+    // SEARCH AND MOBILE PFORILE CONTAINER
+    .header-search-mobile-profile-container {
+      display: flex;
     }
   }
 }

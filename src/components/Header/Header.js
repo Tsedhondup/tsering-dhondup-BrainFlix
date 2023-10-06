@@ -8,11 +8,16 @@ import HeaderUpload from "../Header/HeaderUpload/HeaderUpload";
 let Header = () => {
   return (
     <header className="header">
-      <HeaderLogo />
-      <HeaderProfileMobile />
-      <HeaderSearch />
-      <HeaderUpload />
-      <HeaderProfileTablet />
+      <div className="header__content">
+        <HeaderLogo /> {/* BrainFlix Logo */}
+        {/* SEARCH FIELD & MOBILE PROFILE CONTAINER */}
+        <div className="header-search-mobile-profile-container">
+          <HeaderSearch /> {/* search field */}
+          <HeaderProfileMobile /> {/* mobile profile */}
+        </div>
+        <HeaderUpload /> {/* upload button */}
+        <HeaderProfileTablet /> {/* tablet & desktop profile */}
+      </div>
     </header>
   );
 };

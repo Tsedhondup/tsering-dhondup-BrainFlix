@@ -2,7 +2,14 @@ import "./HeaderProfileTablet.scss";
 import Profile from "../../../assets/images/Mohan-muruge.jpg";
 let HeaderProfileTablet = () => {
   return (
-    <img className="header__profile-tablet" src={Profile} alt="profile"></img>
+    <div className="header-tablet-profile-container">
+      <img
+        className="header-tablet-profile-container__profile"
+        src={Profile}
+        alt="profile"
+      ></img>
+    </div>
   );
 };
+
 export default HeaderProfileTablet;

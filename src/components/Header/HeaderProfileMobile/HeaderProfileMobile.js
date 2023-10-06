@@ -2,7 +2,13 @@ import "./HeaderProfileMobile.scss";
 import Profile from "../../../assets/images/Mohan-muruge.jpg";
 let HeaderProfileMobile = () => {
   return (
-    <img className="header__profile-mobile" src={Profile} alt="profile"></img>
+    <div className="header-mobile-profile-container">
+      <img
+        className="header-mobile-profile-container__profile"
+        src={Profile}
+        alt="profile"
+      ></img>
+    </div>
   );
 };
 export default HeaderProfileMobile;
