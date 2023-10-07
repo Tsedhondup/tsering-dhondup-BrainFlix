@@ -1,5 +1,5 @@
 import "./NextVidTitle.scss";
-let NextVidTitle = () => {
-  return <p>this is next video title </p>;
+let NextVidTitle = (props) => {
+  return <h3>{props.title}</h3>;
 };
 export default NextVidTitle;

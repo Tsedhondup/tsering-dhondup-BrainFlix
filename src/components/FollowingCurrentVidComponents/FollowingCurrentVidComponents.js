@@ -4,19 +4,18 @@ import CurrentVidInfo from "../CurrentVidInfo/CurrentVidInfo";
 import CommentCount from "../CommentCount/CommentCount";
 import CommentAdd from "../CommentAdd/CommentAdd";
 import CommentList from "../CommentList/CommentList";
-import NextVid from "../NextVid/NextVid";
-
+import StateNextVid from "../State/StateNextVid";
 /*
-# THIS COMPONENT ACT AS CONTATINER FOR FOLLOWING COMPONENTS
-# PURPOSE OF THIS COMPONENT IS TO APPLY FLEX PROPERTY AND MATCH THE DESIGN IN MOCK-UP
+# PURPOSE => TO APPLY FLEX PROPERTY AND MATCH THE DESIGN IN MOCK-UP
 
+# THIS COMPONENT ACT AS CONTATINER FOR FOLLOWING COMPONENTS
 # PART-1
    (1) CURRENT VIDEO INFO 
    (2) COMMENT-COUNT
    (3) COMMENT-ADD
    (4) COMMENT-LIST
 # PART-2
-   (5) NEXT-VIDEOS
+   (5) NEXT-VIDEOS - FROM STATE-NEXT-VIDEO COMPONENT
  */
 let FollowingCurrentVidComponents = () => {
   return (
@@ -32,7 +31,7 @@ let FollowingCurrentVidComponents = () => {
         {/*--------------------------------------------------------*/}
         {/* NEXT-VIDEO */}
         <div className="next-video-container">
-          <NextVid />
+          <StateNextVid />
         </div>
       </div>
     </div>
