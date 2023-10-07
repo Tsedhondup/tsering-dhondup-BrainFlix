@@ -1,6 +1,6 @@
 import "./App.scss";
 import Header from "./components/Header/Header";
-import StateCurrentVid from "./components/State/StateCurrentVid/StateCurrentVid";
+import StateCurrentVid from "./components/State/StateCurrentVid";
 import FollowingCurrentVidComponents from "./components/FollowingCurrentVidComponents/FollowingCurrentVidComponents";
 
 function App() {
