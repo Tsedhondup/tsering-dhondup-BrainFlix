@@ -1,6 +1,20 @@
 import "./CurrentVidInfo.scss";
-
-let CurrentVidInfo = () => {
-  return <p>this is currentVidInfo</p>;
+import CurrentVidTitle from "./CurrentVidTitle/CurrentVidTitle";
+import CurrentVidChannel from "./CurrentVidChannel/CurrentVidChannel";
+import CurrentVidDate from "./CurrentVidDate/CurrentVidDate";
+import CurrentVidViews from "./CurrentVidViews/CurrentVidViews";
+import CurrentVidLikes from "./CurrentVidLikes/CurrentVidLikes";
+import CurrentVidDescription from "./CurrentVidDescription/CurrentVidDescription";
+let CurrentVidInfo = (props) => {
+  return (
+    <div>
+      <CurrentVidTitle title={props.currentVideo.title} />
+      <CurrentVidChannel channel={props.currentVideo.channel} />
+      <CurrentVidDate timestamp={props.currentVideo.timestamp} />
+      <CurrentVidViews views={props.currentVideo.views} />
+      <CurrentVidLikes likes={props.currentVideo.likes} />
+      <CurrentVidDescription description={props.currentVideo.description} />
+    </div>
+  );
 };
 export default CurrentVidInfo;

@@ -1,5 +1,5 @@
 import "./CurrentVidDescription.scss";
-let CurrentVidDescription = () => {
-  return <p>this is DESCRIPITION</p>;
+let CurrentVidDescription = (props) => {
+  return <p>{props.description}</p>;
 };
 export default CurrentVidDescription;

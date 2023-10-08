@@ -1,5 +1,5 @@
 import "./CurrentVidTitle.scss";
-let CurrentVidTitle = () => {
-  return <p>current video title</p>;
+let CurrentVidTitle = (props) => {
+  return <h1>{props.title}</h1>;
 };
 export default CurrentVidTitle;
