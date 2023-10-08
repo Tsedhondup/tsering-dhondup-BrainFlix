@@ -31,7 +31,12 @@ let FollowingCurrentVidComponents = () => {
         {/*--------------------------------------------------------*/}
         {/* NEXT-VIDEO */}
         <div className="next-video-container">
-          <StateNextVid />
+          <div>
+            <h2>Next Videos</h2>
+          </div>
+          <div>
+            <StateNextVid />
+          </div>
         </div>
       </div>
     </div>
