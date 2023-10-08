@@ -11,7 +11,7 @@ let NextVid = (props) => {
       id={vidObj.id}
       key={vidObj.id}
       onClick={(event) => {
-        props.nextVideoHandler(event);
+        props.setVideoHandler(event);
       }}
     >
       <NextVidTitle title={vidObj.title} />

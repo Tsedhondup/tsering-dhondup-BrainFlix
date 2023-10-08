@@ -1,7 +1,8 @@
-import "./CurrentVid.scss";
+import "./CurrentVidDisplay.scss";
 
 // HANDLE CURRENT VIDEO
-let CurrentVid = (props) => {
+let CurrentVidDisplay = (props) => {
+  // RENDERING
   return (
     <div className="current-video-container">
       <video
@@ -13,4 +14,4 @@ let CurrentVid = (props) => {
     </div>
   );
 };
-export default CurrentVid;
+export default CurrentVidDisplay;
