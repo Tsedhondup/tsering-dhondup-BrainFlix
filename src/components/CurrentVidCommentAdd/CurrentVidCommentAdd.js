@@ -5,6 +5,7 @@ import CommentAddBtn from "./CommentAddBtn/CommentAddBtn";
 let CurrentVidCommentAdd = (props) => {
   return (
     <form
+      className="current-vid-comment-form"
       onClick={(event) => {
         props.preventCommentSubmit(event);
       }}
