@@ -2,14 +2,14 @@ import "./HeaderSearch.scss";
 import Search from "../../../assets/images/search.svg";
 let HeaderSearch = () => {
   return (
-    <form className="header-search-form">
+    <form className="header-search-and-mobile-profile-container__form">
       <img
-        className="header-search-form__icon"
+        className="header-search-and-mobile-profile-container__form--icon"
         src={Search}
         alt="search icon"
       />
       <input
-        className="header-search-form__input"
+        className="header-search-and-mobile-profile-container__form--input-field"
         type="text"
         name="search"
         placeholder="search"
