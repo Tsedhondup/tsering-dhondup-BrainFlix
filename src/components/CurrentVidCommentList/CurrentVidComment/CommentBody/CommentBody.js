@@ -1,4 +1,4 @@
 let CommentBody = (props) => {
-  return <p>{props.comment}</p>;
+  return <p className="comment-text-container__body">{props.comment}</p>;
 };
 export default CommentBody;

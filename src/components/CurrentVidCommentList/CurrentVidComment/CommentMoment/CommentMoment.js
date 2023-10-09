@@ -1,5 +1,5 @@
 import "./CommentMoment.scss";
 let CommentMoment = (props) => {
-  return <p>{props.moment}</p>;
+  return <p className="comment-text-container__moment">{props.moment}</p>;
 };
 export default CommentMoment;
