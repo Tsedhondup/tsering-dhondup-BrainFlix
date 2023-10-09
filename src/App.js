@@ -11,12 +11,3 @@ function App() {
 }
 
 export default App;
-// <StateCurrentVid />
-//     {/*
-//     # COMPONENTS-WRAPPER-1 CONTAINS FOLLOWING COMPONENTS
-//     (1) CURRENT-VIDEO-INFO
-//     (2) COMMENT-COUNT
-//     (3) COMMENT-ADD
-//     (4) COMMENT-LIST
-//     */}
-//     <FollowingCurrentVidComponents />

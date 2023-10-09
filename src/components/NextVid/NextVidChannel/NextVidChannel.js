@@ -1,6 +1,6 @@
 import "./NextVidChannel.scss";
 
 let NextVidChannel = (props) => {
-  return <p>{props.channel}</p>;
+  return <p className="next-video-text-container__channel">{props.channel}</p>;
 };
 export default NextVidChannel;

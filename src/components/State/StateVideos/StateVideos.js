@@ -129,7 +129,9 @@ let StateVideos = () => {
     const eventTarget = event.target;
 
     // GET THE PARENT OF CLOSEST EVENT-TARGET WITH MATCHED-CLASS SELECTOR
-    const eventParent = eventTarget.closest(".next-video");
+    const eventParent = eventTarget.closest(
+      ".next-video-container__next-video"
+    );
 
     // GET THE ID OF CLOSEST PARENT
     const closestParentId = eventParent.id;
@@ -149,7 +151,9 @@ let StateVideos = () => {
     const eventTarget = event.target;
 
     // GET THE PARENT OF CLOSEST EVENT-TARGET WITH MATCHED-CLASS SELECTOR
-    const eventParent = eventTarget.closest(".next-video");
+    const eventParent = eventTarget.closest(
+      ".next-video-container__next-video"
+    );
 
     // GET THE ID OF CLOSEST PARENT
     const closestParentId = eventParent.id;
@@ -210,20 +214,17 @@ let StateVideos = () => {
         </div>
         {/*----------------------------------------------*/}
         {/* # PART-2 : (B) */}
-        <div className="next-video-container">
-          {/*
+        {/*
             # NEXT-VIDEO-LISTS 
           - CURRENT-VIDEO-ID IS ALSO PASSED
           - REASON - TO DIRECT OR FOCUS PAGE TO CURRENT-VIDEO DISPLAY WHEN
           CLICKED ON NEXT-VIDEO LIST
           */}
-          <NextVid
-            nextVideos={nextVideoFiltered}
-            setVideoHandler={setVideoHandler}
-            currentVideoId={currentVideo.id}
-          />
-        </div>
-        {/*----------------------------------------------*/}
+        <NextVid
+          nextVideos={nextVideoFiltered}
+          setVideoHandler={setVideoHandler}
+          currentVideoId={currentVideo.id}
+        />
       </div>
     </section>
   );
