@@ -170,7 +170,12 @@ let StateVideos = () => {
 
   /*---------------------------------------------------------------------------*/
 
-  // RENDERING
+  // PREVENT COMMENT FORM FROM SUBMISSION
+  let preventCommentSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  /************************* RENDERING ************************/
   return (
     <section className="video-section">
       {/* (1) - CURRENT-VIDEO-DISPLAY CONTAINER */}
@@ -194,9 +199,12 @@ let StateVideos = () => {
             />
           </div>
           {/* COMMENT-COUNT */}
-          <CurrentVidCommentCount currentVideo={currentVideo} />
+          <CurrentVidCommentCount totalComment={currentVideo.comments.length} />
           {/* COMMENT-ADD */}
-          <CurrentVidCommentAdd currentVideo={currentVideo} />
+          <CurrentVidCommentAdd
+            currentVideo={currentVideo}
+            preventCommentSubmit={preventCommentSubmit}
+          />
           {/* COMMENT-LIST */}
           <CurrentVidCommentList currentVideo={currentVideo} />
         </div>

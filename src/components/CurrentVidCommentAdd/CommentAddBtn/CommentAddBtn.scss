@@ -1,0 +1,11 @@
+.add-button-container {
+  position: relative;
+  img {
+    position: absolute;
+    display: block;
+    height: 100%;
+  }
+  button {
+    background-color: blue;
+  }
+}

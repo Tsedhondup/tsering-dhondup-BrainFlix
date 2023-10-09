@@ -1,5 +1,5 @@
 import "./CurrentVidCommentCount.scss";
-let CurrentVidCommentCount = () => {
-  return <p>this id comment count</p>;
+let CurrentVidCommentCount = (props) => {
+  return <p>{props.totalComment} comments</p>;
 };
 export default CurrentVidCommentCount;
