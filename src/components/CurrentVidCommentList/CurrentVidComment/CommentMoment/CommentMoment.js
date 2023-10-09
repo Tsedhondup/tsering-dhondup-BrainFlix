@@ -1,3 +1,5 @@
 import "./CommentMoment.scss";
-let CommentMoment = () => {};
+let CommentMoment = () => {
+    return <p>{}</p>
+};
 export default CommentMoment;
