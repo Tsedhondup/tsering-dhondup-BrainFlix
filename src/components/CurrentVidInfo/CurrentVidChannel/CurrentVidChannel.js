@@ -1,5 +1,9 @@
 import "./CurrentVidChannel.scss";
 let CurrentVidChannel = (props) => {
-  return <p>{props.channel}</p>;
+  return (
+    <p className="current-vid-channel-and-date-container__channel">
+      {props.channel}
+    </p>
+  );
 };
 export default CurrentVidChannel;

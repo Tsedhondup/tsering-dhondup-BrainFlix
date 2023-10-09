@@ -1,11 +1,11 @@
-.current-video-container {
+.video-section__current-video-container {
   background-color: #000;
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 0px 30px;
   // CURRENT VIDEO
-  &__video {
+  &--video {
     width: 400px;
   }
 }

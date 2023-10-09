@@ -8,13 +8,22 @@ import CurrentVidDescription from "./CurrentVidDescription/CurrentVidDescription
 import CurrentVideoMoment from "../CurrentVidInfo/CurrentVideoMoment/CurrentVideoMoment";
 let CurrentVidInfo = (props) => {
   return (
-    <div>
+    <div className="current-vid-info-container__info">
+      {/* CURRENT-VIDEO TITLE */}
       <CurrentVidTitle title={props.currentVideo.title} />
-      <CurrentVidChannel channel={props.currentVideo.channel} />
-      <CurrentVidDate date={props.date} />
-      <CurrentVidViews views={props.currentVideo.views} />
-      <CurrentVidLikes likes={props.currentVideo.likes} />
+      {/* CHANNEL AND DATE CONTAINER */}
+      <div className="current-vid-channel-and-date-container">
+        <CurrentVidChannel channel={props.currentVideo.channel} />
+        <CurrentVidDate date={props.date} />
+      </div>
+      {/* VIEWS AND LIKES CONTAINER */}
+      <div className="current-vid-views-and-likes-container">
+        <CurrentVidViews views={props.currentVideo.views} />
+        <CurrentVidLikes likes={props.currentVideo.likes} />
+      </div>
+      {/* MOMENTS - TIME ELAPSED SINCE CURRENT-VIDEO WAS UPLOADED */}
       <CurrentVideoMoment moment={props.moment} />
+      {/* CURRENT-VIDEO DESCRIPTION */}
       <CurrentVidDescription description={props.currentVideo.description} />
     </div>
   );

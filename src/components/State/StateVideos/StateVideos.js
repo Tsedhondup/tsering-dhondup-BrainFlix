@@ -178,38 +178,38 @@ let StateVideos = () => {
   /************************* RENDERING ************************/
   return (
     <section className="video-section">
-      {/* (1) - CURRENT-VIDEO-DISPLAY CONTAINER */}
-      <div className="video-section__current-vid" id={currentVideo.id}>
-        <CurrentVidDisplay currentVideo={currentVideo} /> {/* CURRENT-VIDEO */}
-      </div>
-
-      {/*-----------------------------------------------------------*/}
-
-      {/* (2) - CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
-      <div className="current-vid-info-next-vid-container">
-        {/*-------------------------------------*/}
-        {/* CURRENT-VIDEO-INFO && COMMENTS-CONTAINER */}
-        <div className="current-vid-info-and-comments-container">
-          <div className="current-vid-info-cnontainer">
-            {/* CURRENT-VIDEO-INFO */}
-            <CurrentVidInfo
-              currentVideo={currentVideo}
-              date={currentVidDate}
-              moment={moment}
-            />
-          </div>
-          {/* COMMENT-COUNT */}
+      {/* VIDEO-SECTION PART-1 : CURRENT-VIDEO-DISPLAY COMPONENT */}
+      <CurrentVidDisplay currentVideo={currentVideo} />
+      {/* VIDEO-SECTION PART-2 : CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
+      <div className="current-vid-info-and-next-vid-container">
+        {/*----------------------------------------------*/}
+        {/* # PART-2 : (A) */}
+        <div className="current-vid-info-container">
+          {/* 
+          # PART-2 (A) CONTAINS FOUR COMPONENTS
+           (A) CURRENT-VIDEO-INFO COMPONENT
+           (B) CURRENT-VIDEO-COMMENT-COUNT COMPONENT
+           (C) CURRENT-VIDEO-COMMENT-ADD COMPONENT
+           (D) CURRENT-VIDEO-COMMENT-LIST COMPONENT
+        */}
+          {/*(A)*/}
+          <CurrentVidInfo
+            currentVideo={currentVideo}
+            date={currentVidDate}
+            moment={moment}
+          />
+          {/*(B)*/}
           <CurrentVidCommentCount totalComment={currentVideo.comments.length} />
-          {/* COMMENT-ADD */}
+          {/*(C)*/}
           <CurrentVidCommentAdd
             currentVideo={currentVideo}
             preventCommentSubmit={preventCommentSubmit}
           />
-          {/* COMMENT-LIST */}
+          {/*(D)*/}
           <CurrentVidCommentList currentVideo={currentVideo} />
         </div>
-        {/*-------------------------------------*/}
-        {/* NEXT-VIDEO-CONTAINER */}
+        {/*----------------------------------------------*/}
+        {/* # PART-2 : (B) */}
         <div className="next-video-container">
           {/*
             # NEXT-VIDEO-LISTS 
@@ -223,7 +223,7 @@ let StateVideos = () => {
             currentVideoId={currentVideo.id}
           />
         </div>
-        {/*-------------------------------------*/}
+        {/*----------------------------------------------*/}
       </div>
     </section>
   );

@@ -4,10 +4,10 @@ import "./CurrentVidDisplay.scss";
 let CurrentVidDisplay = (props) => {
   // RENDERING
   return (
-    <div className="current-video-container">
+    <div className="video-section__current-video-container">
       <video
         id={props.currentVideo.id}
-        className="current-video-container__video"
+        className="video-section__current-video-container--video"
         poster={props.currentVideo.image}
         controls
       ></video>
