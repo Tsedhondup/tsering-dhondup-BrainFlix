@@ -1,7 +1,25 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/mixins";
+@use "../../styles/partials/fonts";
+
 .current-vid-info-container__info {
   // DATE, CHANNEL, VIEWS, & LIKES CONTAINER
   .current-vid-date-channel-viwe-like-container {
     display: flex;
-    padding-top: 16px;
+    padding: 16px 0px;
+    width: 100%;
+    border-top: 1px solid colors.$mercury;
+    border-bottom: 1px solid colors.$mercury;
+
+    // CHANNEL AND DATE CONTAINER
+    .current-vid-channel-and-date-containe {
+      width: 100%;
+      flex: 50%;
+    }
+    // VIEWS AND LIKES CONTAINER
+    .current-vid-views-and-likes-container {
+      flex: 50%;
+      width: 100%;
+    }
   }
 }
