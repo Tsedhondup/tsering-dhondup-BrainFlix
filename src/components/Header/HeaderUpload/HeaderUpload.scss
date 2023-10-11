@@ -1,0 +1,30 @@
+@use "../../../styles/partials/colors";
+
+.header-upload-btn-container {
+  padding: 16px 0px;
+  // UPLOAD-BUTTON
+  &__button {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: colors.$white;
+    background-color: colors.$brainFlixBlue;
+    border-width: 0px;
+    border-radius: 4px;
+
+    // UPLOAD ICON
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 1%;
+      transform: translate(50%, -50%);
+      display: block;
+      height: 17px;
+    }
+  }
+  &__button:hover {
+    background-color: colors.$brainFlixDarkBlue;
+  }
+}

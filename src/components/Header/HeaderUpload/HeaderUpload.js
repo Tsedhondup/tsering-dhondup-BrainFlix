@@ -1,8 +1,16 @@
 import "./HeaderUpload.scss";
+import uploadIcon from "../../../assets/images/upload.svg";
 let HeaderUpload = () => {
   return (
     <div className="header-upload-btn-container">
-      <button className="header-pload-btn-container__button">upload</button>
+      <button className="header-upload-btn-container__button">
+        <img
+          className="header-upload-btn-container__button--icon"
+          src={uploadIcon}
+          alt="upload-icon"
+        />
+        upload
+      </button>
     </div>
   );
 };
