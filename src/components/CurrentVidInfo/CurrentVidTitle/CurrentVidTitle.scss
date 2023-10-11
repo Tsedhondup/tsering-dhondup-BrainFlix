@@ -1,0 +1,11 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
+@use "../../../styles/partials/fonts";
+
+.current-vid-info-container__info--title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: colors.$brainFlixBlack;
+  padding-top: 16px;
+}

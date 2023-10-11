@@ -11,15 +11,18 @@ let CurrentVidInfo = (props) => {
     <div className="current-vid-info-container__info">
       {/* CURRENT-VIDEO TITLE */}
       <CurrentVidTitle title={props.currentVideo.title} />
-      {/* CHANNEL AND DATE CONTAINER */}
-      <div className="current-vid-channel-and-date-container">
-        <CurrentVidChannel channel={props.currentVideo.channel} />
-        <CurrentVidDate date={props.date} />
-      </div>
-      {/* VIEWS AND LIKES CONTAINER */}
-      <div className="current-vid-views-and-likes-container">
-        <CurrentVidViews views={props.currentVideo.views} />
-        <CurrentVidLikes likes={props.currentVideo.likes} />
+      {/* DATE, CHANNEL, VIEWS, & LIKES CONTAINER */}
+      <div className="current-vid-date-channel-viwe-like-container">
+        {/* CHANNEL AND DATE CONTAINER */}
+        <div className="current-vid-channel-and-date-container">
+          <CurrentVidChannel channel={props.currentVideo.channel} />
+          <CurrentVidDate date={props.date} />
+        </div>
+        {/* VIEWS AND LIKES CONTAINER */}
+        <div className="current-vid-views-and-likes-container">
+          <CurrentVidViews views={props.currentVideo.views} />
+          <CurrentVidLikes likes={props.currentVideo.likes} />
+        </div>
       </div>
       {/* MOMENTS - TIME ELAPSED SINCE CURRENT-VIDEO WAS UPLOADED */}
       <CurrentVideoMoment moment={props.moment} />
