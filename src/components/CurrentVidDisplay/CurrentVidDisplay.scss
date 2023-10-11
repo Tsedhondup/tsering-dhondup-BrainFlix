@@ -1,11 +1,14 @@
+@use "../../styles/partials/mixins";
+@use "../../styles/partials/colors";
 .video-section__current-video-container {
-  background-color: #000;
+  background-color: colors.$brainFlixBlack;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0px 30px;
   // CURRENT VIDEO
   &--video {
-    width: 400px;
+    width: 100%; // == 320px;
+    height: 180px;
+    // height: calc(100% * 9 / 16);
   }
 }
