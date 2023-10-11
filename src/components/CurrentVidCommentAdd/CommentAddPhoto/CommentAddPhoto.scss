@@ -1,1 +1,8 @@
-
+.current-vid-comment-form-img-container {
+  &__img-wrapper {
+    &--image {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
