@@ -1,3 +1,13 @@
-.current-vid-info-next-vid-container {
-  display: flex;
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
+.video-section {
+  // CURRENT-VIDEO-INFO & NEXT-VIDEO-LISTS CONTAINER
+  .current-vid-info-and-next-vid-container {
+    padding: 0px 16px;
+
+    // CURRENT-VIDEO-INFO-CONTAINER
+    .current-vid-info-container {
+      border-right: 1px solid colors.$mercury;
+    }
+  }
 }

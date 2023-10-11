@@ -186,11 +186,10 @@ let StateVideos = () => {
       <CurrentVidDisplay currentVideo={currentVideo} />
       {/* VIDEO-SECTION PART-2 : CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
       <div className="current-vid-info-and-next-vid-container">
-        {/*----------------------------------------------*/}
         {/* # PART-2 : (A) */}
         <div className="current-vid-info-container">
           {/* 
-          # PART-2 (A) CONTAINS FOUR COMPONENTS
+          # CONTAINS FOUR COMPONENTS
            (A) CURRENT-VIDEO-INFO COMPONENT
            (B) CURRENT-VIDEO-COMMENT-COUNT COMPONENT
            (C) CURRENT-VIDEO-COMMENT-ADD COMPONENT
