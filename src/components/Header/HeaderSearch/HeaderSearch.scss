@@ -1,12 +1,23 @@
-form {
+@use "../../../styles/partials/colors";
+
+.header-search-and-mobile-profile-container__form {
   position: relative;
-}
-input {
-  //   background-image: url("../../assets/images/search.svg");
-  //   background-repeat: no-repeat;
-  //   background-position: left;
-  padding-left: 30px;
-}
-.search-icon {
-  position: absolute;
+  flex: 90%;
+  // SEARCH ICON
+  &--icon {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+  }
+  // SEARCH FIELD
+  &--input-field {
+    height: 36px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid colors.$mercury;
+    padding-left: 48px;
+  }
+  &--input-field:focus {
+    border: 2px solid colors.$brainFlixBlue;
+  }
 }

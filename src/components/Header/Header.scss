@@ -3,6 +3,7 @@
 @use "../../styles/partials/colors";
 .header {
   &__content {
+    padding: 0px 16px;
     // SEARCH AND MOBILE PFORILE CONTAINER
     .header-search-and-mobile-profile-container {
       display: flex;
@@ -21,5 +22,11 @@
       padding: 0px 0px;
       margin: auto;
     }
+  }
+  // SEARCH & MOBILE PROFILE CONTAINER
+  .header-search-and-mobile-profile-container {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
   }
 }

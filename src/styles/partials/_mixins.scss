@@ -48,13 +48,13 @@
 // PROFILE-IMAGE/PROFILE-IMAGE-BASE DIMENSION
 
 // MOBILE
-@mixin profileImageMobile {
+@mixin mobileProfileDimension {
   width: 36px;
   height: 36px;
   border-radius: 50%;
 }
 // TABLET
-@mixin profileImageTablet {
+@mixin tabletProfileDimension {
   width: 48px;
   height: 48px;
   border-radius: 50%;
