@@ -1,11 +1,11 @@
 import "./HeaderSearch.scss";
-import Search from "../../../assets/images/search.svg";
+import SearchIcon from "../../../assets/images/search.svg";
 let HeaderSearch = () => {
   return (
     <form className="header-search-and-mobile-profile-container__form">
       <img
         className="header-search-and-mobile-profile-container__form--icon"
-        src={Search}
+        src={SearchIcon}
         alt="search icon"
       />
       <input
