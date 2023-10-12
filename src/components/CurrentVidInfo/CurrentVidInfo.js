@@ -25,7 +25,7 @@ let CurrentVidInfo = (props) => {
         </div>
       </div>
       {/* MOMENTS - TIME ELAPSED SINCE CURRENT-VIDEO WAS UPLOADED */}
-      <CurrentVideoMoment moment={props.moment} />
+      <CurrentVideoMoment timestamp={props.currentVideo.timestamp} />
       {/* CURRENT-VIDEO DESCRIPTION */}
       <CurrentVidDescription description={props.currentVideo.description} />
     </div>
