@@ -2,11 +2,12 @@ import "./CommentAddBtn.scss";
 import addCommentIcon from "../../../assets/images/add_comment.svg";
 let CommentAddBtn = () => {
   return (
-    <div className="current-vid-comment-form__btn-container">
-      <button>
+    <div className="current-vid-comment-form-btn-container">
+      <button className="current-vid-comment-form-btn-container__button">
         <img
+          className="current-vid-comment-form-btn-container__button--icon"
           src={addCommentIcon}
-          alt="current-vid-comment-form__btn-container--icon"
+          alt="add-icon"
         />
         comment
       </button>

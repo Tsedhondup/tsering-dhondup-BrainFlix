@@ -1,0 +1,27 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
+.current-vid-comment-form-input-container {
+  // LABEL
+  &__label {
+    display: block;
+    font-size: 10px;
+    line-height: 20px;
+    color: colors.$silver;
+    text-transform: uppercase;
+  }
+  // INPUT-FIELD
+  &__input {
+    width: 100%;
+    height: 100px;
+    text-align: leftF;
+    padding: 12px;
+    border: 1px solid colors.$mercury;
+    border-radius: 4px;
+    resize: none;
+  }
+  // PLACEHOLDER
+  &__input::placeholder {
+    color: colors.$brainFlixBlack;
+    font-size: 12px;
+  }
+}

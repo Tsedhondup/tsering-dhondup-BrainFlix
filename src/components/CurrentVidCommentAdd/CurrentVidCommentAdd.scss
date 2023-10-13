@@ -1,0 +1,15 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins";
+
+.current-vid-comment-form {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+
+  // INPUT & BUTTON CONTAINER
+  &__input-btn-container {
+    width: 100%;
+  }
+}

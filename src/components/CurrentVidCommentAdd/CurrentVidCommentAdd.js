@@ -15,8 +15,11 @@ let CurrentVidCommentAdd = (props) => {
       }}
     >
       <CommentAddPhoto />
-      <CommentAddInput />
-      <CommentAddBtn />
+      {/* INPUT FIELD & BUTTON CONTAINER  */}
+      <div className="current-vid-comment-form__input-btn-container">
+        <CommentAddInput />
+        <CommentAddBtn />
+      </div>
     </form>
   );
 };

@@ -1,8 +1,21 @@
+@use "../../../styles/partials/mixins";
 .current-vid-comment-form-img-container {
+  padding-top: 16px;
+  // IMAGE-WRAPPER
   &__img-wrapper {
+    @include mixins.mobileProfileDimension;
+    overflow: hidden;
+    // IMAGE
     &--image {
-      width: 40px;
-      height: 40px;
+      height: 100%;
+      margin-left: -5px;
+    }
+  }
+
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__img-wrapper {
+    @include mixins.tablet {
+      @include mixins.tabletProfileDimension;
     }
   }
 }
