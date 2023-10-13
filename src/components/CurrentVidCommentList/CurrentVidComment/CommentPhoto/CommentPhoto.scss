@@ -1,0 +1,9 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/mixins";
+.current-vid-comment-img-container {
+  // IMAGE-BASE
+  &__img-base {
+    background-color: colors.$mercury;
+    @include mixins.mobileProfileDimension;
+  }
+}

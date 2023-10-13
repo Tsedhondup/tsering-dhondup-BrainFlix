@@ -7,11 +7,12 @@ import CommentMoment from "./CommentMoment/CommentMoment";
 
 let CurrentVidComment = (props) => {
   const comments = props.currentVideo.comments.map((comment) => (
-    <div className="current-video-comment-lists__comment" key={comment.id}>
-      {/* COMMENT-IMAGE-CONTAINER */}
-      <div className="comment-img-container">
-        <CommentPhoto />
-      </div>
+    <div
+      className="current-video-comment-lists-container__list"
+      key={comment.id}
+    >
+      {/* COMMENT-IMAGE */}
+      <CommentPhoto />
       {/* COMMENT-TEXT-CONTAINER */}
       <div className="comment-text-container">
         {/* COMMENT NAME & TEXT CONTAINER */}

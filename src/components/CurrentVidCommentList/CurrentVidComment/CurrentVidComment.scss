@@ -1,3 +1,8 @@
-.current-video-comment {
-  margin: 20px 0px;
+@use "../../../styles/partials/colors";
+
+.current-video-comment-lists-container__list {
+  padding: 16px 0px;
+  border-bottom: 1px solid colors.$silver;
+  display: flex;
+  gap: 16px;
 }
