@@ -1,0 +1,9 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/mixins";
+@use "../../styles/partials/fonts";
+.current-vid-info-container__total-comments {
+  font-size: 13px;
+  font-weight: 600;
+  color: colors.$brainFlixDarkBlack;
+  padding-top: 16px;
+}
