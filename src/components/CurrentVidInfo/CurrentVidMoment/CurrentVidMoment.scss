@@ -1,0 +1,9 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
+@use "../../../styles/partials/fonts";
+
+.current-vid-info-container__info--moment {
+  font-size: 12px;
+  color: colors.$silver;
+  padding: 0px 0px 10px 0px;
+}

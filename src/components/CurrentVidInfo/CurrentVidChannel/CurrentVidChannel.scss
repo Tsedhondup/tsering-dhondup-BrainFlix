@@ -1,0 +1,10 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
+@use "../../../styles/partials/fonts";
+
+.current-vid-channel-and-date-container__channel {
+  color: colors.$brainFlixBlack;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-bottom: 16px;
+}

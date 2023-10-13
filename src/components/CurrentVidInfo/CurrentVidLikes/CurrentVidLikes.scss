@@ -1,0 +1,12 @@
+.current-vid-views-and-likes-container__likes {
+  display: flex;
+  gap: 10px;
+  // VIEWS LOGO
+  &--log {
+    display: block;
+  }
+  // VIEWS COUNT
+  &--number {
+    display: block;
+  }
+}

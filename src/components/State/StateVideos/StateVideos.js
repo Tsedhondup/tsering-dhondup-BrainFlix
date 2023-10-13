@@ -14,7 +14,6 @@ import "./StateVideos.scss";
 
 let StateVideos = () => {
   const [currentVideo, setCurrentVidDisplay] = useState(videoDataDetail[0]); // **
-  let currentVideoDate = new Date(currentVideo.timestamp).toLocaleDateString();
 
   /************************* EVENT HANDLERS ************************/
 
@@ -43,7 +42,7 @@ let StateVideos = () => {
            (D) CURRENT-VIDEO-COMMENT-LIST COMPONENT
         */}
           {/*(A)*/}
-          <CurrentVidInfo currentVideo={currentVideo} date={currentVideoDate} />
+          <CurrentVidInfo currentVideo={currentVideo} />
           {/*(B)*/}
           <CurrentVidCommentCount totalComment={currentVideo.comments.length} />
           {/*(C)*/}

@@ -6,8 +6,8 @@ import CommentBody from "./CommentBody/CommentBody";
 import CommentMoment from "./CommentMoment/CommentMoment";
 
 let CurrentVidComment = (props) => {
-  const commentInfo = props.commentLists.map((video) => (
-    <div className="current-video-comment-lists__comment" key={video.id}>
+  const comments = props.currentVideo.comments.map((comment) => (
+    <div className="current-video-comment-lists__comment" key={comment.id}>
       {/* COMMENT-IMAGE-CONTAINER */}
       <div className="comment-img-container">
         <CommentPhoto />
@@ -16,14 +16,14 @@ let CurrentVidComment = (props) => {
       <div className="comment-text-container">
         {/* COMMENT NAME & TEXT CONTAINER */}
         <div className="comment-text-container__name-date">
-          <CommentName name={video.name} />
-          <Commentdate currentVidDate={props.currentVidDate} />
+          <CommentName name={comment.name} />
+          <Commentdate timestamp={comment.timestamp} />
         </div>
-        <CommentBody comment={video.comment} />
-        <CommentMoment moment={props.moment} />
+        <CommentBody commentBody={comment.comment} />
+        <CommentMoment timestamp={comment.timestamp} />
       </div>
     </div>
   ));
-  return <div>{commentInfo}</div>;
+  return <div>{comments}</div>;
 };
 export default CurrentVidComment;

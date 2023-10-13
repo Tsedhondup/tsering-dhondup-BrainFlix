@@ -1,4 +1,5 @@
-let CurretVideoMoment = (props) => {
+import "./CurrentVidMoment.scss";
+let CurretVidMoment = (props) => {
   // TIME ELAPSE SINCE THE CURRENT-VIDEO WAS UPLOADED
 
   const getMoment = (timestamp) => {
@@ -94,8 +95,8 @@ let CurretVideoMoment = (props) => {
   return (
     // <p className="current-vid-info-container__info--moment">{props.moment}</p>
     <p className="current-vid-info-container__info--moment">
-      {getMoment(props.timestamp)}
+      Posted {getMoment(props.timestamp)}
     </p>
   );
 };
-export default CurretVideoMoment;
+export default CurretVidMoment;

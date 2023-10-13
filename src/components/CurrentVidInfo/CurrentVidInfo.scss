@@ -6,13 +6,18 @@
   // DATE, CHANNEL, VIEWS, & LIKES CONTAINER
   .current-vid-date-channel-viwe-like-container {
     display: flex;
-    padding: 16px 0px;
+    gap: 25px;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 18px;
+    color: colors.$silver;
     width: 100%;
+    padding: 16px 0px;
     border-top: 1px solid colors.$mercury;
     border-bottom: 1px solid colors.$mercury;
 
     // CHANNEL AND DATE CONTAINER
-    .current-vid-channel-and-date-containe {
+    .current-vid-channel-and-date-container {
       width: 100%;
       flex: 50%;
     }
@@ -23,4 +28,3 @@
     }
   }
 }
-

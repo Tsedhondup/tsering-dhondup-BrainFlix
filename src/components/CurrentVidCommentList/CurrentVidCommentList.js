@@ -3,10 +3,7 @@ import CurrentVidComment from "./CurrentVidComment/CurrentVidComment";
 let CurrentVidCommentList = (props) => {
   return (
     <div className="current-video-comment-lists">
-      <CurrentVidComment
-        commentLists={props.currentVideo.comments}
-        moment={props.moment}
-      />
+      <CurrentVidComment currentVideo={props.currentVideo} />
     </div>
   );
 };
