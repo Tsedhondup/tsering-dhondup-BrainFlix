@@ -3,7 +3,7 @@ import { useState } from "react";
 // DATAS
 import videoDataDetail from "../../../data/video-details.json";
 // COMPONENTS
-import CurrentVidDisplay from "../../CurrentVidDisplay/CurrentVidDisplay";
+import CurrentVideo from "../../CurrentVideo/CurrentVideo";
 import NextVid from "../../NextVid/NextVid";
 import CurrentVidCommentCount from "../../CurrentVidCommentCount/CurrentVidCommentCount";
 import CurrentVidCommentAdd from "../../CurrentVidCommentAdd/CurrentVidCommentAdd";
@@ -30,7 +30,7 @@ let StateVideos = () => {
   return (
     <section className="video-section">
       {/* VIDEO-SECTION PART-1 : CURRENT-VIDEO-DISPLAY COMPONENT */}
-      <CurrentVidDisplay currentVideo={currentVideo} />
+      <CurrentVideo currentVideo={currentVideo} />
       {/* VIDEO-SECTION PART-2 : CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
       <div className="current-vid-info-and-next-vid-container">
         {/* # PART-2 : (A) */}
