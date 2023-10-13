@@ -1,0 +1,9 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/fonts";
+@use "../../../../styles/partials/mixins";
+
+.comment-text-container__body {
+  font-size: 13px;
+  line-height: 18px;
+  padding-bottom: 16px;
+}

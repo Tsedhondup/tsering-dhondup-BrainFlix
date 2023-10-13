@@ -1,0 +1,9 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/fonts";
+@use "../../../../styles/partials/mixins";
+
+.comment-text-container__name-date-container--date {
+  font-size: 12px;
+  font-weight: 400;
+  color: colors.$silver;
+}

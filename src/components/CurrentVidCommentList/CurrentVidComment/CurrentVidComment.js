@@ -16,7 +16,7 @@ let CurrentVidComment = (props) => {
       {/* COMMENT-TEXT-CONTAINER */}
       <div className="comment-text-container">
         {/* COMMENT NAME & TEXT CONTAINER */}
-        <div className="comment-text-container__name-date">
+        <div className="comment-text-container__name-date-container">
           <CommentName name={comment.name} />
           <Commentdate timestamp={comment.timestamp} />
         </div>

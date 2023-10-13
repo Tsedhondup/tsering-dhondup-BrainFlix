@@ -2,7 +2,16 @@
 
 .current-video-comment-lists-container__list {
   padding: 16px 0px;
-  border-bottom: 1px solid colors.$silver;
+  border-bottom: 1px solid colors.$mercury;
   display: flex;
   gap: 16px;
+  // COMMENT-TEXTS CONTAINER
+  .comment-text-container {
+    // NAME & DATE CONTAINER
+    &__name-date-container {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 16px;
+    }
+  }
 }

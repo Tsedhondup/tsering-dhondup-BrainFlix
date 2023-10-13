@@ -1,0 +1,9 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/fonts";
+@use "../../../../styles/partials/mixins";
+
+.comment-text-container__moment {
+  font-size: 13px;
+  line-height: 18px;
+  color: colors.$silver;
+}
