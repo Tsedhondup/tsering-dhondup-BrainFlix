@@ -14,8 +14,9 @@
     text-transform: uppercase;
     color: colors.$white;
     background-color: colors.$brainFlixBlue;
-    border-width: 0px; // ADD ICON
+    border-width: 0px;
     border-radius: 4px;
+    // ADD ICON
     &--icon {
       position: absolute;
       top: 50%;
