@@ -1,1 +1,11 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/fonts";
+@use "../../../styles/partials/mixins";
 
+.next-video__text-container--title {
+  font-size: 13px;
+  font-weight: 600;
+  color: colors.$brainFlixDarkBlack;
+  text-transform: capitalize;
+  padding-bottom: 16px;
+}

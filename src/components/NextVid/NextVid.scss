@@ -1,0 +1,42 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins";
+
+.next-video-container {
+  padding-top: 16px;
+  // HEADER
+  &__header {
+    font-size: 12px;
+    font-weight: 400;
+    color: colors.$silver;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+  }
+
+  // NEXT-VIDEO LIST
+  &__list {
+    padding-bottom: 16px;
+    // NEXT-VIDEO
+    .next-video {
+      display: flex;
+      gap: 16px;
+      height: 65.05px;
+      width: 100%;
+      margin-top: 13px;
+      // NEXT-VIDEO IMAGE-CONTAINER
+      &__img-container {
+        flex: 40%; // flex-proportion
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: colors.$mercury;
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      // NEXT-VIDEO TITLE-CONTAINER
+      &__text-container {
+        flex: 60%; // flex-proportion
+      }
+    }
+  }
+}
