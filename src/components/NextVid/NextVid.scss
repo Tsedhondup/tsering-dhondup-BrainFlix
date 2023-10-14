@@ -36,6 +36,12 @@
       // NEXT-VIDEO TITLE-CONTAINER
       &__text-container {
         flex: 60%; // flex-proportion
+
+        // CHANNEL & VIEWS CONTAINER
+        .next-video-channel-and-views-container {
+          display: flex;
+          justify-content: space-between;
+        }
       }
     }
   }

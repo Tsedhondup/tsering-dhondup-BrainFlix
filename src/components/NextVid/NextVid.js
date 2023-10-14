@@ -4,9 +4,10 @@ import VideoDataList from "../../data/videos.json";
 // HOOK
 import { useState } from "react";
 // COMPONENTS
+import NextVidImage from "./NextVidThumbnail/NextVidThumbnail";
 import NextVidChannel from "./NextVidChannel/NextVidChannel";
 import NextVidTitle from "./NextVidTitle/NextVidTitle";
-import NextVidImage from "./NextVidImagel/NextVidImage";
+import NextVidViews from "./NextVidViews/NextVidViews";
 
 let NextVid = (props) => {
   // NEXT-VIDEO STATE
@@ -31,7 +32,11 @@ let NextVid = (props) => {
         </div>
         <div className="next-video__text-container">
           <NextVidTitle title={videoFiltered.title} />
-          <NextVidChannel channel={videoFiltered.channel} />
+          {/* CHANNEL & VIEWS CONTAINER */}
+          <div className="next-video-channel-and-views-container">
+            <NextVidChannel channel={videoFiltered.channel} />
+            <NextVidViews id={videoFiltered.id} />
+          </div>
         </div>
       </div>
     ));

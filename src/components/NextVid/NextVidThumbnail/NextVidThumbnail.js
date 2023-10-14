@@ -1,4 +1,4 @@
-import "./NextVidImage.scss";
+import "./NextVidThumbnail.scss";
 let NextVidImage = (props) => {
   return (
     
