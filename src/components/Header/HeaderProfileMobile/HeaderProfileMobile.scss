@@ -11,11 +11,10 @@
       margin-left: -5px;
     }
   }
-
-  //  MEDIA = TABLET = [ ] = 768PX
-  &__img-wrapper {
-    @include mixins.tablet {
-      @include mixins.tabletProfileDimension;
-    }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.header-mobile-profile-container {
+  @include mixins.tablet {
+    display: none;
   }
 }
