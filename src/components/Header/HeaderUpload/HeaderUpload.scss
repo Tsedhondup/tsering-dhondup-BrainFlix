@@ -1,4 +1,5 @@
 @use "../../../styles/partials/colors";
+@use "../../../styles//partials/mixins";
 
 .header-upload-btn-container {
   padding: 16px 0px;
@@ -23,8 +24,22 @@
       display: block;
       height: 17px;
     }
+    //MEDIA = TABLET = [ ] = 768PX
+    &--icon {
+      @include mixins.tablet {
+        height: 18px;
+      }
+    }
   }
   &__button:hover {
     background-color: colors.$brainFlixDarkBlue;
+  }
+  //MEDIA = TABLET = [ ] = 768PX
+  &__button {
+    @include mixins.tablet {
+      width: 150px;
+      font-size: 12px;
+      padding: 0px 32px;
+    }
   }
 }

@@ -4,29 +4,35 @@
 .header {
   &__content {
     padding: 0px 16px;
-    // SEARCH AND MOBILE PFORILE CONTAINER
+    // SEARCH & MOBILE PROFILE CONTAINER
     .header-search-and-mobile-profile-container {
       display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: space-between;
+    }
+    //MEDIA = TABLET = [ ] = 768PX
+    .header-search-and-mobile-profile-container {
+      @include mixins.tablet {
+        flex: 40%;
+        justify-content: flex-end;
+      }
     }
   }
   //MEDIA = TABLET = [ ] = 768PX
   &__content {
     @include mixins.tablet {
       display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0px 36px;
     }
   }
   //MEDIA = DESKTOP = [ ] = 1280PX
   &__content {
     @include mixins.desktop {
       max-width: 1040px;
-      padding: 0px 0px;
       margin: auto;
     }
-  }
-  // SEARCH & MOBILE PROFILE CONTAINER
-  .header-search-and-mobile-profile-container {
-    display: flex;
-    gap: 16px;
-    justify-content: space-between;
   }
 }

@@ -17,6 +17,7 @@
 //  MEDIA = TABLET = [ ] = 768PX
 .header-tablet-profile-container {
   @include mixins.tablet {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
