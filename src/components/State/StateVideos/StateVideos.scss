@@ -4,10 +4,11 @@
   // CURRENT-VIDEO-INFO & NEXT-VIDEO-LISTS CONTAINER
   .current-vid-info-and-next-vid-container {
     padding: 0px 16px;
-
-    // CURRENT-VIDEO-INFO-CONTAINER
-    // .current-vid-info-container {
-    //   border-right: 1px solid colors.$mercury;
-    // }
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  .current-vid-info-and-next-vid-container {
+    @include mixins.tablet {
+      padding: 0px 36px;
+    }
   }
 }
