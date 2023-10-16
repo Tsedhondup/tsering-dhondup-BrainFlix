@@ -10,7 +10,7 @@ let CurrentVidLikes = (props) => {
       />
       <span className="current-vid-views-and-likes-container__likes--number">
         {props.likes}
-      </span>{" "}
+      </span>
     </p>
   );
 };

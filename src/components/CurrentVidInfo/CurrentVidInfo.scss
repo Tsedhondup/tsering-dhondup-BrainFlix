@@ -21,10 +21,32 @@
       width: 100%;
       flex: 50%;
     }
+    //  MEDIA = TABLET = [ ] = 768PX
+    .current-vid-channel-and-date-container {
+      @include mixins.tablet {
+        display: flex;
+        gap: 36px;
+      }
+    }
     // VIEWS AND LIKES CONTAINER
     .current-vid-views-and-likes-container {
       flex: 50%;
       width: 100%;
+    }
+    //  MEDIA = TABLET = [ ] = 768PX
+    .current-vid-views-and-likes-container {
+      @include mixins.tablet {
+        display: flex;
+        gap: 36px;
+        justify-content: flex-end;
+      }
+    }
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  .current-vid-date-channel-viwe-like-container {
+    @include mixins.tablet {
+      padding-bottom: 10px ;
+      border-top: unset;
     }
   }
 }

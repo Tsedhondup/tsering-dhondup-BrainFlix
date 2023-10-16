@@ -11,8 +11,7 @@ let CurrentVidInfo = (props) => {
     <div className="current-vid-info-container__info">
       {/* CURRENT-VIDEO TITLE */}
       <CurrentVidTitle title={props.currentVideo.title} />
-      {/* MOMENTS - TIME ELAPSED SINCE CURRENT-VIDEO WAS UPLOADED */}
-      <CurrentVidMoment timestamp={props.currentVideo.timestamp} />
+
       {/* DATE, CHANNEL, VIEWS, & LIKES CONTAINER */}
       <div className="current-vid-date-channel-viwe-like-container">
         {/* CHANNEL AND DATE CONTAINER */}
@@ -26,9 +25,11 @@ let CurrentVidInfo = (props) => {
           <CurrentVidLikes likes={props.currentVideo.likes} />
         </div>
       </div>
-      
+
       {/* CURRENT-VIDEO DESCRIPTION */}
       <CurrentVidDescription description={props.currentVideo.description} />
+      {/* MOMENTS - TIME ELAPSED SINCE CURRENT-VIDEO WAS UPLOADED */}
+      <CurrentVidMoment timestamp={props.currentVideo.timestamp} />
     </div>
   );
 };

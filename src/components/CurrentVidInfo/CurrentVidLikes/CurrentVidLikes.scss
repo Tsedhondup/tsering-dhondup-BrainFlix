@@ -1,5 +1,8 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
 .current-vid-views-and-likes-container__likes {
   display: flex;
+  align-items: center;
   gap: 10px;
   // VIEWS LOGO
   &--log {
@@ -8,5 +11,11 @@
   // VIEWS COUNT
   &--number {
     display: block;
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-views-and-likes-container__likes {
+  @include mixins.tablet {
+    font-size: 13px;
   }
 }

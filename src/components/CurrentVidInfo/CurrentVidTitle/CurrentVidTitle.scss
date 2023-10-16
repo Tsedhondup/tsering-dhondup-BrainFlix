@@ -7,5 +7,15 @@
   font-weight: 600;
   line-height: 32px;
   color: colors.$brainFlixBlack;
-  padding: 16px 0px;
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-info-container__info--title {
+  @include mixins.tablet {
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 36px;
+    padding-bottom: 0px;
+  }
 }

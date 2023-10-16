@@ -1,0 +1,10 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
+
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-channel-and-date-container__date {
+  @include mixins.tablet {
+    font-size: 13px;
+    padding-bottom: 0px;
+  }
+}
