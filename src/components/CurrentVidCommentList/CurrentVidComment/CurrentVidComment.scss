@@ -1,4 +1,5 @@
 @use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
 
 .current-video-comment-lists-container__list {
   padding: 16px 0px;
@@ -13,5 +14,11 @@
       justify-content: space-between;
       padding-bottom: 16px;
     }
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.current-video-comment-lists-container__list {
+  @include mixins.tablet {
+    padding: 24px 0px;
   }
 }

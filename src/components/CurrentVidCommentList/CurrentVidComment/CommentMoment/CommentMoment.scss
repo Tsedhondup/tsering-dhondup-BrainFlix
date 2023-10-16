@@ -3,7 +3,13 @@
 @use "../../../../styles/partials/mixins";
 
 .comment-text-container__moment {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 18px;
   color: colors.$silver;
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.comment-text-container__moment  {
+  @include mixins.tablet {
+    font-size: 13px;
+  }
 }

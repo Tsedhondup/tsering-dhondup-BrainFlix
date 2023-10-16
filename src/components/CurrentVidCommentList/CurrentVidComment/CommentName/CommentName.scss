@@ -8,3 +8,9 @@
   color: colors.$brainFlixBlack;
   text-transform: capitalizeF;
 }
+//  MEDIA = TABLET = [ ] = 768PX
+.comment-text-container__name-date-container--name {
+  @include mixins.tablet {
+    font-size: 13px;
+  }
+}

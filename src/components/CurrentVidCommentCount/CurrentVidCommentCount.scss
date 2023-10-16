@@ -7,3 +7,10 @@
   color: colors.$brainFlixDarkBlack;
   padding-top: 16px;
 }
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-info-container__total-comments {
+  @include mixins.tablet {
+    font-size: 14px;
+    padding-top: 24px;
+  }
+}

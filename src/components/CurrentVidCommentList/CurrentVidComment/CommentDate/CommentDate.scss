@@ -7,3 +7,9 @@
   font-weight: 400;
   color: colors.$silver;
 }
+//  MEDIA = TABLET = [ ] = 768PX
+.comment-text-container__name-date-container--date {
+  @include mixins.tablet {
+    font-size: 13px;
+  }
+}

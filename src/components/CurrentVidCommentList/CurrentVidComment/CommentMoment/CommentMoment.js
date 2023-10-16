@@ -73,22 +73,22 @@ let CommentMoment = (props) => {
     if (timeDifference >= weekMilli && timeDifference < monthMilli) {
       moment =
         timeDifference >= 2 * dayMilli
-          ? `${Math.round(dayDiffs)} wks ago`
-          : `${Math.round(dayDiffs)} wk ago`;
+          ? `${Math.round(dayDiffs)} weeks ago`
+          : `${Math.round(dayDiffs)} week ago`;
     }
     // MONTHS*
     if (timeDifference >= monthMilli && timeDifference < yearMilli) {
       moment =
         timeDifference >= 2 * monthMilli
-          ? `${Math.round(monthDiffs)} mths ago`
-          : `${Math.round(monthDiffs)} mth ago`;
+          ? `${Math.round(monthDiffs)} months ago`
+          : `${Math.round(monthDiffs)} month ago`;
     }
     // YEARS*
     if (timeDifference >= yearMilli) {
       moment =
         timeDifference >= 2 * yearMilli
-          ? `${Math.floor(yearDiffs)} yrs ago`
-          : `${Math.floor(yearDiffs)} yr ago`;
+          ? `${Math.floor(yearDiffs)} years ago`
+          : `${Math.floor(yearDiffs)} year ago`;
     }
     return moment;
   };

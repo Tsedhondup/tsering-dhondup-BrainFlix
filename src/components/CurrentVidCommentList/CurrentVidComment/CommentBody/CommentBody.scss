@@ -7,3 +7,9 @@
   line-height: 18px;
   padding-bottom: 16px;
 }
+//  MEDIA = TABLET = [ ] = 768PX
+.comment-text-container__body  {
+  @include mixins.tablet {
+    font-size: 14px;
+  }
+}
