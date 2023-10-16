@@ -12,6 +12,12 @@
     text-transform: uppercase;
     padding-bottom: 4px;
   }
+  //  MEDIA = TABLET = [ ] = 768PX
+  .header {
+    @include mixins.tablet {
+      padding-top: 36px;
+    }
+  }
 
   // NEXT-VIDEO LIST
   &__list {
@@ -44,5 +50,17 @@
         }
       }
     }
+    //  MEDIA = TABLET = [ ] = 768PX
+    .next-video {
+      @include mixins.tablet {
+        max-width: 288px;
+      }
+    }
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.next-video-container {
+  @include mixins.tablet {
+    padding-top: 36px;
   }
 }

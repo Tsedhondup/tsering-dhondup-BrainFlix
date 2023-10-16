@@ -1,6 +1,14 @@
+@use "../../../styles/partials/mixins";
+
 .next-video__img-container--image {
   display: block;
   width: 100%;
   min-height: 65.05px;
   border-radius: 4px;
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.next-video__img-container--image {
+  @include mixins.tablet {
+    padding-top: 36px;
+  }
 }
