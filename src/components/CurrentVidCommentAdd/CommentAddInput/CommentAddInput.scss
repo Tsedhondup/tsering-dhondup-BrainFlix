@@ -1,16 +1,9 @@
 @use "../../../styles/partials/colors";
 @use "../../../styles/partials/mixins";
-.current-vid-comment-form-input-container {
-  // LABEL
-  &__label {
-    display: block;
-    font-size: 10px;
-    line-height: 20px;
-    color: colors.$silver;
-    text-transform: uppercase;
-  }
+.current-vid-input-and-btn-container__input-container {
+  width: 100%;
   // INPUT-FIELD
-  &__input {
+  &--input {
     width: 100%;
     height: 100px;
     text-align: leftF;
@@ -20,8 +13,20 @@
     resize: none;
   }
   // PLACEHOLDER
-  &__input::placeholder {
+  &--input::placeholder {
     color: colors.$brainFlixBlack;
     font-size: 12px;
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &--input {
+    @include mixins.tablet {
+      height: 40px;
+    }
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &--input::placeholder {
+    @include mixins.tablet {
+      font-size: 14px;
+    }
   }
 }

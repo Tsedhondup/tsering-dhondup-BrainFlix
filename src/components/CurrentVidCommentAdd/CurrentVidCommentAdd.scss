@@ -8,8 +8,35 @@
   gap: 16px;
   padding: 16px 0px;
 
-  // INPUT & BUTTON CONTAINER
-  &__input-btn-container {
+  // LABEL, INPUT & BUTTON CONTAINER
+  .current-vid-label-input-button-container {
     width: 100%;
+    // LABEL
+    &__label {
+      display: block;
+      font-size: 10px;
+      line-height: 20px;
+      color: colors.$silver;
+      text-transform: uppercase;
+    }
+    //  MEDIA = TABLET = [ ] = 768PX
+    &__label {
+      @include mixins.tablet {
+        font-size: 12px;
+      }
+    }
+
+    // INPUT & BUTTON CONTAINER
+    .current-vid-input-and-btn-container {
+      width: 100%;
+    }
+    //  MEDIA = TABLET = [ ] = 768PX
+    .current-vid-input-and-btn-container {
+      @include mixins.tablet {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+      }
+    }
   }
 }

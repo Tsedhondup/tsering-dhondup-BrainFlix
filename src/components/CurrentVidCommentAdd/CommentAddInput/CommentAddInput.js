@@ -1,15 +1,9 @@
 import "./CommentAddInput.scss";
 let CommentAddInput = () => {
   return (
-    <div className="current-vid-comment-form-input-container">
-      <label
-        className="current-vid-comment-form-input-container__label"
-        htmlFor="comment-input"
-      >
-        Join the conversation
-      </label>
+    <div className="current-vid-input-and-btn-container__input-container">
       <textarea
-        className="current-vid-comment-form-input-container__input"
+        className="current-vid-input-and-btn-container__input-container--input"
         id="comment-input"
         type="text"
         placeholder="Add a new comment"

@@ -25,4 +25,18 @@
       height: 16px;
     }
   }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__button {
+    @include mixins.tablet {
+      width: 150px;
+      font-size: 12px;
+    }
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-comment-form-btn-container {
+  @include mixins.tablet {
+    padding-top: 0px;
+    width: auto;
+  }
 }
