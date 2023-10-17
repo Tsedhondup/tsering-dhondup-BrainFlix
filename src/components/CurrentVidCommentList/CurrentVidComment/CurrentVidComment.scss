@@ -22,3 +22,9 @@
     padding: 24px 0px;
   }
 }
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.current-video-comment-lists-container__list {
+  @include mixins.desktop {
+    padding-right: 20px;
+  }
+}

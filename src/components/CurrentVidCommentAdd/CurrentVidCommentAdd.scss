@@ -40,3 +40,9 @@
     }
   }
 }
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.current-vid-comment-form {
+  @include mixins.desktop {
+    padding-right: 20px;
+  }
+}

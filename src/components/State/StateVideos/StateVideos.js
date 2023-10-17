@@ -29,7 +29,7 @@ let StateVideos = () => {
   return (
     <section className="video-section">
       {/* VIDEO-SECTION PART-1 : CURRENT-VIDEO-DISPLAY COMPONENT */}
-      {/* <CurrentVideo currentVideo={currentVideo} /> */}
+      <CurrentVideo currentVideo={currentVideo} />
       {/* VIDEO-SECTION PART-2 : CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
       <div className="current-vid-info-and-next-vid-container">
         {/* # PART-2 : (A) */}
