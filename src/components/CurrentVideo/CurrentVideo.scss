@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
   // CURRENT VIDEO
   &--video {
     width: 100%;
@@ -17,9 +18,11 @@
     }
   }
   //  MEDIA = DESKTOP = [ ] = 1280PX
-  // &--video {
-  //   @include mixins.desktop {
-  //     max-width: 1040px;
-  //   }
-  // }
+  &--video {
+    @include mixins.desktop {
+      max-width: 1040px;
+      padding: 0px 120px;
+      margin: auto;
+    }
+  }
 }

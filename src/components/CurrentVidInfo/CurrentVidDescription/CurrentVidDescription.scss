@@ -18,6 +18,7 @@
 //  MEDIA = DESKTOP = [ ] = 1280PX
 .current-vid-info-container__info--description {
   @include mixins.desktop {
+    font-size: 13px;
     padding-right: 20px;
   }
 }
