@@ -12,7 +12,12 @@
     text-transform: uppercase;
     padding-bottom: 4px;
   }
-
+  //  MEDIA = DESKTOP = [ ] = 1280PX
+  &__header {
+    @include mixins.desktop {
+      padding-bottom: 0px;
+    }
+  }
   // NEXT-VIDEO LIST
   &__list {
     padding-bottom: 16px;
@@ -54,6 +59,7 @@
     .next-video {
       @include mixins.desktop {
         flex: 30%;
+        margin-top: 20px;
       }
     }
   }
