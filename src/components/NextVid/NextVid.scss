@@ -50,6 +50,12 @@
         max-width: 288px;
       }
     }
+    //  MEDIA = DESKTOP = [ ] = 1280PX
+    .next-video {
+      @include mixins.desktop {
+        flex: 30%;
+      }
+    }
   }
   //  MEDIA = TABLET = [ ] = 768PX
   &__list {
