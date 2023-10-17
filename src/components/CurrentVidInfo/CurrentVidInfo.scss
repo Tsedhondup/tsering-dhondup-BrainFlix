@@ -45,8 +45,10 @@
   //  MEDIA = TABLET = [ ] = 768PX
   .current-vid-date-channel-viwe-like-container {
     @include mixins.tablet {
-      padding-bottom: 10px ;
+      padding-bottom: 10px;
       border-top: unset;
     }
   }
 }
+
+

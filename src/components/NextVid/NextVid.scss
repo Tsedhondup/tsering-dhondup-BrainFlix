@@ -64,3 +64,9 @@
     padding-top: 36px;
   }
 }
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.next-video-container {
+  @include mixins.desktop {
+    flex: 40%;
+  }
+}
