@@ -12,17 +12,18 @@
     border-radius: 4px;
     resize: none;
   }
-  // PLACEHOLDER
-  &--input::placeholder {
-    color: colors.$brainFlixBlack;
-    font-size: 12px;
-  }
   //  MEDIA = TABLET = [ ] = 768PX
   &--input {
     @include mixins.tablet {
       height: 40px;
     }
   }
+  // PLACEHOLDER
+  &--input::placeholder {
+    color: colors.$brainFlixBlack;
+    font-size: 12px;
+  }
+
   //  MEDIA = TABLET = [ ] = 768PX
   &--input::placeholder {
     @include mixins.tablet {

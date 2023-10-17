@@ -27,7 +27,7 @@ let NextVid = (props) => {
           props.updateCurrentVidHandler(videoFiltered.id); // *** to changed soon
         }}
       >
-        <div className="next-video__img-container">
+        <div className="next-video__thumbnail-container">
           <NextVidImage image={videoFiltered.image} />
         </div>
         <div className="next-video__text-container">

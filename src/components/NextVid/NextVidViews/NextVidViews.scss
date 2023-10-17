@@ -9,3 +9,9 @@
   color: colors.$silver;
   text-transform: capitalize;
 }
+//  MEDIA = TABLET = [ ] = 768PX
+.next-video-channel-and-views-container__views {
+  @include mixins.tablet {
+    font-size: 12px;
+  }
+}
