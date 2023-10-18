@@ -19,3 +19,9 @@
     padding-bottom: 0px;
   }
 }
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.current-vid-info-container__info--title {
+  @include mixins.tablet {
+    padding-right: 20px;
+  }
+}
