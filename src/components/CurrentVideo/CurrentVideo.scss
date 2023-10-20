@@ -1,38 +1,15 @@
 @use "../../styles/partials/mixins";
 @use "../../styles/partials/colors";
-// .video-section__current-video-container {
-//   background-color: colors.$brainFlixBlack;
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
 
-//   // CURRENT VIDEO
-//   &--video {
-//     width: 100%;
-//     height: 56.25%;
-//   }
-//   //  MEDIA = TABLET = [ ] = 768PX
-//   &--video {
-//     @include mixins.tablet {
-//       padding: 0px 36px;
-//     }
-//   }
-//   //  MEDIA = DESKTOP = [ ] = 1280PX
-//   &--video {
-//     @include mixins.desktop {
-//       max-width: 1040px;
-//       padding: 0px 120px;
-//       margin: auto;
-//     }
-//   }
-// }
-// --------------- //
 .current-video-wrapper-level-2 {
   background-color: colors.$brainFlixDarkBlack;
-
+  // WRAPPER-LEVEL:1
   .current-video-wrapper-level-1 {
+    // WRAPPER-LEVEL:0
     .current-video-wrapper-level-0 {
+      box-sizing: border-box;
       width: 100%;
+      height: 0%;
       position: relative;
       padding-top: 56.25%;
 
@@ -56,7 +33,7 @@
   //  MEDIA = DESKTOP = [ ] = 1280PX
   .current-video-wrapper-level-1 {
     @include mixins.desktop {
-      max-width: 860px;
+      width: 885px;
       margin: auto;
     }
   }
