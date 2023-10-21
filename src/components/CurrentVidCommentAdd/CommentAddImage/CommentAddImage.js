@@ -1,10 +1,13 @@
-import "./CommentAddPhoto.scss";
+// STYLE
+import "./CommentAddImage.scss";
+// ASSET
 import formProfile from "../../../assets/images/Mohan-muruge.jpg";
-let CommentAddPhoto = () => {
+const CommentAddImage = () => {
   return (
     <div className="current-vid-comment-form-img-container">
       {/* IMAGE-WRAPPER WAS CREATED TO MAKE LANDSCAPE IMAGE CICULAR */}
       <div className="current-vid-comment-form-img-container__img-wrapper">
+        {/* IMAGE */}
         <img
           className="current-vid-comment-form-img-container__img-wrapper--image"
           src={formProfile}
@@ -14,4 +17,4 @@ let CommentAddPhoto = () => {
     </div>
   );
 };
-export default CommentAddPhoto;
+export default CommentAddImage;

@@ -1,9 +1,9 @@
 import "./CommentAddInput.scss";
-let CommentAddInput = () => {
+
+const CommentAddInput = () => {
   return (
     <div className="current-vid-input-and-btn-container__input-container">
       {/* INPUT FOR SCREEN MIN-WIDTH:320PX / MOBILE*/}
-
       <textarea
         className="current-vid-input-and-btn-container__input-container--input-mobile"
         id="comment-input"

@@ -1,20 +1,24 @@
+// STYLES
 import "./CurrentVidCommentAdd.scss";
-import CommentAddPhoto from "./CommentAddPhoto/CommentAddPhoto";
+// COMPONENTS
+import CommentAddImage from "./CommentAddImage/CommentAddImage";
 import CommentAddInput from "./CommentAddInput/CommentAddInput";
 import CommentAddBtn from "./CommentAddBtn/CommentAddBtn";
-let CurrentVidCommentAdd = (props) => {
+
+const CurrentVidCommentAdd = (props) => {
   // PREVENT COMMENT FORM FROM SUBMISSION
-  let preventCommentSubmit = (event) => {
+  const commentSubmitHandler = (event) => {
     event.preventDefault();
   };
   return (
     <form
       className="current-vid-comment-form"
       onClick={(event) => {
-        preventCommentSubmit(event);
+        commentSubmitHandler(event); // prevents comment-form submission
       }}
     >
-      <CommentAddPhoto />
+      {/* COMMENT-IMAGE */}
+      <CommentAddImage />
       {/* LABEL, INPUT & BUTTON CONTAINER */}
       <div className="current-vid-label-input-button-container">
         <p

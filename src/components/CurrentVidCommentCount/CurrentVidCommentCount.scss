@@ -1,6 +1,7 @@
 @use "../../styles/partials/colors";
 @use "../../styles/partials/mixins";
 @use "../../styles/partials/fonts";
+
 .current-vid-info-container__total-comments {
   font-size: 13px;
   font-weight: 600;
@@ -14,3 +15,6 @@
     padding-top: 24px;
   }
 }
+
+
+
