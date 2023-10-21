@@ -1,18 +1,21 @@
+// STYLES
 import "./CurrentVidComment.scss";
-import CommentPhoto from "./CommentPhoto/CommentPhoto";
+// COMPONENTS
+import CommentImage from "./CommentImage/CommentImage";
 import CommentName from "./CommentName/CommentName";
 import Commentdate from "./CommentDate/CommentDate";
 import CommentBody from "./CommentBody/CommentBody";
 import CommentMoment from "./CommentMoment/CommentMoment";
 
-let CurrentVidComment = (props) => {
+const CurrentVidComment = (props) => {
   const comments = props.currentVideo.comments.map((comment) => (
+    // COMMENT
     <div
       className="current-video-comment-lists-container__list"
       key={comment.id}
     >
       {/* COMMENT-IMAGE */}
-      <CommentPhoto />
+      <CommentImage />
       {/* COMMENT-TEXT-CONTAINER */}
       <div className="comment-text-container">
         {/* COMMENT NAME & TEXT CONTAINER */}
@@ -20,7 +23,9 @@ let CurrentVidComment = (props) => {
           <CommentName name={comment.name} />
           <Commentdate timestamp={comment.timestamp} />
         </div>
+        {/* COMMENT-BODY */}
         <CommentBody commentBody={comment.comment} />
+        {/* TIME ELAPSED SINCE COMMENT WAS ADDED */}
         <CommentMoment timestamp={comment.timestamp} />
       </div>
     </div>

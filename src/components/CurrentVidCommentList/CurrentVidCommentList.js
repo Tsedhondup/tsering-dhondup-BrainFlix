@@ -1,8 +1,9 @@
 import "./CurrentVidCommentList.scss";
 import CurrentVidComment from "./CurrentVidComment/CurrentVidComment";
-let CurrentVidCommentList = (props) => {
+const CurrentVidCommentList = (props) => {
   return (
     <div className="current-video-comment-lists-container">
+      {/* CURRENT-VIDEO COMMENT-LISTS */}
       <CurrentVidComment currentVideo={props.currentVideo} />
     </div>
   );

@@ -56,9 +56,9 @@
         }
       }
     }
-    //  MEDIA = TABLET = [ ] = 768PX
+    //  MEDIA = MOBILE-2 = [ ] = 367PX
     .next-video {
-      @include mixins.tablet {
+      @include mixins.mobileTwo {
         max-width: 288px;
         margin-bottom: 23px;
       }

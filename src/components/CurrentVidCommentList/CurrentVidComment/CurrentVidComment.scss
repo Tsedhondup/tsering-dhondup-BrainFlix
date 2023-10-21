@@ -20,11 +20,12 @@
 .current-video-comment-lists-container__list {
   @include mixins.tablet {
     padding: 24px 0px;
+    gap: 24px;
   }
 }
 //  MEDIA = DESKTOP = [ ] = 1280PX
 .current-video-comment-lists-container__list {
   @include mixins.desktop {
-    padding-right: 20px;
+    padding-right: 16px;
   }
 }

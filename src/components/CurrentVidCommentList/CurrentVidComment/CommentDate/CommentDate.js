@@ -1,5 +1,6 @@
 import "./CommentDate.scss";
-let Commentdate = (props) => {
+
+const Commentdate = (props) => {
   const commentDate = new Date(props.timestamp).toLocaleDateString();
 
   return (

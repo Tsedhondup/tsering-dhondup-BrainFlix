@@ -1,6 +1,6 @@
 import "./CommentBody.scss";
 
-let CommentBody = (props) => {
+const CommentBody = (props) => {
   return <p className="comment-text-container__body">{props.commentBody}</p>;
 };
 export default CommentBody;
