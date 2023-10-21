@@ -1,6 +1,8 @@
 import "./CurrentVidDate.scss";
-let CurrentVidDate = (props) => {
-  let currentVidDate = new Date(
+
+const CurrentVidDate = (props) => {
+  // FORAMTING DATE
+  const currentVidDate = new Date(
     props.currentVideo.timestamp
   ).toLocaleDateString();
 

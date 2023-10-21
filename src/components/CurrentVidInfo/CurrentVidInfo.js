@@ -1,4 +1,6 @@
+// STYLES
 import "./CurrentVidInfo.scss";
+// COMPONENTS
 import CurrentVidTitle from "./CurrentVidTitle/CurrentVidTitle";
 import CurrentVidChannel from "./CurrentVidChannel/CurrentVidChannel";
 import CurrentVidDate from "./CurrentVidDate/CurrentVidDate";
@@ -6,7 +8,8 @@ import CurrentVidViews from "./CurrentVidViews/CurrentVidViews";
 import CurrentVidLikes from "./CurrentVidLikes/CurrentVidLikes";
 import CurrentVidMoment from "./CurrentVidMoment/CurrentVidMoment";
 import CurrentVidDescription from "./CurrentVidDescription/CurrentVidDescription";
-let CurrentVidInfo = (props) => {
+
+const CurrentVidInfo = (props) => {
   return (
     <div className="current-vid-info-container__info">
       {/* CURRENT-VIDEO TITLE */}

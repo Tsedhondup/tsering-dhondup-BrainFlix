@@ -15,6 +15,7 @@
     padding: 16px 0px;
     border-top: 1px solid colors.$mercury;
     border-bottom: 1px solid colors.$mercury;
+    box-sizing: border-box;
 
     // CHANNEL AND DATE CONTAINER
     .current-vid-channel-and-date-container {
@@ -52,7 +53,7 @@
   //  MEDIA = DESKTOP = [ ] = 1280PX
   .current-vid-date-channel-viwe-like-container {
     @include mixins.desktop {
-      padding-right: 20px;
+      padding-right: 24px;
     }
   }
 }

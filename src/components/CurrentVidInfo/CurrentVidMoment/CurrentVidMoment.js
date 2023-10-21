@@ -1,42 +1,41 @@
 import "./CurrentVidMoment.scss";
-let CurretVidMoment = (props) => {
-  // TIME ELAPSE SINCE THE CURRENT-VIDEO WAS UPLOADED
+
+const CurretVidMoment = (props) => {
+  // TIME ELAPSE SINCE A CURRENT VIDEO WAS UPLOADED
 
   const getMoment = (timestamp) => {
+    // VARIBALE TO STORE TIME ELAPSE SINCE A CURRENT-VIDEO WAS UPLOADED
     let moment;
 
     // GETTING TIME DIFFERENCE AND STORE THE DIFFERENCE IN MILLI-SECONDS
-    let timeDifference = new Date().getTime() - timestamp;
+    const timeDifference = new Date().getTime() - timestamp;
 
     /*
-           # CONVERTING TIME-DIFFERENCES (IN MILLI-SECONDS) INTO DIFFERENT UNITS OF TIME 
-           - EACH UNIT OF TIME INDICATES TOTAL TIME ELAPSED SINCE THE VIDEO WAS ADDED 
-   
-           - e.g : 'secDiffs' VARIABLE INDICATES THE TOTAL SECONDS ELAPSED SINCE THE VIDEO WAS ADDED 
-    */
-    let secDiffs = timeDifference / 1000; // second
-    let minDiffs = secDiffs / 60; // minute
-    let hourDiffs = minDiffs / 60; // hour
-    let dayDiffs = hourDiffs / 24; // day
-    let weekDiffs = dayDiffs / 7; // week
-    let monthDiffs = weekDiffs * 0.23; // month
-    let yearDiffs = monthDiffs / 12; // year
+     * CONVERTING TIME-DIFFERENCES (IN MILLI-SECONDS) INTO DIFFERENT UNITS OF TIME (CUSTOM TIME)
+     * EACH UNIT OF TIME INDICATES TOTAL TIME ELAPSED SINCE THE VIDEO WAS UPLOADED
+     *
+     * e.g : 'TOTAL-SECONDS' VARIABLE INDICATES THE NUMBER OF SECONDS ELAPSED SINCE A CURRENT VIDEO WAS UPLOADED
+     */
+    const totalSeconds = timeDifference / 1000; // second
+    const totalMins = totalSeconds / 60; // minute
+    const totalHours = totalMins / 60; // hour
+    const totalDays = totalHours / 24; // day
+    const totalWeeks = totalDays / 7; // week
+    const totalMonths = totalWeeks * 0.23; // month
+    const totalYears = totalMonths / 12; // year
 
     // TOTAL MILLI-SECONDS IN GIVEN UNITS OF TIME
-    let secMilli = 1000; // 1 second
-    let minMilli = 60000; // 1 minute
-    let hourMilli = 3600000; // 1 hour
-    let dayMilli = 86400000; // 1 day
-    let weekMilli = 604800000; // 1 week
-    let monthMilli = 2592000000; // 1 month
-    let yearMilli = 31536000000; // 1 year
+    const secMilli = 1000; // 1 second
+    const minMilli = 60000; // 1 minute
+    const hourMilli = 3600000; // 1 hour
+    const dayMilli = 86400000; // 1 day
+    const weekMilli = 604800000; // 1 week
+    const monthMilli = 2592000000; // 1 month
+    const yearMilli = 31536000000; // 1 year
 
-    // VARIBLE TO STORE TOTAL TIME ELAPSED SINCE THE COMMENT WAS ADDED
-
-    /* 
-            # RENDERING APPRORIATE TIME INTO DOM BASED ON TOTAL MILLI-SECONDS IN TIME-DIFFERENCE 
-            WITH RESPECTIVE TO TOTAL MILLI-SECONDS IN A GIVEN UNIT OF TIME 
-           */
+    /*
+     * GETTING AND ASSIGNING APPRORIATE TIME TO "MOMENT VARIABLE" BASED ON TOTAL OBTAINED "TIME-DIFFERENCE"
+     */
 
     // MILLI-SECONDS*
     if (timeDifference < secMilli) {
@@ -44,50 +43,52 @@ let CurretVidMoment = (props) => {
     }
     // SECONDS*
     if (timeDifference >= secMilli && timeDifference < minMilli) {
-      moment = `${Math.round(secDiffs)}s ago`;
+      moment = `${Math.round(totalSeconds)}s ago`;
     }
     // MINUTES*
     if (timeDifference >= minMilli && timeDifference < hourMilli) {
       moment =
         timeDifference >= 2 * minMilli
-          ? `${Math.round(minDiffs)} mins ago`
-          : `${Math.round(minDiffs)} min ago`;
+          ? `${Math.round(totalMins)} mins ago`
+          : `${Math.round(totalMins)} min ago`;
     }
     // HOURS*
     if (timeDifference >= hourMilli && timeDifference < dayMilli) {
       moment =
         timeDifference >= 2 * hourMilli
-          ? `${Math.round(hourDiffs)} hrs ago`
-          : `${Math.round(hourDiffs)} hr ago`;
+          ? `${Math.round(totalHours)} hrs ago`
+          : `${Math.round(totalHours)} hr ago`;
     }
     // DAYS*
     if (timeDifference >= dayMilli && timeDifference < weekMilli) {
       moment =
         timeDifference >= 2 * dayMilli
-          ? `${Math.round(dayDiffs)} days ago`
-          : `${Math.round(dayDiffs)} day ago`;
+          ? `${Math.round(totalDays)} days ago`
+          : `${Math.round(totalDays)} day ago`;
     }
     // WEEKS*
     if (timeDifference >= weekMilli && timeDifference < monthMilli) {
       moment =
         timeDifference >= 2 * dayMilli
-          ? `${Math.round(dayDiffs)} weeks ago`
-          : `${Math.round(dayDiffs)} week ago`;
+          ? `${Math.round(totalWeeks)} weeks ago`
+          : `${Math.round(totalWeeks)} week ago`;
     }
     // MONTHS*
     if (timeDifference >= monthMilli && timeDifference < yearMilli) {
       moment =
         timeDifference >= 2 * monthMilli
-          ? `${Math.round(monthDiffs)} months ago`
-          : `${Math.round(monthDiffs)} month ago`;
+          ? `${Math.round(totalMonths)} months ago`
+          : `${Math.round(totalMonths)} month ago`;
     }
     // YEARS*
     if (timeDifference >= yearMilli) {
       moment =
         timeDifference >= 2 * yearMilli
-          ? `${Math.floor(yearDiffs)} years ago`
-          : `${Math.floor(yearDiffs)} year ago`;
+          ? `${Math.floor(totalYears)} years ago`
+          : `${Math.floor(totalYears)} year ago`;
     }
+
+    // RETURNING MOMENT VARIABLE
     return moment;
   };
 

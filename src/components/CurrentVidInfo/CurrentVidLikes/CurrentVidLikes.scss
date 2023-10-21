@@ -1,14 +1,13 @@
-@use "../../../styles/partials/colors";
 @use "../../../styles/partials/mixins";
 .current-vid-views-and-likes-container__likes {
   display: flex;
   align-items: center;
   gap: 10px;
-  // VIEWS LOGO
+  // LIKES LOGO
   &--log {
     display: block;
   }
-  // VIEWS COUNT
+  // LIKES COUNT
   &--number {
     display: block;
   }

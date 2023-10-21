@@ -1,5 +1,6 @@
 import "./CurrentVidChannel.scss";
-let CurrentVidChannel = (props) => {
+
+const CurrentVidChannel = (props) => {
   return (
     <p className="current-vid-channel-and-date-container__channel">
       By {props.channel}
