@@ -1,11 +1,12 @@
-@use "../../../styles/partials/colors";
-@use "../../../styles/partials/mixins";
+@use "../../styles/partials/colors";
+@use "../../styles/partials/mixins";
 
 .video-section {
   // CURRENT-VIDEO-INFO & NEXT-VIDEO-LISTS CONTAINER
   .current-vid-info-and-next-vid-container {
     box-sizing: border-box;
     padding: 0px 16px;
+
     // CURRENT-VIDEO-INFO CONTAINER
     //  MEDIA = DESKTOP = [ ] = 1280PX
     .current-vid-info-container {

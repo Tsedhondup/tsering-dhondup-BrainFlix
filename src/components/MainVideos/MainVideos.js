@@ -1,28 +1,28 @@
 // HOOK
 import { useState } from "react";
-// DATAS
-import videoDataDetail from "../../../data/video-details.json";
-// COMPONENTS
-import CurrentVideo from "../../CurrentVideo/CurrentVideo";
-import NextVid from "../../NextVid/NextVid";
-import CurrentVidCommentCount from "../../CurrentVidCommentCount/CurrentVidCommentCount";
-import CurrentVidCommentAdd from "../../CurrentVidCommentAdd/CurrentVidCommentAdd";
-import CurrentVidInfo from "../../CurrentVidInfo/CurrentVidInfo";
-import CurrentVidCommentList from "../../CurrentVidCommentList/CurrentVidCommentList";
 // STYLES
-import "./StateVideos.scss";
+import "./MainVideos.scss";
+// DATAS
+import videoDataDetail from "../../data/video-details.json";
+// COMPONENTS
+import CurrentVideo from "../CurrentVideo/CurrentVideo";
+import NextVid from "../NextVid/NextVid";
+import CurrentVidCommentCount from "../CurrentVidCommentCount/CurrentVidCommentCount";
+import CurrentVidCommentAdd from "../CurrentVidCommentAdd/CurrentVidCommentAdd";
+import CurrentVidInfo from "../CurrentVidInfo/CurrentVidInfo";
+import CurrentVidCommentList from "../CurrentVidCommentList/CurrentVidCommentList";
 
-let StateVideos = () => {
-  const [currentVideo, setCurrentVidDisplay] = useState(videoDataDetail[0]); // **
+const MainVideos = () => {
+  const [currentVideo, setCurrentVideo] = useState(videoDataDetail[0]); // **
 
   /************************* EVENT HANDLERS ************************/
 
   // // UPDATE CURRENT-VIDEO OBJECT
   const updateCurrentVidHandler = (id) => {
-    const currentVidDisplay = videoDataDetail.find((video) => {
+    const currentVideo = videoDataDetail.find((video) => {
       return video.id === id;
     });
-    setCurrentVidDisplay(currentVidDisplay);
+    setCurrentVideo(currentVideo);
   };
 
   /************************* RENDERING ************************/
@@ -62,4 +62,4 @@ let StateVideos = () => {
     </section>
   );
 };
-export default StateVideos;
+export default MainVideos;
