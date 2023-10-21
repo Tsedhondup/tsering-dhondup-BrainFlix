@@ -28,19 +28,18 @@ let StateVideos = () => {
   /************************* RENDERING ************************/
   return (
     <section className="video-section">
-      {/* VIDEO-SECTION PART-1 : CURRENT-VIDEO-DISPLAY COMPONENT */}
+      {/* VIDEO-SECTION PART-1 : CURRENT-VIDEO COMPONENT */}
       <CurrentVideo currentVideo={currentVideo} />
       {/* VIDEO-SECTION PART-2 : CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
       <div className="current-vid-info-and-next-vid-container">
-        {/* # PART-2 : (A) */}
+        {/*
+         * CONTAINS FOUR COMPONENTS
+         * (A) CURRENT-VIDEO-INFO COMPONENT
+         * (B) CURRENT-VIDEO-COMMENT-COUNT COMPONENT
+         * (C) CURRENT-VIDEO-COMMENT-ADD COMPONENT
+         * (D) CURRENT-VIDEO-COMMENT-LIST COMPONENT
+         */}
         <div className="current-vid-info-container">
-          {/* 
-          # CONTAINS FOUR COMPONENTS
-           (A) CURRENT-VIDEO-INFO COMPONENT
-           (B) CURRENT-VIDEO-COMMENT-COUNT COMPONENT
-           (C) CURRENT-VIDEO-COMMENT-ADD COMPONENT
-           (D) CURRENT-VIDEO-COMMENT-LIST COMPONENT
-        */}
           {/*(A)*/}
           <CurrentVidInfo currentVideo={currentVideo} />
           {/*(B)*/}
@@ -51,15 +50,12 @@ let StateVideos = () => {
           <CurrentVidCommentList currentVideo={currentVideo} />
         </div>
         {/*----------------------------------------------*/}
-        {/* # PART-2 : (B) */}
+
         {/*
-            # NEXT-VIDEO-LISTS 
-          - CURRENT-VIDEO-ID IS ALSO PASSED
-          - REASON - TO DIRECT OR FOCUS PAGE TO CURRENT-VIDEO DISPLAY WHEN
-          CLICKED ON NEXT-VIDEO LIST
-          */}
+         * NEXT-VIDEO COMPONENT
+         */}
         <NextVid
-          currentVidDisplayId={currentVideo.id}
+          currentVidId={currentVideo.id}
           updateCurrentVidHandler={updateCurrentVidHandler}
         />
       </div>

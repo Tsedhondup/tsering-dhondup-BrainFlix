@@ -9,9 +9,9 @@
   color: colors.$brainFlixBlack;
   text-transform: capitalize;
 }
- //  MEDIA = TABLET = [ ] = 768PX
- .next-video-channel-and-views-container__channel {
-    @include mixins.tablet {
-      font-size: 14px;
-    }
+//  MEDIA = TABLET = [ ] = 768PX
+.next-video-channel-and-views-container__channel {
+  @include mixins.tablet {
+    font-size: 14px;
   }
+}

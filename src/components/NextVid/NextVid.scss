@@ -6,19 +6,25 @@
   padding-top: 16px;
   // HEADER
   &__header {
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 13px;
+    font-weight: 600;
     color: colors.$silver;
     text-transform: uppercase;
-    padding-bottom: 4px;
+    padding-bottom: 16px;
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__header {
+    @include mixins.tablet {
+      padding-bottom: 26px;
+    }
   }
   //  MEDIA = DESKTOP = [ ] = 1280PX
   &__header {
     @include mixins.desktop {
-      padding-bottom: 0px;
+      padding-bottom: 20px;
     }
   }
-  // NEXT-VIDEO LIST
+  // NEXT-VIDEO LISTS
   &__list {
     padding-bottom: 16px;
     // NEXT-VIDEO
@@ -27,22 +33,23 @@
       gap: 16px;
       height: 65.05px;
       width: 100%;
-      margin-top: 13px;
+      margin-bottom: 13px;
+      box-sizing: border-box;
       // NEXT-VIDEO THUMBNAIL-CONTAINER
       &__thumbnail-container {
-        flex: 40%; // flex-proportion
+        flex: 40%;
         display: flex;
         align-items: center;
         width: 100%;
         background-color: colors.$mercury;
         overflow: hidden;
         border-radius: 4px;
+        box-sizing: border-box;
       }
-      // NEXT-VIDEO TITLE-CONTAINER
+      // NEXT-VIDEO-TITLE CONTAINER
       &__text-container {
-        flex: 60%; // flex-proportion
-
-        // CHANNEL & VIEWS CONTAINER
+        flex: 60%;
+        // CHANNEL & VIEW CONTAINER
         .next-video-channel-and-views-container {
           display: flex;
           justify-content: space-between;
@@ -53,13 +60,13 @@
     .next-video {
       @include mixins.tablet {
         max-width: 288px;
+        margin-bottom: 23px;
       }
     }
     //  MEDIA = DESKTOP = [ ] = 1280PX
     .next-video {
       @include mixins.desktop {
         flex: 30%;
-        margin-top: 20px;
       }
     }
   }

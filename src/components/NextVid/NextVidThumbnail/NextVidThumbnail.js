@@ -1,7 +1,6 @@
 import "./NextVidThumbnail.scss";
-let NextVidImage = (props) => {
+const NextVidThumbnail = (props) => {
   return (
-    
     <img
       className="next-video__thumbnail-container--image"
       src={props.image}
@@ -9,4 +8,4 @@ let NextVidImage = (props) => {
     ></img>
   );
 };
-export default NextVidImage;
+export default NextVidThumbnail;
