@@ -1,6 +1,9 @@
+// STYLE
 import "./HeaderProfileTablet.scss";
+// ASSET
 import Profile from "../../../assets/images/Mohan-muruge.jpg";
-let HeaderProfileTablet = () => {
+
+const HeaderProfileTablet = () => {
   return (
     //  PROFILE-IMAGE
     <div className="header-tablet-profile-container">

@@ -5,7 +5,7 @@ import HeaderProfileMobile from "../Header/HeaderProfileMobile/HeaderProfileMobi
 import HeaderSearch from "../Header/HeaderSearch/HeaderSearch";
 import HeaderUpload from "../Header/HeaderUpload/HeaderUpload";
 
-let Header = () => {
+const Header = () => {
   return (
     <header className="header">
       {/* HEADER-CONTENT */}

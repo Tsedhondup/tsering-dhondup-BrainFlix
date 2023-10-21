@@ -1,6 +1,9 @@
+// STYLE
 import "./HeaderProfileMobile.scss";
+// ASSET
 import Profile from "../../../assets/images/Mohan-muruge.jpg";
-let HeaderProfileMobile = () => {
+
+const HeaderProfileMobile = () => {
   return (
     //  PROFILE-IMAGE
     <div className="header-mobile-profile-container">

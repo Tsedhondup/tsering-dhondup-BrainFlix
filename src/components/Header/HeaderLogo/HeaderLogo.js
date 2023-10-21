@@ -1,8 +1,11 @@
+// STYLE
 import "./HeaderLogo.scss";
+// ASSET
 import BrainFlixLogo from "../../../assets/images/BrainFlix-logo.svg";
-let HeaderLogo = () => {
+const HeaderLogo = () => {
   return (
     <div className="header-logo-container">
+      {/* BRAIN-FLIX LOGO */}
       <img
         className="header-logo-container__logo"
         src={BrainFlixLogo}

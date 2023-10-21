@@ -45,7 +45,5 @@
 .header-search-and-mobile-profile-container__form {
   @include mixins.tablet {
     flex: unset;
-    // display: flex;
-    // justify-content: flex-end;
   }
 }
