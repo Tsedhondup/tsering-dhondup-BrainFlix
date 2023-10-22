@@ -1,0 +1,100 @@
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/fonts";
+@use "../../../styles/partials/mixins";
+
+.next-video-container {
+  padding-top: 16px;
+  // HEADER
+  &__header {
+    font-size: 13px;
+    font-weight: 600;
+    color: colors.$silver;
+    text-transform: uppercase;
+    padding-bottom: 16px;
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__header {
+    @include mixins.tablet {
+      padding-bottom: 26px;
+    }
+  }
+  //  MEDIA = DESKTOP = [ ] = 1280PX
+  &__header {
+    @include mixins.desktop {
+      padding-bottom: 20px;
+    }
+  }
+  // NEXT-VIDEO LISTS
+  &__list {
+    padding-bottom: 5px;
+    // NEXT-VIDEO
+    .next-video {
+      display: flex;
+      gap: 16px;
+      height: 65.05px;
+      width: 100%;
+      margin-bottom: 13px;
+      box-sizing: border-box;
+      // NEXT-VIDEO THUMBNAIL-CONTAINER
+      &__thumbnail-container {
+        flex: 40%;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: colors.$mercury;
+        overflow: hidden;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      // NEXT-VIDEO-TITLE CONTAINER
+      &__text-container {
+        flex: 60%;
+        // CHANNEL & VIEW CONTAINER
+        .next-video-channel-and-views-container {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+    // WHEN HOVER
+    .next-video:hover {
+      cursor: pointer;
+    }
+    //  MEDIA = MOBILE-2 = [ ] = 367PX
+    .next-video {
+      @include mixins.mobileTwo {
+        max-width: 310px;
+      }
+    }
+    //  MEDIA = TABLET = [ ] = 768PX
+    .next-video {
+      @include mixins.tablet {
+        margin-bottom: 23px;
+      }
+    }
+    //  MEDIA = DESKTOP = [ ] = 1280PX
+    .next-video {
+      @include mixins.desktop {
+        flex: 30%;
+      }
+    }
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__list {
+    @include mixins.tablet {
+      padding-bottom: 13px;
+    }
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.next-video-container {
+  @include mixins.tablet {
+    padding-top: 36px;
+  }
+}
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.next-video-container {
+  @include mixins.desktop {
+    flex: 40%;
+  }
+}

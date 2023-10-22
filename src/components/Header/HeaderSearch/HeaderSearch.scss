@@ -14,17 +14,31 @@
     transform: translate(50%, -50%);
     height: 14px;
   }
+  // DYNAMIC CLASS FROM HeaderSearch.js
+  &--icon-display-none {
+    display: none;
+  }
   // SEARCH FIELD
   &--input-field {
+    font-size: 12px;
+    padding-left: 32px;
     height: 36px;
     width: 100%;
-    font-size: 12px;
     border-radius: 4px;
     border: 1px solid colors.$mercury;
-    padding-left: 32px;
+    outline: none;
+    transition: .1s;
   }
+
+  // WHEN HOVER
+  &--input-field:hover {
+    border-width: 2px;
+    border-color: colors.$brainFlixBlue;
+  }
+  // WHEN FOCUS
   &--input-field:focus {
-    border: 2px solid colors.$brainFlixBlue;
+    border-width: 2px;
+    border-color: colors.$brainFlixBlue;
   }
   // INPUT PLACEHOLDER
   &--input-field::placeholder {
@@ -39,6 +53,10 @@
       width: 240px;
       padding: 16px 16px 16px 32px;
     }
+  }
+  // DYNAMIC CLASS FROM HeaderSearch.js
+  &--input-field-even-padding {
+    padding-left: 16px;
   }
 }
 // MEDIA = TABLET = [ ] = 768PX

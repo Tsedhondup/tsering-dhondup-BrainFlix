@@ -9,4 +9,8 @@
     height: 25px;
     width: 120px;
   }
+  // WHEN HOVER
+  &__logo:hover {
+    cursor: pointer;
+  }
 }

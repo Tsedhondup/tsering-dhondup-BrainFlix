@@ -1,0 +1,18 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/fonts";
+@use "../../../../styles/partials/mixins";
+
+
+.next-video-channel-and-views-container__channel {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: colors.$brainFlixBlack;
+  text-transform: capitalize;
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.next-video-channel-and-views-container__channel {
+  @include mixins.tablet {
+    font-size: 14px;
+  }
+}

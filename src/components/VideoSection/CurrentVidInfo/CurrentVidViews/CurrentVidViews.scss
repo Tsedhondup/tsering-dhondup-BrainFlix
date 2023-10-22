@@ -1,0 +1,23 @@
+@use "../../../../styles/partials/mixins";
+
+.current-vid-views-and-likes-container__views {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 16px;
+  // VIEWS LOGO
+  &--log {
+    display: block;
+  }
+  // VIEWS COUNT
+  &--number {
+    display: block;
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-views-and-likes-container__views {
+  @include mixins.tablet {
+    font-size: 13px;
+    padding-bottom: 0px;
+  }
+}

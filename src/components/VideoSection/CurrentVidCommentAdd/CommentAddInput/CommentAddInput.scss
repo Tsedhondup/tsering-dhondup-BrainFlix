@@ -1,0 +1,88 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/mixins";
+
+.current-vid-input-and-btn-container__input-container {
+  width: 100%;
+  // (1) *** INPUT-MOBILE *** //
+  &--input-mobile {
+    width: 100%;
+    height: 100px;
+    text-align: leftF;
+    padding: 12px;
+    border: 1px solid colors.$mercury;
+    border-radius: 4px;
+    outline: none;
+    resize: none;
+  }
+  // WHEN HOVER
+  &--input-mobile:hover {
+    border-width: 2px;
+    border-color: colors.$brainFlixBlue;
+  }
+  // WHEN FOCUS
+  &--input-mobile:focus {
+    border-width: 2px;
+    border-color: colors.$brainFlixBlue;
+  }
+
+  //  MEDIA = TABLET = [ ] = 768PX
+  &--input-mobile {
+    @include mixins.tablet {
+      display: none;
+    }
+  }
+  // PLACEHOLDER
+  &--input-mobile::placeholder {
+    color: colors.$brainFlixBlack;
+    font-size: 12px;
+  }
+
+  //  MEDIA = TABLET = [ ] = 768PX
+  &--input-mobile::placeholder {
+    @include mixins.tablet {
+      font-size: 14px;
+    }
+  }
+
+  /*-----------------------------------------------------*/
+
+  // (2) *** INPUT TABLET & DESKTOP **** //
+  &--input-tablet {
+    display: none;
+    height: 40px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid colors.$mercury;
+    border-radius: 4px;
+    outline: none;
+  }
+  // WHEN HOVER
+  &--input-tablet:hover {
+    border-width: 2px;
+    border-color: colors.$brainFlixBlue;
+  }
+  // WHEN FOCUS
+  &--input-tablet:focus {
+    border-width: 2px;
+    border-color: colors.$brainFlixBlue;
+  }
+
+  //  MEDIA = TABLET = [ ] = 768PX
+  &--input-tablet {
+    @include mixins.tablet {
+      display: block;
+    }
+  }
+  // PLACEHOLDER
+  &--input-tablet::placeholder {
+    color: colors.$brainFlixBlack;
+    font-size: 12px;
+  }
+
+  //  MEDIA = TABLET = [ ] = 768PX
+  &--input-tablet::placeholder {
+    @include mixins.tablet {
+      font-size: 14px;
+    }
+  }
+}

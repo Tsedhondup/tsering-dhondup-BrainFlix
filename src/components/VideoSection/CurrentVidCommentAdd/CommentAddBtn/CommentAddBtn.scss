@@ -1,47 +1,47 @@
-@use "../../../styles/partials/colors";
-@use "../../../styles//partials/mixins";
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/mixins";
 
-.header-upload-btn-container {
-  padding: 16px 0px;
-  // UPLOAD-BUTTON
+.current-vid-comment-form-btn-container {
+  width: 100%;
+  padding-top: 16px;
+  // ADD BUTTON
   &__button {
     position: relative;
-    height: 40px;
+    display: block;
     width: 100%;
+    height: 40px;
     font-size: 10px;
     text-transform: uppercase;
     color: colors.$white;
     background-color: colors.$brainFlixBlue;
     border-width: 0px;
     border-radius: 4px;
-
-    // UPLOAD ICON
+    // ADD ICON
     &--icon {
       position: absolute;
       top: 50%;
       left: 1%;
       transform: translate(50%, -50%);
-      display: block;
-      height: 17px;
-    }
-    //MEDIA = TABLET = [ ] = 768PX
-    &--icon {
-      @include mixins.tablet {
-        height: 18px;
-      }
+      height: 16px;
     }
   }
   // WHEN HOVER
-  &__button:hover {
+  &__button:hover{
     background-color: colors.$brainFlixDarkBlue;
     cursor: pointer;
   }
-  //MEDIA = TABLET = [ ] = 768PX
+  //  MEDIA = TABLET = [ ] = 768PX
   &__button {
     @include mixins.tablet {
       width: 150px;
       font-size: 12px;
-      padding: 0px 32px;
     }
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-comment-form-btn-container {
+  @include mixins.tablet {
+    padding-top: 0px;
+    width: auto;
   }
 }
