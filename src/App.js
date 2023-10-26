@@ -8,6 +8,7 @@ function App() {
     <>
       {/*  HEADER COMPONENT */}
       <Header />
+      {/* Define route here  */}
       {/*
        * VIDEO-SECTION COMPONENTS CONTAIN FOLLOWING COMPONENTS
        *
