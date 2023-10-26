@@ -1,5 +1,5 @@
 import "./VideoUploadHeader.scss";
 const VideoUploadHeader = () => {
-  return <p>this is VideoUploadHeader</p>;
+  return <h1>Upload Video</h1>;
 };
 export default VideoUploadHeader;
