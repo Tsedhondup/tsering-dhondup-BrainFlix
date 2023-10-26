@@ -1,3 +1,9 @@
+// REACT ROUTES
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// PAGES
+import HomePage from "./Page/HomePage/HomePage";
+import VideoDetailsPage from "./Page/VideoDetailsPage/VideoDetailsPage";
+import VideoUploadPage from "./Page/VideoUploadPage/VideoUploadPage";
 // STYLE
 import "./App.scss";
 // COMPONENTS
@@ -9,6 +15,14 @@ function App() {
       {/*  HEADER COMPONENT */}
       <Header />
       {/* Define route here  */}
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="videoDetailPage" element={<VideoDetailsPage />} />
+          {/* <Route path="/about" element={<VideoUploadPage />} /> */}
+        </Routes>
+      </BrowserRouter>
       {/*
        * VIDEO-SECTION COMPONENTS CONTAIN FOLLOWING COMPONENTS
        *
@@ -19,7 +33,7 @@ function App() {
        * CURRENT-VID-COMMENT-LISTS COMPONENT
        * NEXT-VID COMPONENT
        */}
-      <VideoSection />
+      {/* <VideoSection /> */}
     </>
   );
 }
