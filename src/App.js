@@ -1,8 +1,8 @@
 // REACT ROUTES
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 // PAGES
-import HomePage from "./Page/HomePage/HomePage";
-import VideoDetailsPage from "./Page/VideoDetailsPage/VideoDetailsPage";
+import HomePage from "./Page/VideoPage/HomePage/HomePage";
+import VideoDetailsPage from "./Page/VideoPage/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./Page/VideoUploadPage/VideoUploadPage";
 // STYLE
 import "./App.scss";
@@ -17,10 +17,21 @@ function App() {
       {/* Define route here  */}
 
       <BrowserRouter>
+        <ul>
+          <li>
+            <NavLink to="/">home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/VideoDetailPage">VideoDetailPage</NavLink>
+          </li>
+          <li>
+            <NavLink to="/VideoUploadPage">VideoUploadPage</NavLink>
+          </li>
+        </ul>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="videoDetailPage" element={<VideoDetailsPage />} />
-          {/* <Route path="/about" element={<VideoUploadPage />} /> */}
+          <Route path="VideoDetailPage" element={<VideoDetailsPage />} />
+          <Route path="VideoUploadPage" element={<VideoUploadPage />} />
         </Routes>
       </BrowserRouter>
       {/*

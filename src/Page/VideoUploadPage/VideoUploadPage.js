@@ -1,5 +1,5 @@
+import VideoUpload from "../../components/VideoUpload/VideoUpload";
 const VideoUploadPage = () => {
-    return <p>this is video detail page</p>;
-  };
-  export default VideoUploadPage;
-  
+  return <VideoUpload />;
+};
+export default VideoUploadPage;
