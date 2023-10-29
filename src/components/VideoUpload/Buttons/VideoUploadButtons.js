@@ -4,7 +4,7 @@ const VideoUploadButtons = () => {
   return (
     <div>
       {/* UPLOAD-LOGO */}
-      <img src={uploadLogo}/>
+      <img className="page-img" src={uploadLogo} alt="upload-logo"/>
       <button type="button">publish</button>
     </div>
   );

@@ -2,9 +2,10 @@
 import "./NextVid.scss";
 // DATA
 import VideoDataList from "../../../data/videos.json";
-
 // HOOK
 import { useState } from "react";
+// REACT ROUTER
+import { NavLink } from "react-router-dom";
 // COMPONENTS
 import NextVidThumbnail from "./NextVidThumbnail/NextVidThumbnail";
 import NextVidChannel from "./NextVidChannel/NextVidChannel";
@@ -12,23 +13,31 @@ import NextVidTitle from "./NextVidTitle/NextVidTitle";
 import NextVidViews from "./NextVidViews/NextVidViews";
 
 const NextVid = (props) => {
-  // NEXT-VIDEO STATE
-  const [nextVideoList, setNextVideoList] = useState(VideoDataList);
+  /*
+   * WILL RECIEVE CURRENT-VID ID FROM HOME-PAGE AS A PROPS
+   * PERFORM THE SAME MAP AND FILTER FUNCTION TO CREATE THE NEXT-VID LISTS
+   * INSTEAD LIST WILL BE MADE OF REACT-ROUTER-DOM 'LINK' COMPONENT
+   * LINK WILL HAVE DIRECT TO="/videoPlayerPage/:ID"
+   *
+   */
 
   // CREATING NEXT VIDEO-LIST
-  const nextVideoListEl = nextVideoList
+  const nextVideoListEl = props.nextVideos
     .filter((video) => {
       return video.id !== props.currentVidId;
     })
     .map((videoFiltered) => (
       // NEXT-VIDEO-LIST
-      <div
+      <NavLink
+        to={`/videoPlayerPage/${videoFiltered.id}`}
         className="next-video"
         id={videoFiltered.id}
         key={videoFiltered.id}
-        onClick={() => {
+        onClick={(event) => {
           // UPDATES CURRENT-VIDEO FROM STATE-VIDEOS COMPONENT
-          props.updateCurrentVidHandler(videoFiltered.id);
+          // props.updateCurrentVidHandler(videoFiltered.id);
+          // event.preventDefault();
+          props.handleMainVideo();
         }}
       >
         {/* THUMBNAIL-CONTAINER */}
@@ -52,7 +61,7 @@ const NextVid = (props) => {
             <NextVidViews id={videoFiltered.id} />
           </div>
         </div>
-      </div>
+      </NavLink>
     ));
 
   return (
