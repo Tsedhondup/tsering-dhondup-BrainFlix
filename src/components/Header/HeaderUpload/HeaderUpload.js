@@ -5,23 +5,26 @@ import "./HeaderUpload.scss";
 // ASSET
 import uploadIcon from "../../../assets/images/upload.svg";
 // COMPONENTS
-// import VideoUploadPage from "../../../Page/VideoUploadPage/VideoUploadPage";
+import VideoUploadPage from "../../../Page/VideoUploadPage/VideoUploadPage";
 
 const HeaderUpload = () => {
   return (
     // <Link to={"/videoUploadPage"}>
-    <div className="header-upload-btn-container">
-      {/* UPLOAD BUTTON */}
-      <button className="header-upload-btn-container__button">
-        {/* UPLOAD LOGO */}
-        <img
-          className="header-upload-btn-container__button--icon"
-          src={uploadIcon}
-          alt="upload-icon"
-        />
-        upload
-      </button>
-    </div>
+
+    <NavLink to="videoUploadPage">
+      <div className="header-upload-btn-container">
+        {/* UPLOAD BUTTON */}
+        <button className="header-upload-btn-container__button">
+          {/* UPLOAD LOGO */}
+          <img
+            className="header-upload-btn-container__button--icon"
+            src={uploadIcon}
+            alt="upload-icon"
+          />
+          upload
+        </button>
+      </div>
+    </NavLink>
   );
 };
 export default HeaderUpload;

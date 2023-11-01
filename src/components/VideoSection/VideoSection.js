@@ -14,7 +14,7 @@ import CurrentVidCommentList from "./CurrentVidCommentList/CurrentVidCommentList
 import axios from "axios";
 
 const VideoSection = (props) => {
-  const [mainVideo, setMainVideo] = useState({});
+  const [currentVideo, setMainVideo] = useState({});
   const [nextVideos, setNextVideos] = useState([]);
 
   // GET ID OF FIRST OF VIDEO
@@ -25,7 +25,7 @@ const VideoSection = (props) => {
     });
   };
 
-  // GET DEFAULT VIDEO FROM THE SERVER
+  // GET FIRST VIDEO FROM THE SERVER
   const getDefaultVideo = (videoId) => {
     if (videoId) {
       axios
@@ -48,56 +48,30 @@ const VideoSection = (props) => {
     getNextVideos();
   }, []);
 
-  // WHEN PROPS CHANGED
+  // WHEN PROPS == VIDEO-ID CHANGED
   useEffect(() => {
     getDefaultVideo(props.videoId);
   }, [props.videoId]);
 
-  /************************* EVENT HANDLERS ************************/
-
-  // // UPDATE CURRENT-VIDEO OBJECT
-  const handleMainVideo = () => {
-    // PROPS FROM PARENT COMPONENT GENERATED VIA useParam() HOOK
-    const clickedVideoId = props.videoId;
-    getDefaultVideo(clickedVideoId);
-  };
-
   // /************************* RENDERING ************************/
-  if (mainVideo.id) {
+  if (currentVideo.id) {
     return (
       <section className="video-section">
         {/* VIDEO-SECTION PART-1 : CURRENT-VIDEO COMPONENT */}
-        <CurrentVideo currentVideo={mainVideo} />
+        <CurrentVideo currentVideo={currentVideo} />
         {/* VIDEO-SECTION PART-2 : CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
         <div className="current-vid-info-and-next-vid-container">
-          {/*
-           * CONTAINS FOUR COMPONENTS
-           * (A) CURRENT-VIDEO-INFO COMPONENT
-           * (B) CURRENT-VIDEO-COMMENT-COUNT COMPONENT
-           * (C) CURRENT-VIDEO-COMMENT-ADD COMPONENT
-           * (D) CURRENT-VIDEO-COMMENT-LIST COMPONENT
-           */}
           <div className="current-vid-info-container">
-            {/*(A)*/}
-            <CurrentVidInfo currentVideo={mainVideo} />
-            {/*(B)*/}
-            <CurrentVidCommentCount totalComment={mainVideo.comments.length} />
-            {/*(C)*/}
-            <CurrentVidCommentAdd currentVideo={mainVideo} />
-            {/*(D)*/}
-            <CurrentVidCommentList currentVideo={mainVideo} />
+            <CurrentVidInfo currentVideo={currentVideo} />
+            <CurrentVidCommentCount
+              totalComment={currentVideo.comments.length}
+            />
+            <CurrentVidCommentAdd currentVideo={currentVideo} />
+            <CurrentVidCommentList currentVideo={currentVideo} />
           </div>
           {/*----------------------------------------------*/}
 
-          {/*
-           * NEXT-VIDEO COMPONENT
-           */}
-          <NextVid
-            nextVideos={nextVideos}
-            currentVidId={mainVideo.id}
-            // updateCurrentVidHandler={updateCurrentVidHandler}
-            handleMainVideo={handleMainVideo}
-          />
+          <NextVid nextVideos={nextVideos} currentVidId={currentVideo.id} />
         </div>
       </section>
     );

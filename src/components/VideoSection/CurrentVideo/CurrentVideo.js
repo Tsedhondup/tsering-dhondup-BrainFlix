@@ -1,17 +1,6 @@
 import "./CurrentVideo.scss";
 
 let CurrentVideo = (props) => {
-  /*
-   * THREE LAYERS OF WRAPPERS FOR FOR CURRENT-VIDEO/VIDEO TAG
-   *
-   *    ...< WRAPPER-LEVEL-2 />
-   *      ...< WRAPPER-LEVEL-1 />
-   *        ...< WRAPPER-LEVEL-0 />
-   *             < VIDEO-TAG* />
-   *        ...< WRAPPER-LEVEL-0 />
-   *      ...< WRAPPER-LEVEL-1 />
-   *    ...< WRAPPER-LEVEL-2 />
-   */
   return (
     /* 
     # WRAPPER LEVEL-2 : PURPOSES
@@ -53,6 +42,7 @@ let CurrentVideo = (props) => {
             className="current-video-wrapper-level-0__video"
             poster={props.currentVideo.image}
             controls
+            // src={props.currentVideo.video}
           ></video>
         </div>
       </div>

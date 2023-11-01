@@ -4,7 +4,7 @@ import VideoUploadHeader from "./Header/VideoUploadHeader";
 import VideoUploadThumbnail from "./VideoUploadThumnail/VideoUploadThumbnail";
 import VideoUploadForm from "./Form/VideoUploadForm";
 import VideoUploadButtons from "./Buttons/VideoUploadButtons";
-const VideoUpload = () => {
+const VideoUpload = (props) => {
   return (
     <div>
       <VideoUploadHeader />

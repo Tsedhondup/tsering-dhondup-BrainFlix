@@ -1,0 +1,16 @@
+.video-upload-msg {
+  // display: none;
+  color: green;
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  top: -150px;
+  left: 0px;
+  transition: 3s;
+}
+.isUploaded {
+  // display: block;
+  font-size: 34px;
+  color: red;
+  top: 0px;
+}

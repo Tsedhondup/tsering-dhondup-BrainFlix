@@ -11,16 +11,16 @@ function App() {
   return (
     <>
       {/*  HEADER COMPONENT */}
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<VideoPlayerPage />} />
+          {/* <Route path="/:confirmUpload" element={<VideoPlayerPage />} /> */}
           <Route
             path="videoPlayerPage/:videoId"
             element={<VideoPlayerPage />}
           />
           <Route path="videoUploadPage" element={<VideoUploadPage />} />
-          {/* <Route path="/" element={<VideoPlayerPage />} /> */}
         </Routes>
       </BrowserRouter>
     </>

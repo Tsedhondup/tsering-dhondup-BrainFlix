@@ -33,12 +33,6 @@ const NextVid = (props) => {
         className="next-video"
         id={videoFiltered.id}
         key={videoFiltered.id}
-        onClick={(event) => {
-          // UPDATES CURRENT-VIDEO FROM STATE-VIDEOS COMPONENT
-          // props.updateCurrentVidHandler(videoFiltered.id);
-          // event.preventDefault();
-          props.handleMainVideo();
-        }}
       >
         {/* THUMBNAIL-CONTAINER */}
         <div className="next-video__thumbnail-container">
