@@ -1,16 +1,15 @@
 import "./VideoUpload.scss";
 // COMPONENTS
-import VideoUploadHeader from "./Header/VideoUploadHeader";
+import VideoUploadHeader from "./VideoUploadHeader/VideoUploadHeader";
 import VideoUploadThumbnail from "./VideoUploadThumnail/VideoUploadThumbnail";
-import VideoUploadForm from "./Form/VideoUploadForm";
-import VideoUploadButtons from "./Buttons/VideoUploadButtons";
+import VideoUploadForm from "./VideoUploadForm/VideoUploadForm";
 const VideoUpload = (props) => {
+  // HANDEL FORM SUBMISSION
   return (
     <div>
       <VideoUploadHeader />
       <VideoUploadThumbnail />
       <VideoUploadForm />
-      <VideoUploadButtons />
     </div>
   );
 };

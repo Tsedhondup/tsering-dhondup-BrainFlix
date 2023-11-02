@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 // STYLES
 import "./VideoUploadButtons.scss";
 // ASSETS
-import uploadLogo from "../../../assets/images/add_comment.svg";
+import uploadLogo from "../../../../assets/images/add_comment.svg";
 const VideoUploadButtons = (props) => {
   return (
     <div>
@@ -11,10 +11,11 @@ const VideoUploadButtons = (props) => {
       <img className="page-img" src={uploadLogo} alt="upload-logo" />
       <NavLink to="/">
         <button
-          type="button"
-          onClick={() => {
-            sessionStorage.setItem("isUploadedClass", "isUploaded");
+          type="submit"
+          onClick={(event) => {
+            sessionStorage.setItem("uploadedClassName", "video-uploaded");
           }}
+          disabled={!props.enableButton()}
         >
           publish
         </button>

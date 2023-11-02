@@ -2,15 +2,14 @@ import "./ConfirmVidUploadMessage.scss";
 import { useState, useEffect } from "react";
 const ConfirmVidUploadMessage = (props) => {
   const [confirmUpload, setConfirmUpload] = useState(
-    sessionStorage.getItem("isUploadedClass")
+    sessionStorage.getItem("uploadedClassName") // initially empty in sessionStorage
   );
 
-  console.log(confirmUpload);
   useEffect(() => {
     setTimeout(() => {
       setConfirmUpload("");
-      sessionStorage.removeItem("isUploadedClass");
-    }, 4000);
+      sessionStorage.removeItem("uploadedClassName");
+    }, 3000);
   }, []);
   return (
     <p className={`video-upload-msg ${confirmUpload}`}>
