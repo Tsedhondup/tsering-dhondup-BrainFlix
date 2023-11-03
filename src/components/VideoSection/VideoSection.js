@@ -17,7 +17,7 @@ const VideoSection = (props) => {
   const [currentVideo, setMainVideo] = useState({});
   const [nextVideos, setNextVideos] = useState([]);
 
-  // GET ID OF FIRST OF VIDEO
+  // GET ID OF FIRST/CURRENT OF VIDEO
   const getVideoId = () => {
     axios.get(`${baseURL}/videos?api_key=${myApiKey}`).then((response) => {
       const firstVideoId = response.data[0].id;
