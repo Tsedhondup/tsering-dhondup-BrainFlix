@@ -58,7 +58,11 @@ const VideoSection = (props) => {
     return (
       <section className="video-section">
         {/* VIDEO-SECTION PART-1 : CURRENT-VIDEO COMPONENT */}
-        <CurrentVideo currentVideo={currentVideo} />
+        <CurrentVideo
+          currentVideo={currentVideo}
+          myApiKey={myApiKey}
+          baseURL={baseURL}
+        />
         {/* VIDEO-SECTION PART-2 : CURRENT-VIDEO-INFO & NEXT-VIDEO CONTAINER */}
         <div className="current-vid-info-and-next-vid-container">
           <div className="current-vid-info-container">
