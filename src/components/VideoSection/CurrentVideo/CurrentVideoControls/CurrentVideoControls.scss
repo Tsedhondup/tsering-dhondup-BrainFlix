@@ -7,30 +7,94 @@
   height: 40px;
   position: absolute;
   bottom: 0;
+
+  // GENERAL RULE FOR BUTTON
   button {
     width: 100%;
     background-color: colors.$brainFlixDarkBlack;
     opacity: 50%;
     border-width: 0px;
     outline: none;
+    // GENERAL RULE FOR BUTTON
     img {
       color: colors.$white;
     }
   }
+  // PLAY && PAUSE*******************
+  &__play-puase-btn-container {
+    display: flex;
+    // PLAY
+    &--play {
+      display: block;
+    }
+    // REACT.JS DYNAMIC CLASS
+    &--play-hidden {
+      display: none;
+    }
+    // PAUSE
+    &--pause {
+      display: none;
+    }
+    // REACT.JS DYNAMIC CLASS
+    &--pause-show {
+      display: flex;
+    }
+  }
+  // CONTROL SCRUBS********************
   &__scrub {
     position: relative;
     &--scrub-icon {
       position: absolute;
     }
   }
-  .full-screen-and-volume {
+  // FULL-SCREEN && VOLUME CONTAINER****
+  .full-screen-and-volume-container {
     display: flex;
     gap: 16px;
-    button {
-      width: 100%;
+
+    // FULL-SCREENS
+    &__full-screen {
+      display: flex;
+      // FULL-SCREEN OPEN
+      &--open {
+        display: block;
+      }
+      // REACT.JS DYNAMIC CLASS
+      &--open-hidden {
+        display: none;
+      }
+      // FULL-SCREEN CLOSE
+      &--close {
+        display: none;
+      }
+      // REACT.JS DYNAMIC CLASS
+      &--close-show {
+        display: flex;
+      }
+    }
+
+    // VOLUMES
+    &__volume {
+      // VOLUME-ON
+      &--on {
+        display: block;
+      }
+      // REACT.JS DYNAMIC CLASS
+      &--on-hidden {
+        display: none;
+      }
+      // VOLUME-OFF
+      &--off {
+        display: none;
+      }
+      // REACT.JS DYNAMIC CLASS
+      &--off-show {
+        display: flex;
+      }
     }
   }
 }
+
 .video-control-hidden {
   display: none;
 }
