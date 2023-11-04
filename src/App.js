@@ -15,7 +15,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<VideoPlayerPage />} />
-          {/* <Route path="/:confirmUpload" element={<VideoPlayerPage />} /> */}
           <Route
             path="videoPlayerPage/:videoId"
             element={<VideoPlayerPage />}

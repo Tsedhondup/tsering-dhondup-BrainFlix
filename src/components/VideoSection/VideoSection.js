@@ -42,13 +42,23 @@ const VideoSection = (props) => {
     });
   };
 
-  // DATA INITIALISATION
+  // DATA INITIALISATION FOR NEXT VIDEOS
   useEffect(() => {
-    getVideoId();
     getNextVideos();
   }, []);
 
-  // WHEN PROPS == VIDEO-ID CHANGED
+  // GETTING ID OF FIRST VIDEO
+  useEffect(() => {
+    /*
+     * ON REFRESHING, IT WILL VALIDATE THE PRESENCE OF VIDEO-ID useParams()
+     * RENDER THE APPROPRIATE PAGE BASE ON 'URL'
+     */
+    if (!props.videoId) {
+      getVideoId();
+    }
+  }, []);
+
+  // WHEN videoID PROPS CHANGED
   useEffect(() => {
     getDefaultVideo(props.videoId);
   }, [props.videoId]);
