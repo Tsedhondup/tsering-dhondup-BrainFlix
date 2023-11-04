@@ -85,4 +85,21 @@
       font-size: 14px;
     }
   }
+
+  // DYNAMIC REACT.JS CLASS - PINK BORDER - 'WARNING!'
+  &--pink-border {
+    border-color: colors.$pink;
+  }
+  /*-----------------------------------------------------*/
+  // WARNING MESSAGE
+  &--warning-msg-hidden {
+    color: colors.$pink;
+    font-size: 13px;
+    display: none;
+    padding-top: 10px;
+  }
+  // DYNAMIC REACT.JS CLASS
+  &--warning-msg-show {
+    display: inline-block;
+  }
 }

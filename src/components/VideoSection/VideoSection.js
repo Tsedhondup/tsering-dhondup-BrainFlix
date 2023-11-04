@@ -1,5 +1,5 @@
 // HOOK
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 // STYLES
 import "./VideoSection.scss";
 // APIs
@@ -15,13 +15,18 @@ import axios from "axios";
 
 const VideoSection = (props) => {
   const [currentVideo, setMainVideo] = useState({});
+  const [currentVidId, setCurrentVidId] = useState("");
   const [nextVideos, setNextVideos] = useState([]);
+  const [currentVidComments, setCurrentVidComments] = useState("");
+  const [currentVidCommentCounts, setCurrentVidCommentCounts] = useState("");
+
+  /*--------------------------------------------------*/
 
   // GET ID OF FIRST/CURRENT OF VIDEO
   const getVideoId = () => {
     axios.get(`${baseURL}/videos?api_key=${myApiKey}`).then((response) => {
       const firstVideoId = response.data[0].id;
-      getDefaultVideo(firstVideoId);
+      getDefaultVideo(firstVideoId); // get first video
     });
   };
 
@@ -31,7 +36,10 @@ const VideoSection = (props) => {
       axios
         .get(`${baseURL}/videos/${videoId}?api_key=${myApiKey}`)
         .then((response) => {
-          setMainVideo(response.data);
+          setMainVideo(response.data); // set the current-video
+          setCurrentVidComments(response.data.comments); // set the comments
+          setCurrentVidCommentCounts(response.data.comments.length); // set current-video comment counts
+          setCurrentVidId(videoId); // set current-video id
         });
     }
   };
@@ -42,6 +50,8 @@ const VideoSection = (props) => {
     });
   };
 
+  /*--------------------------------------------------*/
+  // USE-EFFECTS
   // DATA INITIALISATION FOR NEXT VIDEOS
   useEffect(() => {
     getNextVideos();
@@ -79,9 +89,21 @@ const VideoSection = (props) => {
             <CurrentVidInfo currentVideo={currentVideo} />
             <CurrentVidCommentCount
               totalComment={currentVideo.comments.length}
+              currentVidCommentCounts={currentVidCommentCounts}
             />
-            <CurrentVidCommentAdd currentVideo={currentVideo} />
-            <CurrentVidCommentList currentVideo={currentVideo} />
+            <CurrentVidCommentAdd
+              currentVidCommentCounts={currentVidCommentCounts}
+              setCurrentVidCommentCounts={setCurrentVidCommentCounts}
+              currentVidComments={currentVidComments}
+              setCurrentVidComments={setCurrentVidComments}
+              currentVidId={currentVidId}
+              myApiKey={myApiKey}
+              baseURL={baseURL}
+            />
+            <CurrentVidCommentList
+              currentVideo={currentVideo}
+              currentVidComments={currentVidComments}
+            />
           </div>
           {/*----------------------------------------------*/}
 

@@ -8,7 +8,8 @@ import CommentBody from "./CommentBody/CommentBody";
 import CommentMoment from "./CommentMoment/CommentMoment";
 
 const CurrentVidComment = (props) => {
-  const comments = props.currentVideo.comments.map((comment) => (
+  // const comments = props.currentVideo.comments.map((comment) => (
+  const comments = props.currentVidComments.map((comment) => (
     // COMMENT
     <div
       className="current-video-comment-lists-container__list"
