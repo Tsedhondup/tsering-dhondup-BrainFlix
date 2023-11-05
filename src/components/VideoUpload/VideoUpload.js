@@ -6,7 +6,7 @@ import VideoUploadForm from "./VideoUploadForm/VideoUploadForm";
 const VideoUpload = (props) => {
   // HANDEL FORM SUBMISSION
   return (
-    <div>
+    <div className="video-upload-container">
       <VideoUploadHeader />
       <VideoUploadThumbnail />
       <VideoUploadForm />

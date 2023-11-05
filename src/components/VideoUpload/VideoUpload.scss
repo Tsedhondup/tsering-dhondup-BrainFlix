@@ -1,0 +1,7 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/mixins";
+
+.video-upload-container {
+  padding: 0px 16px;
+  border-top: 1px solid colors.$mercury;
+}

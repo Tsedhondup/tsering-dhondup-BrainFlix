@@ -1,0 +1,69 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/mixins";
+
+.video-upload-btn-container {
+  width: 100%;
+  padding-top: 16px;
+  // UPLOAD
+  &__upload-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: colors.$white;
+    background-color: colors.$silver;
+    border-width: 0px;
+    border-radius: 4px;
+    // ADD ICON
+    &--icon {
+      position: absolute;
+      top: 50%;
+      left: 1%;
+      transform: translate(50%, -50%);
+      height: 16px;
+    }
+  }
+  // DYNAMIC REACT.JS CLASS
+  &__upload-button-enable-background-color {
+    background-color: colors.$brainFlixBlue;
+  }
+  // WHEN HOVER
+  &__upload-button-enable-background-color:hover {
+    background-color: colors.$brainFlixDarkBlue;
+    cursor: pointer;
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__upload-button {
+    @include mixins.tablet {
+      width: 150px;
+      font-size: 12px;
+    }
+  }
+
+  // CANCEL
+  &__cancel-button {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 10px;
+    color: colors.$brainFlixBlue;
+    text-transform: uppercase;
+    background-color: colors.$white;
+    border-width: 0px;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  &__cancel-button:hover {
+    color: colors.$white;
+    background-color: colors.$pink;
+  }
+}
+//  MEDIA = TABLET = [ ] = 768PX
+.current-vid-comment-form-btn-container {
+  @include mixins.tablet {
+    padding-top: 0px;
+    width: auto;
+  }
+}

@@ -1,4 +1,19 @@
-.page-img {
-  width: 100px;
-  height: 100px;
+@use "../../../styles/partials/colors";
+@use "../../../styles/partials/mixins";
+@use "../../../styles/partials/fonts";
+.video-upload-container__thumbnail-container {
+  padding-top: 23px;
+  // HEADER
+  &--header {
+    font-size: 12px;
+    font-weight: 400;
+    color: colors.$silver;
+    text-transform: uppercase;
+    padding-bottom: 9px;
+  }
+  // IMAGE
+  &--image {
+    border-radius: 4px;
+    width: 100%;
+  }
 }

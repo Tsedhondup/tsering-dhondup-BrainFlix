@@ -8,8 +8,11 @@ import VideoUploadButtons from "./VideoUploadButtons/VideoUploadButtons";
 const VideoUploadForm = () => {
   const [vidTitle, setVidTitle] = useState("");
   const [vidDescription, setVidDescription] = useState("");
+  const [titleErrorBorderClass, setTitleErrorBorderClass] = useState("");
   const [titleErrorMessageClass, setTitleErrorMessageClass] = useState("");
   const [descriptionErrorMessageClass, setDescriptionErrorMessageClass] =
+    useState("");
+  const [descriptionErrorBorderClass, setDescriptionErrorBorderClass] =
     useState("");
 
   // INPUTS VALUE HANDLERS
@@ -25,14 +28,36 @@ const VideoUploadForm = () => {
    * onBlur event
    */
   const handleTitleValidation = (event) => {
-    setTitleErrorMessageClass(!event.target.value ? "js-input-error-msg" : "");
+    setTitleErrorMessageClass(
+      !event.target.value ? "form-input-container__title-error-msg-show" : ""
+    );
+    setTitleErrorBorderClass(
+      !event.target.value ? "form-input-container__title-error-border" : ""
+    );
   };
 
   const handleDescriptionValidation = (event) => {
     setDescriptionErrorMessageClass(
-      !event.target.value ? "js-input-error-msg" : ""
+      !event.target.value
+        ? "form-input-container__description-error-msg-show"
+        : ""
+    );
+    setDescriptionErrorBorderClass(
+      !event.target.value
+        ? "form-input-container__description-error-border"
+        : ""
     );
   };
+
+  // HANDLE BUTTON UPLOAD BUTTON BACKGROUND
+  const enableUploadButtonBackground = () => {
+    if (vidTitle && vidDescription) {
+      return "video-upload-btn-container__upload-button-enable-background-color";
+    } else {
+      return "";
+    }
+  };
+
   const enableButton = () => {
     if (!vidTitle || !vidDescription) {
       return false;
@@ -43,23 +68,29 @@ const VideoUploadForm = () => {
     if (!vidDescription) {
       return;
     }
+
     return true;
   };
 
   return (
-    <form>
+    <form className="video-upload-container__form">
       <VideoUploadInputs
         vidTitle={vidTitle}
         handleVideoTitle={handleVideoTitle}
         handleTitleValidation={handleTitleValidation}
         titleErrorMessageClass={titleErrorMessageClass}
+        titleErrorBorderClass={titleErrorBorderClass}
         vidDescription={vidDescription}
         handleVideoDescription={handleVideoDescription}
         handleDescriptionValidation={handleDescriptionValidation}
         descriptionErrorMessageClass={descriptionErrorMessageClass}
+        descriptionErrorBorderClass={descriptionErrorBorderClass}
         enableButton={enableButton}
       />
-      <VideoUploadButtons enableButton={enableButton} />
+      <VideoUploadButtons
+        enableButton={enableButton}
+        enableUploadButtonBackground={enableUploadButtonBackground}
+      />
     </form>
   );
 };
