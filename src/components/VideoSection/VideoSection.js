@@ -1,5 +1,5 @@
 // HOOK
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 // STYLES
 import "./VideoSection.scss";
 // APIs
@@ -91,6 +91,7 @@ const VideoSection = (props) => {
               totalComment={currentVideo.comments.length}
               currentVidCommentCounts={currentVidCommentCounts}
             />
+            {/* PROPS WILL BE USE FOR POSTING COMMENTS */}
             <CurrentVidCommentAdd
               currentVidCommentCounts={currentVidCommentCounts}
               setCurrentVidCommentCounts={setCurrentVidCommentCounts}
@@ -100,9 +101,15 @@ const VideoSection = (props) => {
               myApiKey={myApiKey}
               baseURL={baseURL}
             />
+            {/* PROPS WILL BE USE FOR DELETING COMMENTS */}
             <CurrentVidCommentList
-              currentVideo={currentVideo}
               currentVidComments={currentVidComments}
+              setCurrentVidComments={setCurrentVidComments}
+              currentVidCommentCounts={currentVidCommentCounts}
+              setCurrentVidCommentCounts={setCurrentVidCommentCounts}
+              currentVidId={currentVidId}
+              myApiKey={myApiKey}
+              baseURL={baseURL}
             />
           </div>
           {/*----------------------------------------------*/}

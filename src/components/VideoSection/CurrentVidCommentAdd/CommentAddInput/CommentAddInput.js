@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./CommentAddInput.scss";
 
 const CommentAddInput = (props) => {
