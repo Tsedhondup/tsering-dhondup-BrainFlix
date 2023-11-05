@@ -21,8 +21,6 @@ const CurrentVidCommentAdd = (props) => {
       name: "tsering Dhondup",
     };
 
-    // POST REQUEST
-    // URL, API, CURRENT-VID ID , COMMENT-STATE VARIABLE, COMMENTS-COUNT STATE VARIABLE
     axios
       .post(
         `${props.baseURL}/videos/${props.currentVidId}/comments?api_key=${props.myApiKey}`,
@@ -30,9 +28,8 @@ const CurrentVidCommentAdd = (props) => {
       )
       .then((response) => {
         // extract the comments from comment state variable
-        const newComments = [...props.currentVidComments];
-        // push response data object to newComments array
-        newComments.push(response.data);
+        const newComments = [...props.currentVidComments, response.data];
+
         // // set the comment state variable
         props.setCurrentVidComments(newComments);
         // // set the commentCount state
@@ -71,12 +68,7 @@ const CurrentVidCommentAdd = (props) => {
     );
   };
   return (
-    <form
-      className="current-vid-comment-form"
-      onClick={(event) => {
-        handleCommentSubmit(event); // prevents comment-form submission
-      }}
-    >
+    <form className="current-vid-comment-form">
       {/* COMMENT-IMAGE */}
       <CommentAddImage />
       {/* LABEL, INPUT & BUTTON CONTAINER */}

@@ -2,32 +2,6 @@ import { useState } from "react";
 import "./CommentAddInput.scss";
 
 const CommentAddInput = (props) => {
-  const [commentValue, setCommentValue] = useState("");
-  const [warningMsgClass, setWarningMsgClass] = useState("");
-  const [pinkBorderClass, setPinkBorderClass] = useState("");
-
-  // EVENT HANDLERS
-  const handleCommentInputs = (event) => {
-    const comments = event.target.value;
-    setCommentValue(comments);
-  };
-
-  // VALIDATE COMMENTS
-  const handlerCommentValidation = (event) => {
-    // WARNING MESSAGE
-    setWarningMsgClass(
-      !event.target.value
-        ? "current-vid-input-and-btn-container__input-container--warning-msg-show"
-        : ""
-    );
-    // PINK BORDER
-    setPinkBorderClass(
-      !event.target.value
-        ? "current-vid-input-and-btn-container__input-container--pink-border"
-        : ""
-    );
-  };
-
   return (
     <div className="current-vid-input-and-btn-container__input-container">
       {/* INPUT FOR SCREEN MIN-WIDTH:320PX / MOBILE*/}

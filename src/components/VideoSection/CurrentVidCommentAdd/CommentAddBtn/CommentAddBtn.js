@@ -12,6 +12,7 @@ const CommentAddBtn = (props) => {
         className="current-vid-comment-form-btn-container__button"
         type="submit"
         onClick={(event) => {
+          event.stopPropagation();
           props.handleCommentSubmit(event);
         }}
       >
