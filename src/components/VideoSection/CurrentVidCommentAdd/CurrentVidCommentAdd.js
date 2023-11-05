@@ -34,6 +34,9 @@ const CurrentVidCommentAdd = (props) => {
         props.setCurrentVidComments(newComments);
         // // set the commentCount state
         props.setCurrentVidCommentCounts(newComments.length);
+      })
+      .then((response) => {
+        setCommentValue("");
       });
   };
   // HANDLE COMMENT SUBMIT
