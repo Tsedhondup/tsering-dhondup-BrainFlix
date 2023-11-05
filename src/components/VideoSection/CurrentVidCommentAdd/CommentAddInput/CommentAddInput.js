@@ -21,7 +21,6 @@ const CommentAddInput = (props) => {
       />
       {/* INPUT FOR SCREEN MIN-WIDTH:768PX AND BEYOND  */}
       <input
-        // className="current-vid-input-and-btn-container__input-container--input-tablet"
         className={`current-vid-input-and-btn-container__input-container--input-tablet ${props.pinkBorderClass}`}
         type="text"
         placeholder="Add a new comment"

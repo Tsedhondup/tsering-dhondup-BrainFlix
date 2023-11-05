@@ -8,3 +8,12 @@
   font-weight: 600;
   color: colors.$brainFlixBlack;
 }
+//  MEDIA = TABLET = [ ] = 768PX
+.video-upload-container__header {
+  @include mixins.tablet {
+    font-size: 33px;
+    font-weight: 700;
+    padding-top: 36px;
+    padding-bottom: 8px;
+  }
+}

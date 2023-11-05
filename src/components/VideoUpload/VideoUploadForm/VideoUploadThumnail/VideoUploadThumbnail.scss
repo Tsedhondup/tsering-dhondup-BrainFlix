@@ -1,0 +1,45 @@
+@use "../../../../styles/partials/colors";
+@use "../../../../styles/partials/mixins";
+@use "../../../../styles/partials/fonts";
+.video-upload-container__thumbnail-container {
+  padding-top: 23px;
+  margin-bottom: 14px;
+  // HEADER
+  &--header {
+    font-size: 12px;
+    font-weight: 400;
+    color: colors.$silver;
+    text-transform: uppercase;
+    padding-bottom: 9px;
+  }
+  //  MEDIA = DESKTOP = [ ] = 1280PX
+  &--header {
+    @include mixins.desktop {
+      padding-bottom: 5px;
+    }
+  }
+  // IMAGE
+  &--image {
+    border-radius: 4px;
+    width: 100%;
+  }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &--image {
+    @include mixins.tablet {
+      width: 50%;
+    }
+  }
+  //  MEDIA = DESKTOP = [ ] = 1280PX
+  &--image {
+    @include mixins.desktop {
+      width: 100%;
+    }
+  }
+}
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.video-upload-container__thumbnail-container {
+  @include mixins.desktop {
+    flex: 20%;
+    padding-top: 0px;
+  }
+}

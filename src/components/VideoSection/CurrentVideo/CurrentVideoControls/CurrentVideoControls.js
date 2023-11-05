@@ -1,5 +1,5 @@
 // HOOKS
-import { useState, useRef } from "react";
+import { useState } from "react";
 // STYLE
 import "./CurrentVideoControls.scss";
 // ASSETS
@@ -26,7 +26,7 @@ let CurrentVideoControls = (props) => {
       onMouseOver={props.handleVideoControlShow}
       onMouseOut={props.handleVideoControlHidden}
     >
-      {/* PLAY AND PAUSE BUTTON SCONTAINER */}
+      {/*** PLAY AND PAUSE BUTTON SCONTAINER ***/}
       <div className="video-controls__play-puase-btn-container">
         {/* PLAY */}
         <button
@@ -55,37 +55,47 @@ let CurrentVideoControls = (props) => {
           <img src={pause} alt="pause" />
         </button>
       </div>
-      {/*----------------------------------------------*/}
 
-      {/* SCRUBBING-CONTROL CONTAINER  */}
-      <div className="video-controls__scrub">
-        <div
-          ref={props.progressBarRef}
-          className="video-controls__scrub--range"
-          style={{ width: `${props.progressBar}%` }}
-          // onClick={(event) => {
-          //   props.handleProgressBarOnClick(event);
-          // }}
-        >
-          s
+      {/*----------------------------------------------*/}
+      {/***  SCRUBBING CONTROL AND TIME-LINE CONTAINER ***/}
+      <div className="scrubbing-and-time-line-container">
+        {/* SCRUBBING-CONTROL CONTAINER  */}
+        <div className="scrubbing-control-container">
+          <div className="scrubbing-control-container__content">
+            {/* SCRUBBER */}
+            <div className="control-scrubber"></div>
+            {/* PALYED BAR */}
+            <div
+              ref={props.progressBarRef}
+              className="control-played"
+              style={{ width: `${props.progressBar}%` }}
+            >
+              <img
+                className="video-controls-scrub-icon"
+                src={scrub}
+                alt="scrub"
+              />
+            </div>
+            {/* BUFFER */}
+            <div className="control-buffer"></div>
+          </div>
         </div>
-        <img className="video-controls__scrub--icon" src={scrub} alt="scrub" />
+
+        {/* TIMELINE CONTAINER  */}
+        <div className="scrubbing-and-time-line-container__timeline">
+          <span className="scrubbing-and-time-line-container__timeline--current">
+            {props.currentTime}
+          </span>
+          /
+          <span className="scrubbing-and-time-line-container__timeline--duration">
+            {props.currentDuration}
+          </span>
+        </div>
       </div>
+
       {/*----------------------------------------------*/}
 
-      {/* TIMELINE CONTAINER  */}
-      <div className="video-controls__timeline">
-        <span className="video-controls__timeline--current">
-          {props.currentTime}
-        </span>
-        /
-        <span className="video-controls__timeline--duration">
-          {props.currentDuration}
-        </span>
-      </div>
-      {/*----------------------------------------------*/}
-
-      {/* FULL SCREEN AND VOLUME CONTAINER */}
+      {/*** FULL SCREEN AND VOLUME CONTAINER ***/}
       <div className="full-screen-and-volume-container">
         {/* FULL-SCREEN BUTTONS CONTAINER */}
         <div className="full-screen-and-volume-container__full-screen">

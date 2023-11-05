@@ -8,10 +8,25 @@
   color: colors.$brainFlixDarkBlack;
   text-transform: capitalize;
   padding-bottom: 16px;
+  max-width: 164px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+//  MEDIA = MOBILE-THREE = [ ] = 410PX
+.next-video__text-container--title {
+  @include mixins.mobileThree {
+    width: 100%;
+    white-space: unset;
+    overflow: unset;
+    text-overflow: unset;
+  }
+}
+
 //  MEDIA = TABLET = [ ] = 768PX
 .next-video__text-container--title {
   @include mixins.tablet {
     font-size: 14px;
+    white-space: unset;
   }
 }

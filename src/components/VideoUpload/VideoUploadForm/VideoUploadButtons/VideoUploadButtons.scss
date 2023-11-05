@@ -4,8 +4,12 @@
 .video-upload-btn-container {
   width: 100%;
   padding-top: 16px;
+  // NAV-LINK
+  .video-upload-btn-container__nav-link {
+    text-decoration: none;
+  }
   // UPLOAD
-  &__upload-button {
+  .upload-button {
     position: relative;
     display: block;
     width: 100%;
@@ -17,7 +21,7 @@
     border-width: 0px;
     border-radius: 4px;
     // ADD ICON
-    &--icon {
+    &__icon {
       position: absolute;
       top: 50%;
       left: 1%;
@@ -26,16 +30,16 @@
     }
   }
   // DYNAMIC REACT.JS CLASS
-  &__upload-button-enable-background-color {
+  .upload-button-enable-background-color {
     background-color: colors.$brainFlixBlue;
   }
   // WHEN HOVER
-  &__upload-button-enable-background-color:hover {
+  .upload-button-enable-background-color:hover {
     background-color: colors.$brainFlixDarkBlue;
     cursor: pointer;
   }
   //  MEDIA = TABLET = [ ] = 768PX
-  &__upload-button {
+  .upload-button {
     @include mixins.tablet {
       width: 150px;
       font-size: 12px;
@@ -59,11 +63,22 @@
     color: colors.$white;
     background-color: colors.$pink;
   }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__cancel-button {
+    @include mixins.tablet {
+      width: 150px;
+      font-size: 12px;
+      margin-top: 0px;
+    }
+  }
 }
 //  MEDIA = TABLET = [ ] = 768PX
-.current-vid-comment-form-btn-container {
+.video-upload-btn-container {
   @include mixins.tablet {
-    padding-top: 0px;
-    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    gap: 16px;
+    padding-top: 20px;
   }
 }

@@ -1,9 +1,6 @@
 // STYLES
 import "./NextVid.scss";
-// DATA
-import VideoDataList from "../../../data/videos.json";
-// HOOK
-import { useState } from "react";
+
 // REACT ROUTER
 import { NavLink } from "react-router-dom";
 // COMPONENTS
@@ -13,14 +10,6 @@ import NextVidTitle from "./NextVidTitle/NextVidTitle";
 import NextVidViews from "./NextVidViews/NextVidViews";
 
 const NextVid = (props) => {
-  /*
-   * WILL RECIEVE CURRENT-VID ID FROM HOME-PAGE AS A PROPS
-   * PERFORM THE SAME MAP AND FILTER FUNCTION TO CREATE THE NEXT-VID LISTS
-   * INSTEAD LIST WILL BE MADE OF REACT-ROUTER-DOM 'LINK' COMPONENT
-   * LINK WILL HAVE DIRECT TO="/videoPlayerPage/:ID"
-   *
-   */
-
   // CREATING NEXT VIDEO-LIST
   const nextVideoListEl = props.nextVideos
     .filter((video) => {
@@ -44,14 +33,6 @@ const NextVid = (props) => {
           {/* CHANNEL & VIEWS CONTAINER */}
           <div className="next-video-channel-and-views-container">
             <NextVidChannel channel={videoFiltered.channel} />
-            {/*
-             * ID OF CURRENT-INSTANCE OF NEXT-VIDEO IS BEING PASSED AS A PROPS
-             *
-             * REASON***
-             * ID WILL BE USE TO FILTER THE VIDEO-DETAIL-JSON FILE IN
-             * NEXT-VID-VIEWS COMPONENT &&
-             * GET THE TOTAL VIEW OF VIDEO WITH THE MATCHED ID
-             */}
             <NextVidViews id={videoFiltered.id} />
           </div>
         </div>

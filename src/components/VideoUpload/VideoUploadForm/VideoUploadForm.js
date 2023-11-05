@@ -3,6 +3,7 @@ import { useState } from "react";
 // STYLE
 import "./VideoUploadForm.scss";
 // COMPONENTS
+import VideoUploadThumbnail from "./VideoUploadThumnail/VideoUploadThumbnail";
 import VideoUploadInputs from "./VideoUploadInputs/VideoUploadInputs";
 import VideoUploadButtons from "./VideoUploadButtons/VideoUploadButtons";
 const VideoUploadForm = () => {
@@ -52,7 +53,7 @@ const VideoUploadForm = () => {
   // HANDLE BUTTON UPLOAD BUTTON BACKGROUND
   const enableUploadButtonBackground = () => {
     if (vidTitle && vidDescription) {
-      return "video-upload-btn-container__upload-button-enable-background-color";
+      return "upload-button-enable-background-color";
     } else {
       return "";
     }
@@ -74,19 +75,23 @@ const VideoUploadForm = () => {
 
   return (
     <form className="video-upload-container__form">
-      <VideoUploadInputs
-        vidTitle={vidTitle}
-        handleVideoTitle={handleVideoTitle}
-        handleTitleValidation={handleTitleValidation}
-        titleErrorMessageClass={titleErrorMessageClass}
-        titleErrorBorderClass={titleErrorBorderClass}
-        vidDescription={vidDescription}
-        handleVideoDescription={handleVideoDescription}
-        handleDescriptionValidation={handleDescriptionValidation}
-        descriptionErrorMessageClass={descriptionErrorMessageClass}
-        descriptionErrorBorderClass={descriptionErrorBorderClass}
-        enableButton={enableButton}
-      />
+      <div className="thumbnail-and-input-container">
+        <VideoUploadThumbnail />
+        <VideoUploadInputs
+          vidTitle={vidTitle}
+          handleVideoTitle={handleVideoTitle}
+          handleTitleValidation={handleTitleValidation}
+          titleErrorMessageClass={titleErrorMessageClass}
+          titleErrorBorderClass={titleErrorBorderClass}
+          vidDescription={vidDescription}
+          handleVideoDescription={handleVideoDescription}
+          handleDescriptionValidation={handleDescriptionValidation}
+          descriptionErrorMessageClass={descriptionErrorMessageClass}
+          descriptionErrorBorderClass={descriptionErrorBorderClass}
+          enableButton={enableButton}
+        />
+      </div>
+
       <VideoUploadButtons
         enableButton={enableButton}
         enableUploadButtonBackground={enableUploadButtonBackground}

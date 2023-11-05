@@ -27,7 +27,7 @@ const VideoUploadInputs = (props) => {
       <span
         className={`form-input-container__title-error-msg-hidden ${props.titleErrorMessageClass}`}
       >
-        Title required!{`e.g - Trip to Hawaii/Summer Vlog `}
+        Title required! {`e.g - "The Lord of the Rings: Battle of Minas Tirith" `}
       </span>
       {/* DESCRIPTION */}
       <label

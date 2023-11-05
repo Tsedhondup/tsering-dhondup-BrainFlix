@@ -60,8 +60,8 @@ const VideoSection = (props) => {
   // GETTING ID OF FIRST VIDEO
   useEffect(() => {
     /*
-     * ON REFRESHING, IT WILL VALIDATE THE PRESENCE OF VIDEO-ID useParams()
-     * RENDER THE APPROPRIATE PAGE BASE ON 'URL'
+     * ON REFRESHING, IT WILL CHECK THE PRESENCE OF VIDEO-ID useParams()
+     * & RENDER THE PAGE BASE ON 'URL'
      */
     if (!props.videoId) {
       getVideoId();
@@ -91,7 +91,7 @@ const VideoSection = (props) => {
               totalComment={currentVideo.comments.length}
               currentVidCommentCounts={currentVidCommentCounts}
             />
-            {/* PROPS WILL BE USE FOR POSTING COMMENTS */}
+            {/* API-KEY & BASE-URL WILL BE USE FOR POSTING COMMENTS */}
             <CurrentVidCommentAdd
               currentVidCommentCounts={currentVidCommentCounts}
               setCurrentVidCommentCounts={setCurrentVidCommentCounts}
@@ -101,7 +101,7 @@ const VideoSection = (props) => {
               myApiKey={myApiKey}
               baseURL={baseURL}
             />
-            {/* PROPS WILL BE USE FOR DELETING COMMENTS */}
+            {/* API-KEY & BASE-URL WILL BE USE FOR DELETING COMMENTS */}
             <CurrentVidCommentList
               currentVidComments={currentVidComments}
               setCurrentVidComments={setCurrentVidComments}

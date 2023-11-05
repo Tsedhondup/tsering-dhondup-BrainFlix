@@ -28,6 +28,12 @@
     @content;
   }
 }
+// MOBILE-2
+@mixin mobileThree {
+  @media (min-width: 410px) {
+    @content;
+  }
+}
 // TABLET
 @mixin tablet {
   @media (min-width: 768px) {

@@ -1,3 +1,23 @@
+@use "../../../styles/partials/mixins";
+@use "../../../styles/partials/colors";
+
 .video-upload-container__form {
-  margin-top: 16px;
+  // THUMBNAIL AND INPUTS CONTAINER
+  //  MEDIA = TABLET = [ ] = 768PX
+  .thumbnail-and-input-container {
+    @include mixins.tablet {
+      border-top: 1px solid colors.$mercury;
+      border-bottom: 1px solid colors.$mercury;
+      margin-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+  //  MEDIA = DESKTOP = [ ] = 1280PX
+  .thumbnail-and-input-container {
+    @include mixins.desktop {
+      display: flex;
+      gap: 24px;
+      padding-top: 20px;
+    }
+  }
 }

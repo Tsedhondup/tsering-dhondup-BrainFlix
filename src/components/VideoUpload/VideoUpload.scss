@@ -5,3 +5,16 @@
   padding: 0px 16px;
   border-top: 1px solid colors.$mercury;
 }
+//  MEDIA = TABLET = [ ] = 768PX
+.video-upload-container {
+  @include mixins.tablet {
+    padding: 0px 36px;
+  }
+}
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.video-upload-container {
+  @include mixins.desktop {
+    max-width: 1040px;
+    margin: auto;
+  }
+}

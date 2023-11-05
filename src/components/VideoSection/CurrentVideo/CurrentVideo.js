@@ -5,11 +5,10 @@ import CurrentVideoControls from "./CurrentVideoControls/CurrentVideoControls";
 let CurrentVideo = (props) => {
   // # STATES
 
-  // CLASSES FOR CURRENT-VIDEO TAG WILL BE DYNAMICALLY ADDED INTO VIDEO CUSTOM CONTROLS-CONTAINER
+  // DYNAMIC CLASS FOR CONTROLS DISPLAY
   const [videoControlClass, setVideoControlClass] = useState(
     "video-control-hidden"
   );
-
   const [currentTime, setCurrentTime] = useState("0:00");
   const [currentDuration, setCurrentDuration] = useState("0:00");
   const [progressBar, setProgressBar] = useState(0);
@@ -31,7 +30,6 @@ let CurrentVideo = (props) => {
   // PROGRESS BAR REF
   const progressBarRef = useRef();
   // POGRESS BAR ELEMENT
-  const progressBarEl = progressBarRef.current;
 
   /*-------------------------------------------------*/
   // # EVENT HANDLERS
@@ -51,19 +49,12 @@ let CurrentVideo = (props) => {
     setCurrentDuration(`${durationMinutes}:${durationSeconds}`);
   };
 
-  // HANDLE PROGRESS BAR
+  // HANDLE PROGRESS BAR - SETTING WIDTH OF SCRUBBING BASE ON CHANGE IN CURRENT TIME OF VIDEO
   const handleProgressBar = () => {
     setProgressBar(
       (currentVideoEl.currentTime / currentVideoEl.duration) * 100
     );
   };
-
-  // HANLDE PROGRESS BAR ON CLICK
-  // const handleProgressBarOnClick = (event) => {
-  //   const progressTime =
-  //     (event.target.offsetX / progressBarEl.offsetWidth) * currentVideoEl.duration;
-  //   currentVideoEl.currentTime = progressTime;
-  // };
 
   // SHOW VIDEO CONTROLS - HOVER ON VIDEO ELEMENT
   const handleVideoControlShow = () => {
@@ -74,7 +65,7 @@ let CurrentVideo = (props) => {
     setVideoControlClass("video-control-hidden");
   };
 
-  // HANDLE VIDEO PLAY
+  // HANDLE VIDEO PLAYING
   const handlePlayButton = () => {
     currentVideoEl.play();
   };
@@ -141,7 +132,6 @@ let CurrentVideo = (props) => {
               currentDuration={currentDuration}
               progressBar={progressBar}
               progressBarRef={progressBarRef}
-              // handleProgressBarOnClick={handleProgressBarOnClick}
             />
           </div>
         </div>

@@ -6,26 +6,27 @@
   width: 100%;
   height: 40px;
   position: absolute;
-  bottom: 0;
+  bottom: 16px;
+  padding: 0px 16px;
 
   // GENERAL RULE FOR BUTTON
   button {
-    width: 100%;
-    background-color: colors.$brainFlixDarkBlack;
-    opacity: 50%;
     border-width: 0px;
     outline: none;
-    // GENERAL RULE FOR BUTTON
-    img {
-      color: colors.$white;
-    }
   }
   // PLAY && PAUSE*******************
   &__play-puase-btn-container {
-    display: flex;
+    // display: flex;
+    flex: 2%;
+
     // PLAY
     &--play {
       display: block;
+      width: 43px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: colors.$brainFlixDarkBlack;
+      opacity: 50%;
     }
     // REACT.JS DYNAMIC CLASS
     &--play-hidden {
@@ -34,39 +35,126 @@
     // PAUSE
     &--pause {
       display: none;
+      width: 43px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: colors.$brainFlixDarkBlack;
+      opacity: 50%;
     }
     // REACT.JS DYNAMIC CLASS
     &--pause-show {
-      display: flex;
-    }
-  }
-  // CONTROL SCRUBS********************
-  &__scrub {
-    position: relative;
-    width: 100%;
-    background-color: colors.$brainFlixDarkBlack;
-    // RANGE
-    &--range {
       display: block;
-      width: 50%;
-      background-color: red;
-    }
-    // ICON
-    &--icon {
-      position: absolute;
     }
   }
+  // SCRUB AND TIME-LINE
+  .scrubbing-and-time-line-container {
+    display: flex;
+    gap: 16px;
+    flex: 95%;
+    padding: 0px 16px;
+    background-color: colors.$brainFlixDarkBlack;
+    opacity: 50%;
+    border-radius: 4px;
+
+    // CONTROL SCRUBS********************
+    .scrubbing-control-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      &__content {
+        position: relative;
+        height: 3px;
+        width: 100%;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+
+        // SCRUBBER
+        .control-scrubber {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: colors.$brainFlixDarkBlack;
+          background-color: colors.$silver;
+          border-top-right-radius: 3px;
+          border-top-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+        // PLAYED
+        .control-played {
+          position: absolute;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 0%;
+          height: 100%;
+          background-color: colors.$brainFlixBlue;
+          border-top-right-radius: 3px;
+          border-top-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          border-bottom-left-radius: 3px;
+          // SCRUB-BALL
+          .video-controls-scrub-icon {
+            visibility: hidden;
+            position: absolute;
+          }
+        }
+        .control-played:hover {
+          .video-controls-scrub-icon {
+            visibility: visible;
+          }
+        }
+        // BUFFER
+        .control-buffer {
+          position: absolute;
+          height: 100%;
+          background-color: colors.$silver;
+          border-top-right-radius: 3px;
+          border-top-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+      }
+    } // TIME && DURATION*******************
+    &__timeline {
+      font-size: 10px;
+      color: colors.$white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      // CURRENT TIME
+      &--current {
+        padding-right: 3px;
+      }
+      // DURATION
+      &--duration {
+        padding-left: 3px;
+      }
+    }
+  }
+
   // FULL-SCREEN && VOLUME CONTAINER****
   .full-screen-and-volume-container {
     display: flex;
     gap: 16px;
+    height: 40px;
+    background-color: colors.$brainFlixDarkBlack;
+    opacity: 50%;
+    padding: 0px 16px;
+    border-radius: 4px;
 
     // FULL-SCREENS
     &__full-screen {
       display: flex;
+      align-items: center;
       // FULL-SCREEN OPEN
       &--open {
         display: block;
+        background-color: colors.$brainFlixDarkBlack;
+        opacity: 50%;
       }
       // REACT.JS DYNAMIC CLASS
       &--open-hidden {
@@ -74,6 +162,8 @@
       }
       // FULL-SCREEN CLOSE
       &--close {
+        background-color: colors.$brainFlixDarkBlack;
+        opacity: 50%;
         display: none;
       }
       // REACT.JS DYNAMIC CLASS
@@ -84,8 +174,12 @@
 
     // VOLUMES
     &__volume {
+      display: flex;
+      align-items: center;
       // VOLUME-ON
       &--on {
+        background-color: colors.$brainFlixDarkBlack;
+        opacity: 50%;
         display: block;
       }
       // REACT.JS DYNAMIC CLASS
@@ -94,11 +188,13 @@
       }
       // VOLUME-OFF
       &--off {
+        background-color: colors.$brainFlixDarkBlack;
+        opacity: 50%;
         display: none;
       }
       // REACT.JS DYNAMIC CLASS
       &--off-show {
-        display: flex;
+        display: block;
       }
     }
   }

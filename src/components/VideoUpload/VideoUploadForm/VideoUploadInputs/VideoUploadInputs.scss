@@ -15,10 +15,10 @@
   &__title {
     width: 100%;
     padding: 12px;
-    margin-bottom: 16px;
     border: 1px solid colors.$silver;
     border-radius: 4px;
     outline: none;
+    margin-bottom: 16px;
   }
   &__title:focus {
     border-color: colors.$brainFlixBlue;
@@ -28,10 +28,29 @@
     color: colors.$brainFlixBlack;
     font-size: 12px;
   }
-  // DYNAMIC REACT.JS CLASS
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__title::placeholder {
+    @include mixins.tablet {
+      font-size: 13px;
+    }
+  }
+  // DYNAMIC REACT.JS CLASSE
   &__title-error-border {
     border-color: colors.$pink;
   }
+
+  // TITLE ERROR MESSAGE
+  &__title-error-msg-hidden {
+    color: colors.$pink;
+    display: none;
+  }
+  // DYNAMIC REACT.JS CLASS
+  &__title-error-msg-show {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
+
   // DESCRIPTION
   &__description {
     width: 100%;
@@ -42,6 +61,7 @@
     outline: none;
     resize: none;
   }
+
   &__description:focus {
     border-color: colors.$brainFlixBlue;
     border-width: 2px;
@@ -50,19 +70,17 @@
     color: colors.$brainFlixBlack;
     font-size: 12px;
   }
+  //  MEDIA = TABLET = [ ] = 768PX
+  &__description::placeholder {
+    @include mixins.tablet {
+      font-size: 13px;
+    }
+  }
   // DYNAMIC REACT.JS CLASS
   &__description-error-border {
     border-color: colors.$pink;
   }
-  // TITLE ERROR MESSAGE
-  &__title-error-msg-hidden {
-    color: colors.$pink;
-    display: none;
-  }
-  // DYNAMIC REACT.JS CLASS
-  &__title-error-msg-show {
-    display: block;
-  }
+
   // TITLE ERROR MESSAGE
   &__description-error-msg-hidden {
     color: colors.$pink;
@@ -71,13 +89,13 @@
   // DYNAMIC REACT.JS CLASS
   &__description-error-msg-show {
     display: block;
+    padding-top: 6px;
+    font-size: 13px;
   }
 }
-
-.error-msg-hidden {
-  display: none;
-}
-.error-msg-show {
-  display: block;
-  color: red;
+//  MEDIA = DESKTOP = [ ] = 1280PX
+.form-input-container {
+  @include mixins.desktop {
+    flex: 50%;
+  }
 }

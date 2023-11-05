@@ -1,5 +1,5 @@
 // HOOKS
-import { useRef, useState } from "react";
+import { useState } from "react";
 // STYLES
 import "./CurrentVidCommentAdd.scss";
 // COMPONENTS
@@ -18,7 +18,7 @@ const CurrentVidCommentAdd = (props) => {
     // CREAT COMMENT OBJECT
     const commentObject = {
       comment: commentValue,
-      name: "tsering Dhondup",
+      name: "Tsering Dhondup",
     };
 
     axios
@@ -27,12 +27,11 @@ const CurrentVidCommentAdd = (props) => {
         commentObject
       )
       .then((response) => {
-        // extract the comments from comment state variable
+        // EXTRACT THE COMMENTS FROM COMMENT-STATE VARIABLE
         const newComments = [...props.currentVidComments, response.data];
-
-        // // set the comment state variable
+        // SET THE COMMENT STATE VARIABLE WITH NEW COMMENTS
         props.setCurrentVidComments(newComments);
-        // // set the commentCount state
+        // SET THE COMMENT-COUNT STATE VARIABLE
         props.setCurrentVidCommentCounts(newComments.length);
       })
       .then((response) => {

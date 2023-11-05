@@ -1,0 +1,79 @@
+@use "../../../../../styles/partials/colors";
+.comment-delete-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  &__button {
+    outline: none;
+    border-width: 0px;
+    background-color: colors.$white;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+  &__button:hover {
+    align-items: flex-start;
+  }
+  // DELETE CONFIMATION
+  .confirm-delete-prompt-container-outer-hidden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+
+    .confirm-delete-prompt-container-inner {
+      max-width: 300px;
+      background-color: colors.$white;
+      padding: 10px;
+      border: 1px solid colors.$brainFlixBlack;
+      border-radius: 4px;
+      position: absolute;
+      top: 20%;
+      opacity: none;
+      // MESSAGE
+      &__msg {
+        color: colors.$pink;
+        padding-bottom: 30px;
+      }
+      // BUTTON CONTAINER
+      &__button-container {
+        display: flex;
+        gap: 10px;
+        // DELETE-CANCEL
+        &--delete-cancel {
+          display: block;
+          height: 40px;
+          width: 100%;
+          font-size: 10px;
+          text-transform: uppercase;
+          color: colors.$white;
+          background-color: colors.$brainFlixBlue;
+          border-width: 0px;
+          border-radius: 4px;
+          background-color: colors.$brainFlixBlue;
+        }
+        &--delete-cancel:hover {
+          background-color: colors.$brainFlixDarkBlue;
+          cursor: pointer;
+        }
+        // DELETE
+        &--delete-confirm {
+          @extend .confirm-delete-prompt-container-inner__button-container--delete-cancel;
+          background-color: colors.$pink;
+        }
+        &--delete-confirm:hover {
+          background-color: colors.$pink;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  // DYNAMIC REACT.JS CLASS
+  .confirm-delete-prompt-container-outer-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
