@@ -59,12 +59,29 @@ let CurrentVideoControls = (props) => {
 
       {/* SCRUBBING-CONTROL CONTAINER  */}
       <div className="video-controls__scrub">
-        <input className="video-controls__scrub--range" type="range"></input>
-        <img
-          className="video-controls__scrub--scrub-icon"
-          src={scrub}
-          alt="scrub"
-        />
+        <div
+          ref={props.progressBarRef}
+          className="video-controls__scrub--range"
+          style={{ width: `${props.progressBar}%` }}
+          // onClick={(event) => {
+          //   props.handleProgressBarOnClick(event);
+          // }}
+        >
+          s
+        </div>
+        <img className="video-controls__scrub--icon" src={scrub} alt="scrub" />
+      </div>
+      {/*----------------------------------------------*/}
+
+      {/* TIMELINE CONTAINER  */}
+      <div className="video-controls__timeline">
+        <span className="video-controls__timeline--current">
+          {props.currentTime}
+        </span>
+        /
+        <span className="video-controls__timeline--duration">
+          {props.currentDuration}
+        </span>
       </div>
       {/*----------------------------------------------*/}
 

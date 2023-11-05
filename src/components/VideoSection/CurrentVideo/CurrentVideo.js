@@ -10,6 +10,10 @@ let CurrentVideo = (props) => {
     "video-control-hidden"
   );
 
+  const [currentTime, setCurrentTime] = useState("0:00");
+  const [currentDuration, setCurrentDuration] = useState("0:00");
+  const [progressBar, setProgressBar] = useState(0);
+
   /*-------------------------------------------------*/
 
   // # REFS
@@ -23,9 +27,43 @@ let CurrentVideo = (props) => {
   const currentVideoRef = useRef();
   // GETTING CURRENT-VIDEO-CONTAINER FROM USING VIDEO-REF OBJECT
   const currentVideoEl = currentVideoRef.current;
-  /*-------------------------------------------------*/
 
+  // PROGRESS BAR REF
+  const progressBarRef = useRef();
+  // POGRESS BAR ELEMENT
+  const progressBarEl = progressBarRef.current;
+
+  /*-------------------------------------------------*/
   // # EVENT HANDLERS
+
+  const handleTimeUpdate = () => {
+    // GET CURRENT TIME
+    const currentMinutes = Math.floor(currentVideoEl.currentTime / 60);
+    const currentSeconds = Math.floor(
+      currentVideoEl.currentTime - currentMinutes * 60
+    );
+    // GET CURRENT DURATION
+    const durationMinutes = Math.floor(currentVideoEl.duration / 60);
+    const durationSeconds = Math.floor(
+      currentVideoEl.duration - durationMinutes * 60
+    );
+    setCurrentTime(`${currentMinutes}:${currentSeconds}`);
+    setCurrentDuration(`${durationMinutes}:${durationSeconds}`);
+  };
+
+  // HANDLE PROGRESS BAR
+  const handleProgressBar = () => {
+    setProgressBar(
+      (currentVideoEl.currentTime / currentVideoEl.duration) * 100
+    );
+  };
+
+  // HANLDE PROGRESS BAR ON CLICK
+  // const handleProgressBarOnClick = (event) => {
+  //   const progressTime =
+  //     (event.target.offsetX / progressBarEl.offsetWidth) * currentVideoEl.duration;
+  //   currentVideoEl.currentTime = progressTime;
+  // };
 
   // SHOW VIDEO CONTROLS - HOVER ON VIDEO ELEMENT
   const handleVideoControlShow = () => {
@@ -83,6 +121,10 @@ let CurrentVideo = (props) => {
                 event.stopPropagation();
                 handleVideoControlHidden();
               }}
+              onTimeUpdate={() => {
+                handleTimeUpdate();
+                handleProgressBar();
+              }}
             ></video>
             {/* CURRENT VIDEO CONTROLS */}
             <CurrentVideoControls
@@ -95,6 +137,11 @@ let CurrentVideo = (props) => {
               handleCloseFullScreen={handleCloseFullScreen}
               handleMuted={handleMuted}
               handleUnmuted={handleUnmuted}
+              currentTime={currentTime}
+              currentDuration={currentDuration}
+              progressBar={progressBar}
+              progressBarRef={progressBarRef}
+              // handleProgressBarOnClick={handleProgressBarOnClick}
             />
           </div>
         </div>

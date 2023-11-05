@@ -43,7 +43,16 @@
   // CONTROL SCRUBS********************
   &__scrub {
     position: relative;
-    &--scrub-icon {
+    width: 100%;
+    background-color: colors.$brainFlixDarkBlack;
+    // RANGE
+    &--range {
+      display: block;
+      width: 50%;
+      background-color: red;
+    }
+    // ICON
+    &--icon {
       position: absolute;
     }
   }
