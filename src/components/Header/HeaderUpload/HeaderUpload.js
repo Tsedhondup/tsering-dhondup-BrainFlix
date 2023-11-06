@@ -5,12 +5,9 @@ import "./HeaderUpload.scss";
 // ASSET
 import uploadIcon from "../../../assets/images/upload.svg";
 // COMPONENTS
-import VideoUploadPage from "../../../Page/VideoUploadPage/VideoUploadPage";
 
 const HeaderUpload = () => {
   return (
-    // <Link to={"/videoUploadPage"}>
-
     <NavLink to="videoUploadPage">
       <div className="header-upload-btn-container">
         {/* UPLOAD BUTTON */}
