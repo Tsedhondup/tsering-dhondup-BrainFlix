@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<VideoPlayerPage />} />
           <Route
-            path="videoPlayerPage/:videoId"
+            path="/:videoId"
             element={<VideoPlayerPage />}
           />
           <Route path="videoUploadPage" element={<VideoUploadPage />} />

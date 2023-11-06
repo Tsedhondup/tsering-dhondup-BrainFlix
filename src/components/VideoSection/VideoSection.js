@@ -70,10 +70,21 @@ const VideoSection = (props) => {
 
   // WHEN videoID PROPS CHANGED
   useEffect(() => {
-    getDefaultVideo(props.videoId);
+    /*
+    THIS IS TO ENSURE THE RENDERING OF STARTING HOME-PAGE 
+    RESOURCE WITH '/' ROUTE CLICKING ON BROWSER BACK BUTTON 
+    */
+
+    // IF THE useParams() OBJECT IS EMPTY & HAS PATH "/", FIRST VIDEO FROM VIDEO-ARRAY WILL WILL GET RENDERED
+    if (props.videoId) {
+      getDefaultVideo(props.videoId);
+    }
+    if (!props.videoId) {
+      getVideoId();
+    }
   }, [props.videoId]);
 
-  // /************************* RENDERING ************************/
+  // /************************ RENDERING ************************/
   if (currentVideo.id) {
     return (
       <section className="video-section">

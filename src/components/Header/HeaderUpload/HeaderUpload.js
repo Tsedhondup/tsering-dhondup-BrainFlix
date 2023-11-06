@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import "./HeaderUpload.scss";
 // ASSET
 import uploadIcon from "../../../assets/images/upload.svg";
+// COMPONENTS
+import VideoUploadPage from "../../../Page/VideoUploadPage/VideoUploadPage";
 
 const HeaderUpload = () => {
   return (

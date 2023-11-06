@@ -18,7 +18,7 @@ const NextVid = (props) => {
     .map((videoFiltered) => (
       // NEXT-VIDEO-LIST
       <NavLink
-        to={`/videoPlayerPage/${videoFiltered.id}`}
+        to={`/${videoFiltered.id}`}
         className="next-video"
         id={videoFiltered.id}
         key={videoFiltered.id}
