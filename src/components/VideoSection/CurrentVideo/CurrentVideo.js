@@ -5,7 +5,7 @@ import CurrentVideoControls from "./CurrentVideoControls/CurrentVideoControls";
 let CurrentVideo = (props) => {
   // # STATES
 
-  // DYNAMIC CLASS FOR CONTROLS DISPLAY
+  // DYNAMIC CLASS FOR DISPLAYING CONTROLS
   const [videoControlClass, setVideoControlClass] = useState(
     "video-control-hidden"
   );
