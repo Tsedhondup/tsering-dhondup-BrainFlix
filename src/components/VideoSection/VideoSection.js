@@ -84,7 +84,7 @@ const VideoSection = (props) => {
     }
   }, [props.videoId]);
 
-  // /************************* RENDERING ************************/
+  // /************************ RENDERING ************************/
   if (currentVideo.id) {
     return (
       <section className="video-section">
