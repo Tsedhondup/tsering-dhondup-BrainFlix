@@ -45,7 +45,7 @@ const VideoSection = (props) => {
   };
   // GET NEXT-VIDEOS
   const getNextVideos = () => {
-    axios.get(`${baseURL}/videos?api_key=${myApiKey}`).then((response) => {
+    axios.get(`${localURL}/videos`).then((response) => {
       setNextVideos(response.data);
     });
   };
