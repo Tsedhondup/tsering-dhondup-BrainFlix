@@ -19,6 +19,8 @@ const VideoSection = (props) => {
   const [nextVideos, setNextVideos] = useState([]);
   const [currentVidComments, setCurrentVidComments] = useState("");
   const [currentVidCommentCounts, setCurrentVidCommentCounts] = useState("");
+  // EXPRESS SERVER PORT
+  const localURL = process.env.REACT_APP_URL;
 
   /*--------------------------------------------------*/
 
@@ -30,17 +32,15 @@ const VideoSection = (props) => {
     });
   };
 
-  // GET FIRST VIDEO FROM THE SERVER
+  // GET FIRST VIDEO FROM THE SERVER get
   const getDefaultVideo = (videoId) => {
     if (videoId) {
-      axios
-        .get(`${baseURL}/videos/${videoId}?api_key=${myApiKey}`)
-        .then((response) => {
-          setMainVideo(response.data); // set the current-video
-          setCurrentVidComments(response.data.comments); // set the comments
-          setCurrentVidCommentCounts(response.data.comments.length); // set current-video comment counts
-          setCurrentVidId(videoId); // set current-video id
-        });
+      axios.get(`${localURL}/videos/${videoId}`).then((response) => {
+        setMainVideo(response.data); // set the current-video
+        setCurrentVidComments(response.data.comments); // set the comments
+        setCurrentVidCommentCounts(response.data.comments.length); // set current-video comment counts
+        setCurrentVidId(videoId); // set current-video id
+      });
     }
   };
   // GET NEXT-VIDEOS
@@ -63,6 +63,9 @@ const VideoSection = (props) => {
      * ON REFRESHING, IT WILL CHECK THE PRESENCE OF VIDEO-ID useParams()
      * & RENDER THE PAGE BASE ON 'URL'
      */
+
+    // to get first video from the list
+    // invoke getVideoId() function which in turns invoke getDefault() with vidId as an argument
     if (!props.videoId) {
       getVideoId();
     }
@@ -79,6 +82,7 @@ const VideoSection = (props) => {
     if (props.videoId) {
       getDefaultVideo(props.videoId);
     }
+    // IF NOT CALL THE GET-VIDEO-ID FUNCTION WHICH IN TURNS INVOKED GET-DEFAULT VIDEO
     if (!props.videoId) {
       getVideoId();
     }
