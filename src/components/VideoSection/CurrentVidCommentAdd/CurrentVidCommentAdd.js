@@ -12,7 +12,7 @@ const CurrentVidCommentAdd = (props) => {
   const [commentValue, setCommentValue] = useState("");
   const [warningMsgClass, setWarningMsgClass] = useState("");
   const [pinkBorderClass, setPinkBorderClass] = useState("");
-
+  const localURL = process.env.REACT_APP_URL;
   // POSTING COMMENTS
   const postComments = () => {
     // CREAT COMMENT OBJECT
@@ -22,10 +22,7 @@ const CurrentVidCommentAdd = (props) => {
     };
 
     axios
-      .post(
-        `${props.baseURL}/videos/${props.currentVidId}/comments?api_key=${props.myApiKey}`,
-        commentObject
-      )
+      .post(`${localURL}/videos/${props.currentVidId}/comments`, commentObject)
       .then((response) => {
         // EXTRACT THE COMMENTS FROM COMMENT-STATE VARIABLE
         const newComments = [...props.currentVidComments, response.data];

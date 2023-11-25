@@ -8,7 +8,8 @@ import axios from "axios";
 
 const CommentDelete = (props) => {
   const [confirmDeletePromptClass, setConfirmDeletePromptClass] = useState("");
-
+  // local URL
+  const localURL = process.env.REACT_APP_URL;
   // HANDLE DELETE PROMPT DISPLAY
   const handleSetDeletePromptClass = () => {
     setConfirmDeletePromptClass("confirm-delete-prompt-container-outer-show");
@@ -16,10 +17,11 @@ const CommentDelete = (props) => {
   const handleRemoveDeletePromptClass = () => {
     setConfirmDeletePromptClass("");
   };
+
   const handleDeleteComment = () => {
     axios
       .delete(
-        `${props.baseURL}/videos/${props.currentVidId}/comments/${props.commentId}?api_key=${props.myApiKey}`
+        `${localURL}/videos/${props.currentVidId}/comments/${props.commentId}`
       )
       .then((response) => {
         // GET THE ID OF RESPONSE COMMENT OBJECT

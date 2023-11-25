@@ -14,7 +14,7 @@ const VideoUploadButtons = (props) => {
           className={`upload-button ${props.enableUploadButtonBackground()}`}
           type="submit"
           onClick={() => {
-            alert("Video uploaded successfully!");
+            props.handleVideoUpload();
           }}
           disabled={!props.enableButton()}
         >

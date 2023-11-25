@@ -33,7 +33,7 @@ const NextVid = (props) => {
           {/* CHANNEL & VIEWS CONTAINER */}
           <div className="next-video-channel-and-views-container">
             <NextVidChannel channel={videoFiltered.channel} />
-            <NextVidViews id={videoFiltered.id} />
+            <NextVidViews views={videoFiltered.views} />
           </div>
         </div>
       </NavLink>

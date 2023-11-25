@@ -1,7 +1,5 @@
 import "./NextVidViews.scss";
 // DATA
-import VideoDetailData from "../../../../data/video-details.json";
-
 const NextVidViews = (props) => {
   //*** METHODS ***//
 
@@ -20,23 +18,18 @@ const NextVidViews = (props) => {
 
   // (2) - FORMATING 'VIEW UI' BASE ON 'VIEW VALUES'
   const formateViews = (videoId) => {
-    // GETTING VIDEO WITH MATCHING FROM VIDEO-DETAIL-JSON FILE
-    const matchedVid = VideoDetailData.find((video) => {
-      return video.id === videoId;
-    });
-
-    // GETTING VIEWS OF MATCHED VIDEO
-    const views = matchedVid.views;
-
     // INVOKING GET-VIEW-ARRAY FUNCTION TO CONVERT VIEWS VALUE INTO AN ARRAY
-    const viewArray = getViewArray(views);
+    const viewArray = getViewArray(props.views);
 
     // VARIABLE TO STORE VIEWS AND WILL ALSO BE THE FINAL RETURN VALUE***
     let finalViews;
 
+    if (viewArray.length < 1 || viewArray.length === 0) {
+      finalViews = `${props.views} view`; // output = e.g '105 Views'
+    }
     // LESS THAN 1000
-    if (viewArray.length < 4) {
-      finalViews = `${views} + views`; // output = e.g '105 Views'
+    if (viewArray.length < 4 && viewArray.length > 0) {
+      finalViews = `${props.views} views`; // output = e.g '105 Views'
     }
 
     // EQUAL TO 1000
@@ -79,7 +72,7 @@ const NextVidViews = (props) => {
 
   return (
     <p className="next-video-channel-and-views-container__views">
-      {formateViews(props.id)}
+      {formateViews()}
     </p>
   );
 };

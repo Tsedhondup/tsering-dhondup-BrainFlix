@@ -6,6 +6,7 @@ import "./VideoUploadForm.scss";
 import VideoUploadThumbnail from "./VideoUploadThumnail/VideoUploadThumbnail";
 import VideoUploadInputs from "./VideoUploadInputs/VideoUploadInputs";
 import VideoUploadButtons from "./VideoUploadButtons/VideoUploadButtons";
+import axios from "axios";
 const VideoUploadForm = () => {
   const [vidTitle, setVidTitle] = useState("");
   const [vidDescription, setVidDescription] = useState("");
@@ -16,18 +17,17 @@ const VideoUploadForm = () => {
   const [descriptionErrorBorderClass, setDescriptionErrorBorderClass] =
     useState("");
 
-  // INPUTS VALUE HANDLERS
+  // LOCAL-URL
+  const localURL = process.env.REACT_APP_URL;
+  // HANDLE INPUT VALUES
   const handleVideoTitle = (event) => {
     setVidTitle(event.target.value);
   };
   const handleVideoDescription = (event) => {
     setVidDescription(event.target.value);
   };
-  // INPUT VALIDATION HANDLERS
-  /*
-   * onChang event
-   * onBlur event
-   */
+
+  // HANDLE INPUT VALIDATION
   const handleTitleValidation = (event) => {
     setTitleErrorMessageClass(
       !event.target.value ? "form-input-container__title-error-msg-show" : ""
@@ -50,7 +50,21 @@ const VideoUploadForm = () => {
     );
   };
 
-  // HANDLE BUTTON UPLOAD BUTTON BACKGROUND
+  // HANDLE VIDEO UPLOAD/POST
+  const handleVideoUpload = () => {
+    axios
+      .post(`${localURL}/videos`, {
+        title: vidTitle,
+        description: vidDescription,
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // TOGGLE UPLOAD BUTTON BACKGROUND
   const enableUploadButtonBackground = () => {
     if (vidTitle && vidDescription) {
       return "upload-button-enable-background-color";
@@ -59,6 +73,7 @@ const VideoUploadForm = () => {
     }
   };
 
+  // TOGGLE BUTTON ENABLE
   const enableButton = () => {
     if (!vidTitle || !vidDescription) {
       return false;
@@ -95,6 +110,7 @@ const VideoUploadForm = () => {
       <VideoUploadButtons
         enableButton={enableButton}
         enableUploadButtonBackground={enableUploadButtonBackground}
+        handleVideoUpload={handleVideoUpload}
       />
     </form>
   );
