@@ -15,6 +15,18 @@
       justify-content: space-between;
       padding-bottom: 10px;
     }
+    // LIKE & DELETE CONTAINER
+    &__like-delete-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 16px;
+    }
+    //  MEDIA = TABLET = [ ] = 768PX
+    &__like-delete-container {
+      @include mixins.tablet {
+        padding-top: 30px;
+      }
+    }
   }
 }
 //  MEDIA = TABLET = [ ] = 768PX

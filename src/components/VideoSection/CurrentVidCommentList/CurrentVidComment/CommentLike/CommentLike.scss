@@ -1,0 +1,9 @@
+.comment-like-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  // LOGO
+  &__logo {
+    cursor: pointer;
+  }
+}
