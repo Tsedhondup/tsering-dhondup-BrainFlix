@@ -18,6 +18,26 @@
       padding-bottom: 5px;
     }
   }
+  // IMAGE-INPUT
+  &--img-input {
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  &--img-input::file-selector-button {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: colors.$white;
+    background-color: colors.$brainFlixBlue;
+    cursor: pointer;
+    border-width: 0px;
+    border-radius: 4px;
+  }
+  &--img-input::file-selector-button:hover {
+    background-color: colors.$brainFlixDarkBlue;
+  }
   // IMAGE
   &--image {
     border-radius: 4px;

@@ -10,6 +10,7 @@ import axios from "axios";
 const VideoUploadForm = () => {
   const [vidTitle, setVidTitle] = useState("");
   const [vidDescription, setVidDescription] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
   const [titleErrorBorderClass, setTitleErrorBorderClass] = useState("");
   const [titleErrorMessageClass, setTitleErrorMessageClass] = useState("");
   const [descriptionErrorMessageClass, setDescriptionErrorMessageClass] =
@@ -25,6 +26,9 @@ const VideoUploadForm = () => {
   };
   const handleVideoDescription = (event) => {
     setVidDescription(event.target.value);
+  };
+  const handleThumbnail = (event) => {
+    setThumbnail(event.target.files[0]);
   };
 
   // HANDLE INPUT VALIDATION
@@ -52,12 +56,19 @@ const VideoUploadForm = () => {
 
   // HANDLE VIDEO UPLOAD/POST
   const handleVideoUpload = () => {
+    const formData = new FormData(); // Creating new form data
+    formData.append("thumbnail", thumbnail);
+    formData.append("title", vidTitle);
+    formData.append("description", vidDescription);
+
     axios
-      .post(`${localURL}/videos`, {
-        title: vidTitle,
-        description: vidDescription,
+      .post(`${localURL}/videos`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((response) => {
+        // need to change,not bug! related to setting nextVideo list State
         console.log(response.data);
       })
       .catch((err) => {
@@ -91,7 +102,10 @@ const VideoUploadForm = () => {
   return (
     <form className="video-upload-container__form">
       <div className="thumbnail-and-input-container">
-        <VideoUploadThumbnail />
+        <VideoUploadThumbnail
+          thumbnail={thumbnail}
+          handleThumbnail={handleThumbnail}
+        />
         <VideoUploadInputs
           vidTitle={vidTitle}
           handleVideoTitle={handleVideoTitle}

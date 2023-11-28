@@ -9,7 +9,10 @@ const VideoUploadButtons = (props) => {
     // BUTTON CONTAINER
     <div className="video-upload-btn-container">
       {/* BUTTON */}
-      <NavLink to="/" className="video-upload-btn-container__nav-link">
+      <NavLink
+        to="/" // Home route is only enable after video is upload
+        className="video-upload-btn-container__nav-link"
+      >
         <button
           className={`upload-button ${props.enableUploadButtonBackground()}`}
           type="submit"
