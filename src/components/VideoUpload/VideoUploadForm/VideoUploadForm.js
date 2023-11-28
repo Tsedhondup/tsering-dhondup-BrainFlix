@@ -18,9 +18,6 @@ const VideoUploadForm = () => {
   const [descriptionErrorBorderClass, setDescriptionErrorBorderClass] =
     useState("");
 
-  thumbnail
-    ? console.log("yes there is thumbnail")
-    : console.log("no add imgage");
   // LOCAL-URL
   const localURL = process.env.REACT_APP_URL;
   // HANDLE INPUT VALUES
@@ -59,7 +56,6 @@ const VideoUploadForm = () => {
 
   // HANDLE VIDEO UPLOAD/POST
   const handleVideoUpload = () => {
-    
     const formData = new FormData(); // Creating new form data
     formData.append("thumbnail", thumbnail);
     formData.append("title", vidTitle);

@@ -34,6 +34,7 @@
     cursor: pointer;
     border-width: 0px;
     border-radius: 4px;
+    margin-bottom: 10px;
   }
   &--img-input::file-selector-button:hover {
     background-color: colors.$brainFlixDarkBlue;
