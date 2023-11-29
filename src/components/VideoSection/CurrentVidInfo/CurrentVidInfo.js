@@ -1,3 +1,5 @@
+// HOOKS
+import { useState } from "react";
 // STYLES
 import "./CurrentVidInfo.scss";
 // COMPONENTS
@@ -8,8 +10,28 @@ import CurrentVidViews from "./CurrentVidViews/CurrentVidViews";
 import CurrentVidLikes from "./CurrentVidLikes/CurrentVidLikes";
 import CurrentVidMoment from "./CurrentVidMoment/CurrentVidMoment";
 import CurrentVidDescription from "./CurrentVidDescription/CurrentVidDescription";
+import axios from "axios";
 
 const CurrentVidInfo = (props) => {
+  const [currentVideoLikes, setCurrentVideoLikes] = useState(
+    props.currentVideo.likes
+  );
+
+  // LOCAL URL
+  const localURL = process.env.REACT_APP_URL;
+
+  // EVENT HANDLERS
+  const handleLikes = () => {
+    axios
+      .put(`${localURL}/videos/${props.currentVideo.id}/like`)
+      .then((response) => {
+        setCurrentVideoLikes(response.data.likes);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="current-vid-info-container__info">
       {/* CURRENT-VIDEO TITLE */}
@@ -25,7 +47,10 @@ const CurrentVidInfo = (props) => {
         {/* VIEWS AND LIKES CONTAINER */}
         <div className="current-vid-views-and-likes-container">
           <CurrentVidViews views={props.currentVideo.views} />
-          <CurrentVidLikes likes={props.currentVideo.likes} />
+          <CurrentVidLikes
+            likes={currentVideoLikes}
+            handleLikes={handleLikes}
+          />
         </div>
       </div>
 
