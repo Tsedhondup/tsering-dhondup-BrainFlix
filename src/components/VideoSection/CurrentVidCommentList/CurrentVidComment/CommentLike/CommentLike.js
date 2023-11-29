@@ -13,7 +13,6 @@ const CommentLike = ({ commentId, commentLikes }) => {
       .put(`${localURL}/comments/${commentId}/like`)
       .then((response) => {
         setLikes(response.data.likes);
-        console.log(response.data);
       })
       .catch((err) => {
         console.log(err);

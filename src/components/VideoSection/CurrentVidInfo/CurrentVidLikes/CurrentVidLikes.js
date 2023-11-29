@@ -2,9 +2,33 @@
 import "./CurrentVidLikes.scss";
 // ASSETS
 import LikeLogo from "../../../../assets/images/likes.svg";
-import { round } from "lodash";
-
+import axios from "axios";
+import { useState, useEffect } from "react";
 const CurrentVidLikes = (props) => {
+  const [currentVideoLikes, setCurrentVideoLikes] = useState("");
+  // LOCAL URL
+  const localURL = process.env.REACT_APP_URL;
+
+  // GETTING CURRENT VIDEOS LIKES DYNAMICALLY
+  useEffect(() => {
+    axios
+      .get(`${localURL}/videos/${props.currentVideo.id}`)
+      .then((response) => {
+        setCurrentVideoLikes(response.data.likes);
+      });
+  }, [props.currentVideo.id]);
+
+  // EVENT HANDLERS
+  const handleLikes = () => {
+    axios
+      .put(`${localURL}/videos/${props.currentVideo.id}/like`)
+      .then((response) => {
+        setCurrentVideoLikes(response.data.likes);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <p className="current-vid-views-and-likes-container__likes">
       {/* LIKE-LOGO */}
@@ -14,12 +38,12 @@ const CurrentVidLikes = (props) => {
         alt="views-logo"
         onClick={(event) => {
           event.stopPropagation();
-          props.handleLikes();
+          handleLikes();
         }}
       />
       {/* LIKES COUNT */}
       <span className="current-vid-views-and-likes-container__likes--number">
-        {props.likes}
+        {currentVideoLikes}
       </span>
     </p>
   );
