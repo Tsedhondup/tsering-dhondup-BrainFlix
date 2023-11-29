@@ -1,5 +1,3 @@
-// HOOKS
-import { useState } from "react";
 // STYLES
 import "./CurrentVidInfo.scss";
 // COMPONENTS
@@ -10,7 +8,6 @@ import CurrentVidViews from "./CurrentVidViews/CurrentVidViews";
 import CurrentVidLikes from "./CurrentVidLikes/CurrentVidLikes";
 import CurrentVidMoment from "./CurrentVidMoment/CurrentVidMoment";
 import CurrentVidDescription from "./CurrentVidDescription/CurrentVidDescription";
-import axios from "axios";
 
 const CurrentVidInfo = (props) => {
   return (
