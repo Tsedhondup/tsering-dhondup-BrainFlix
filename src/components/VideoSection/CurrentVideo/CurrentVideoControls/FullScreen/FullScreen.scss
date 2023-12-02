@@ -1,0 +1,25 @@
+@use "../../../../../styles/partials/colors";
+.full-screen-and-volume-container__full-screen {
+  display: flex;
+  align-items: center;
+  // FULL-SCREEN OPEN
+  &--open {
+    display: block;
+    background-color: colors.$brainFlixDarkBlack;
+    opacity: 50%;
+  }
+  // REACT.JS DYNAMIC CLASS
+  &--open-hidden {
+    display: none;
+  }
+  // FULL-SCREEN CLOSE
+  &--close {
+    background-color: colors.$brainFlixDarkBlack;
+    opacity: 50%;
+    display: none;
+  }
+  // REACT.JS DYNAMIC CLASS
+  &--close-show {
+    display: flex;
+  }
+}

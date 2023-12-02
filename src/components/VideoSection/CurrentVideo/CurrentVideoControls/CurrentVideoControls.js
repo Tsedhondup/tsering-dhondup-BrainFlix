@@ -1,25 +1,14 @@
-// HOOKS
-import { useState } from "react";
 // STYLE
 import "./CurrentVideoControls.scss";
-// ASSETS
-import fullScreen from "../../../../assets/images/fullscreen.svg";
-import closeFullScreen from "../../../../assets/images/close_fullscreen.svg";
-import pause from "../../../../assets/images/pause.svg";
-import play from "../../../../assets/images/play.svg";
-import scrub from "../../../../assets/images/scrub.svg";
-import volumeUp from "../../../../assets/images/volume_up.svg";
-import volumeOff from "../../../../assets/images/volume_off.svg";
+
+// COMPONENTS
+import PlayAndPause from "./PlayAndPause/PlayAndPause";
+import ScrubberBar from "./ScrubberBar/ScrubberBar";
+import TimeTrack from "./TimeTrack/TimeTrack";
+import FullScreen from "./FullScreen/FullScreen";
+import Volume from "./Volume/Volume";
 
 let CurrentVideoControls = (props) => {
-  // STATES
-  const [playBtnClass, setPlayBtnClass] = useState("");
-  const [pauseBtnClass, setPauseBtnClass] = useState("");
-  const [openFullScreenBtnClass, setOpenFullScreenBtnClass] = useState("");
-  const [closeFullScreenBtnClass, setCloseFullScreenBtnClass] = useState("");
-  const [volumeOnBtnClass, setVolumenOnBtnClass] = useState("");
-  const [volumeOffBtnClass, setVolumenOffBtnClass] = useState("");
-
   return (
     <div
       className={`video-controls ${props.videoControlClass}`}
@@ -27,70 +16,25 @@ let CurrentVideoControls = (props) => {
       onMouseOut={props.handleVideoControlHidden}
     >
       {/*** PLAY AND PAUSE BUTTON SCONTAINER ***/}
-      <div className="video-controls__play-puase-btn-container">
-        {/* PLAY */}
-        <button
-          className={`video-controls__play-puase-btn-container--play ${playBtnClass}`}
-          onClick={() => {
-            props.handlePlayButton();
-            setPlayBtnClass(
-              "video-controls__play-puase-btn-container--play-hidden" // hide play button
-            );
-            setPauseBtnClass(
-              "video-controls__play-puase-btn-container--pause-show" // show pause button
-            );
-          }}
-        >
-          <img src={play} alt="play" />
-        </button>
-        {/* PAUSE */}
-        <button
-          className={`video-controls__play-puase-btn-container--pause ${pauseBtnClass}`}
-          onClick={() => {
-            props.handlePauseButton();
-            setPlayBtnClass(""); // show play button
-            setPauseBtnClass(""); // hide pause button
-          }}
-        >
-          <img src={pause} alt="pause" />
-        </button>
-      </div>
+      <PlayAndPause
+        handlePlayButton={props.handlePlayButton}
+        handlePauseButton={props.handlePauseButton}
+      />
 
       {/*----------------------------------------------*/}
       {/***  SCRUBBING CONTROL AND TIME-LINE CONTAINER ***/}
+
       <div className="scrubbing-and-time-line-container">
-        {/* SCRUBBING-CONTROL CONTAINER  */}
-        <div className="scrubbing-control-container">
-          <div className="scrubbing-control-container__content">
-            {/* SCRUBBER */}
-            <div className="control-scrubber"></div>
-            {/* PALYED BAR */}
-            <div
-              ref={props.progressBarRef}
-              className="control-played"
-              style={{ width: `${props.progressBar}%` }}
-            >
-              <img
-                className="video-controls-scrub-icon"
-                src={scrub}
-                alt="scrub"
-              />
-            </div>
-            {/* BUFFER */}
-            <div className="control-buffer"></div>
-          </div>
-        </div>
+        <ScrubberBar
+          progressBarRef={props.progressBarRef}
+          progressBar={props.progressBar}
+        />
 
         {/* TIMELINE CONTAINER  */}
-        <div className="scrubbing-and-time-line-container__timeline">
-          <span className="scrubbing-and-time-line-container__timeline--current">
-            {props.currentTime}
-          </span>
-          /
-          <span className="scrubbing-and-time-line-container__timeline--duration">
-            {props.currentDuration}
-          </span>
-        </div>
+        <TimeTrack
+          currentTime={props.currentTime}
+          currentDuration={props.currentDuration}
+        />
       </div>
 
       {/*----------------------------------------------*/}
@@ -98,61 +42,16 @@ let CurrentVideoControls = (props) => {
       {/*** FULL SCREEN AND VOLUME CONTAINER ***/}
       <div className="full-screen-and-volume-container">
         {/* FULL-SCREEN BUTTONS CONTAINER */}
-        <div className="full-screen-and-volume-container__full-screen">
-          {/* OPEN FULL-SCREEN  */}
-          <button
-            className={`full-screen-and-volume-container__full-screen--open ${openFullScreenBtnClass}`}
-            onClick={() => {
-              props.handleShowFullScreen();
-              setOpenFullScreenBtnClass(
-                "full-screen-and-volume-container__full-screen--open-hidden" // hide open full-screen button
-              );
-              setCloseFullScreenBtnClass(
-                "full-screen-and-volume-container__full-screen--close-show" // show close full-screen buttons
-              );
-            }}
-          >
-            <img src={fullScreen} alt="full screen" />
-          </button>
-          {/* CLOSE FULL-SCREEN  */}
-          <button
-            className={`full-screen-and-volume-container__full-screen--close ${closeFullScreenBtnClass}`}
-            onClick={() => {
-              props.handleCloseFullScreen();
-              setOpenFullScreenBtnClass(""); // show open full-screen button
-              setCloseFullScreenBtnClass(""); // hide close full-screen button
-            }}
-          >
-            <img src={closeFullScreen} alt=" exit fullscreen" />
-          </button>
-        </div>
+        <FullScreen
+          handleShowFullScreen={props.handleShowFullScreen}
+          handleCloseFullScreen={props.handleCloseFullScreen}
+        />
+
         {/* VOLUMES BUTTONS  CONTAINER */}
-        <div className="full-screen-and-volume-container__volume">
-          <button
-            className={`full-screen-and-volume-container__volume--on ${volumeOnBtnClass}`}
-            onClick={() => {
-              props.handleMuted();
-              setVolumenOnBtnClass(
-                "full-screen-and-volume-container__volume--on-hidden" // hide volume-on button
-              );
-              setVolumenOffBtnClass(
-                "full-screen-and-volume-container__volume--off-show" // show volume-off button
-              );
-            }}
-          >
-            <img src={volumeUp} alt="volume up" />
-          </button>
-          <button
-            className={`full-screen-and-volume-container__volume--off ${volumeOffBtnClass}`}
-            onClick={() => {
-              props.handleUnmuted();
-              setVolumenOnBtnClass(""); // show volume-on button
-              setVolumenOffBtnClass(""); // hide volume-off button
-            }}
-          >
-            <img src={volumeOff} alt="volume off" />
-          </button>
-        </div>
+        <Volume
+          handleMuted={props.handleMuted}
+          handleUnmuted={props.handleUnmuted}
+        />
       </div>
     </div>
   );

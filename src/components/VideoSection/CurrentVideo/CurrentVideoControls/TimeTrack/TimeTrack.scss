@@ -1,0 +1,17 @@
+@use "../../../../../styles/partials/colors";
+// TIME && DURATION*******************
+.scrubbing-and-time-line-container__timeline {
+    font-size: 10px;
+    color: colors.$white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    // CURRENT TIME
+    &--current {
+      padding-right: 3px;
+    }
+    // DURATION
+    &--duration {
+      padding-left: 3px;
+    }
+  }

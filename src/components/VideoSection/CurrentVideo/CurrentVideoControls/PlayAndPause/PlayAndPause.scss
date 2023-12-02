@@ -1,0 +1,32 @@
+@use "../../../../../styles/partials/colors";
+
+.video-controls__play-puase-btn-container {
+  flex: 2%;
+
+  // PLAY
+  &--play {
+    display: block;
+    width: 43px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: colors.$brainFlixDarkBlack;
+    opacity: 50%;
+  }
+  // REACT.JS DYNAMIC CLASS
+  &--play-hidden {
+    display: none;
+  }
+  // PAUSE
+  &--pause {
+    display: none;
+    width: 43px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: colors.$brainFlixDarkBlack;
+    opacity: 50%;
+  }
+  // REACT.JS DYNAMIC CLASS
+  &--pause-show {
+    display: block;
+  }
+}
