@@ -67,10 +67,6 @@ const VideoUploadForm = () => {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((response) => {
-        // need to change,not bug! related to setting nextVideo list State
-        console.log("Not a bug, nothing to do with respons! Still thinking");
-      })
       .catch((err) => {
         console.log(err);
       });

@@ -16,7 +16,7 @@ const CurrentVidLikes = (props) => {
       .then((response) => {
         setCurrentVideoLikes(response.data.likes);
       });
-  }, [props.currentVideo.id]);
+  }, [localURL, props.currentVideo.id]);
 
   // EVENT HANDLERS
   const handleLikes = () => {

@@ -55,6 +55,7 @@ const VideoSection = (props) => {
   // DATA INITIALISATION FOR NEXT VIDEOS
   useEffect(() => {
     getNextVideos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // GETTING ID OF FIRST VIDEO
@@ -69,7 +70,8 @@ const VideoSection = (props) => {
     if (!props.videoId) {
       getVideoId();
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.videoId]);
 
   // WHEN videoID PROPS CHANGED
   useEffect(() => {
@@ -86,6 +88,7 @@ const VideoSection = (props) => {
     if (!props.videoId) {
       getVideoId();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.videoId]);
 
   // /************************ RENDERING ************************/
