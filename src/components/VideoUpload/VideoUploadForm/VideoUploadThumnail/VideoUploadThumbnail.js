@@ -10,6 +10,7 @@ const VideoUploadThumbnail = ({ thumbnail, handleThumbnail }) => {
         type="file"
         accept="image/*"
         name="thumbnail"
+        placeholder="file"
         onChange={(event) => {
           handleThumbnail(event);
         }}
