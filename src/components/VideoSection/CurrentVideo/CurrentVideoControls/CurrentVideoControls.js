@@ -28,6 +28,9 @@ let CurrentVideoControls = (props) => {
         <ScrubberBar
           progressBarRef={props.progressBarRef}
           progressBar={props.progressBar}
+          handleProgressBarOnClickScrubber={
+            props.handleProgressBarOnClickScrubber
+          }
         />
 
         {/* TIMELINE CONTAINER  */}

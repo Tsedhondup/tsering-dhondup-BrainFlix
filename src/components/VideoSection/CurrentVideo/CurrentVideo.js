@@ -2,6 +2,7 @@
 import { useState, useRef } from "react";
 import "./CurrentVideo.scss";
 import CurrentVideoControls from "./CurrentVideoControls/CurrentVideoControls";
+import axios from "axios";
 let CurrentVideo = (props) => {
   // # STATES
 
@@ -34,19 +35,18 @@ let CurrentVideo = (props) => {
   /*-------------------------------------------------*/
   // # EVENT HANDLERS
 
-  const handleTimeUpdate = () => {
-    // GET CURRENT TIME
-    const currentMinutes = Math.floor(currentVideoEl.currentTime / 60);
-    const currentSeconds = Math.floor(
-      currentVideoEl.currentTime - currentMinutes * 60
-    );
+  const handleTimeUpdate = (percentagewidth) => {
     // GET CURRENT DURATION
     const durationMinutes = Math.floor(currentVideoEl.duration / 60);
     const durationSeconds = Math.floor(
       currentVideoEl.duration - durationMinutes * 60
     );
-    setCurrentTime(`${currentMinutes}:${currentSeconds}`);
     setCurrentDuration(`${durationMinutes}:${durationSeconds}`);
+    const currentMinutes = Math.floor(currentVideoEl.currentTime / 60);
+    const currentSeconds = Math.floor(
+      currentVideoEl.currentTime - currentMinutes * 60
+    );
+    setCurrentTime(`${currentMinutes}:${currentSeconds}`);
   };
 
   // HANDLE PROGRESS BAR - SETTING WIDTH OF SCRUBBING BASE ON CHANGE IN CURRENT TIME OF VIDEO
@@ -54,6 +54,20 @@ let CurrentVideo = (props) => {
     setProgressBar(
       (currentVideoEl.currentTime / currentVideoEl.duration) * 100
     );
+  };
+  // HANDLE PROGRESS BAR - SETTING WIDHT OF SCRUBBER WHEN CLICK ON SCRUBBER BAR
+  const handleProgressBarOnClickScrubber = (event) => {
+    const xCord = event.nativeEvent.offsetX;
+    const eTargetWidth = event.target.offsetWidth;
+
+    const percentageWidth = (xCord / eTargetWidth) * 100;
+    // SET PROGRESS-BAR
+    setProgressBar(percentageWidth);
+
+    // INVOKE  HANDLE TIME UPDATE
+    handleTimeUpdate(Math.floor(percentageWidth));
+    // console.log(`percentagewidht: ${Math.floor(percentageWidth)}%`);
+    currentVideoEl.play();
   };
 
   // SHOW VIDEO CONTROLS - HOVER ON VIDEO ELEMENT
@@ -89,6 +103,16 @@ let CurrentVideo = (props) => {
     currentVideoEl.muted = false;
   };
 
+  // HANLDE VIEWS
+  const handleViews = () => {
+    const localURL = process.env.REACT_APP_URL;
+    axios
+      .put(`${localURL}/videos/${props.currentVideo.id}/view`)
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="current-video-wrapper-level-2">
       <div className="current-video-wrapper-level-1">
@@ -116,6 +140,11 @@ let CurrentVideo = (props) => {
                 handleTimeUpdate();
                 handleProgressBar();
               }}
+              onPlaying={() => {
+                setTimeout(() => {
+                  handleViews();
+                }, 4000);
+              }}
             ></video>
             {/* CURRENT VIDEO CONTROLS */}
             <CurrentVideoControls
@@ -132,6 +161,9 @@ let CurrentVideo = (props) => {
               currentDuration={currentDuration}
               progressBar={progressBar}
               progressBarRef={progressBarRef}
+              handleProgressBarOnClickScrubber={
+                handleProgressBarOnClickScrubber
+              }
             />
           </div>
         </div>
