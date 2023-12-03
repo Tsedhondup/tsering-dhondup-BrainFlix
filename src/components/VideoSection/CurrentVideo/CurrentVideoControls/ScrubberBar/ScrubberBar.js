@@ -7,7 +7,7 @@ const ScrubberBar = (props) => {
       <div className="scrubbing-control-container__content">
         {/* SCRUBBER */}
         <div
-          className="control-scrubber"
+          className="scrubbing-control-container__content--control-scrubber"
           onClick={(event) => {
             props.handleProgressBarOnClickScrubber(event);
           }}
@@ -15,16 +15,17 @@ const ScrubberBar = (props) => {
         {/* PALYED BAR */}
         <div
           ref={props.progressBarRef}
-          className="control-played"
+          className="scrubbing-control-container__content--control-played"
           style={{ width: `${props.progressBar}%` }}
           onClick={(event) => {
             props.handleProgressBarOnClickScrubber(event);
           }}
         >
+          {/* SCRUB */}
           <img className="video-controls-scrub-icon" src={scrub} alt="scrub" />
         </div>
         {/* BUFFER */}
-        <div className="control-buffer"></div>
+        <div className="scrubbing-control-container__content--control-buffer"></div>
       </div>
     </div>
   );

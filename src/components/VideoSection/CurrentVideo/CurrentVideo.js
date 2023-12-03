@@ -61,14 +61,8 @@ let CurrentVideo = (props) => {
     const xCord = event.nativeEvent.offsetX;
     const eTargetWidth = event.target.offsetWidth;
 
-    const percentageWidth = (xCord / eTargetWidth) * 100;
-    // SET PROGRESS-BAR
-    setProgressBar(percentageWidth);
-
-    // INVOKE  HANDLE TIME UPDATE
-    handleTimeUpdate(Math.floor(percentageWidth));
-    // console.log(`percentagewidht: ${Math.floor(percentageWidth)}%`);
-    currentVideoEl.play();
+    const timeProgress = (xCord / eTargetWidth) * currentVideoEl.duration;
+    currentVideoEl.currentTime = timeProgress;
   };
 
   // SHOW VIDEO CONTROLS - HOVER ON VIDEO ELEMENT

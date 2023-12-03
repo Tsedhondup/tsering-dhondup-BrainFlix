@@ -16,7 +16,7 @@
     border-bottom-left-radius: 3px;
 
     // SCRUBBER
-    .control-scrubber {
+    &--control-scrubber {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -28,7 +28,7 @@
       cursor: pointer;
     }
     // PLAYED
-    .control-played {
+    &--control-played {
       position: absolute;
       display: flex;
       justify-content: flex-end;
@@ -42,18 +42,19 @@
       border-bottom-left-radius: 3px;
       cursor: pointer;
       // SCRUB-BALL
+
       .video-controls-scrub-icon {
         visibility: hidden;
         position: absolute;
       }
     }
-    .control-played:hover {
+    &--control-played:hover {
       .video-controls-scrub-icon {
         visibility: visible;
       }
     }
     // BUFFER
-    .control-buffer {
+    &--control-buffer {
       position: absolute;
       height: 100%;
       background-color: colors.$silver;
