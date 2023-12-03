@@ -5,14 +5,17 @@
   align-items: center;
   gap: 10px;
   // LIKES LOGO
-  &--log {
+  &--logo {
     display: block;
+    cursor: pointer;
   }
   // LIKES COUNT
+
   &--number {
     display: block;
   }
 }
+
 //  MEDIA = TABLET = [ ] = 768PX
 .current-vid-views-and-likes-container__likes {
   @include mixins.tablet {

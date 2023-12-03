@@ -13,6 +13,7 @@ let CurrentVideo = (props) => {
   const [currentTime, setCurrentTime] = useState("0:00");
   const [currentDuration, setCurrentDuration] = useState("0:00");
   const [progressBar, setProgressBar] = useState(0);
+  const [viewAdded, setViewAdded] = useState(false); // to add only view on video play
 
   /*-------------------------------------------------*/
 
@@ -142,7 +143,10 @@ let CurrentVideo = (props) => {
               }}
               onPlaying={() => {
                 setTimeout(() => {
-                  handleViews();
+                  if (viewAdded === false) {
+                    handleViews();
+                    setViewAdded(true);
+                  }
                 }, 4000);
               }}
             ></video>
