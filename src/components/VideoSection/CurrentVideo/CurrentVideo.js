@@ -8,7 +8,6 @@ let CurrentVideo = (props) => {
   // props.currentVideo.forEach((item) => {
   //   console.log(item.image);
   // });
-  console.log(props.currentVideo.image)
   // DYNAMIC CLASS FOR DISPLAYING CONTROLS
   const [videoControlClass, setVideoControlClass] = useState(
     "video-control-hidden"
