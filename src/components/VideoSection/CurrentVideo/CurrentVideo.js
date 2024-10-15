@@ -5,7 +5,10 @@ import CurrentVideoControls from "./CurrentVideoControls/CurrentVideoControls";
 import axios from "axios";
 let CurrentVideo = (props) => {
   // # STATES
-
+  // props.currentVideo.forEach((item) => {
+  //   console.log(item.image);
+  // });
+  console.log(props.currentVideo.image)
   // DYNAMIC CLASS FOR DISPLAYING CONTROLS
   const [videoControlClass, setVideoControlClass] = useState(
     "video-control-hidden"
