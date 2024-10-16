@@ -1,6 +1,5 @@
 
-# [BrainFlix](https://github.com/Tsedhondup/tsering-dhondup-BrainFlix.git) 
-[https://brain-flix-app.netlify.app/](https://brain-flix-app.netlify.app/)
+# [BrainFlix](https://github.com/Tsedhondup/tsering-dhondup-BrainFlix.git) [Open](https://brain-flix-app.netlify.app/)
 
 
 BrainFlix is a video streaming web application built as a part of the School Project at BrainStation's Software Engineering Bootcamp.
